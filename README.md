@@ -1,108 +1,238 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# FizzyBeese
+FizzyBeese is an small independently run business that sells bath bombs, wax melts and other various accessories directly to their customers. Users can browse products by category, price or fragrance. Users are also able to add products to their cart and checkout securely. 
 
-Welcome USER_NAME,
+## [INSERT IMAGE HERE]
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+## Table of Contents
+- [Features](#features)
+   - [Existing Features](#existing-features)
+   - [Future Features](#future-features)
+- [Target Market](#target-market)
+- [Marketing Plan](#marketing-plan)
+- [Agile Development](#agile-development)
+   - [Epics](#epics)
+- [Testing](#testing)
+   - [Manual Testing](#manual-testing)
+   - [Automated Testing](#automated-testing)
+   - [Validator Testing](#validator-testing)
+   - [Bugs](#bugs)
+- [Deployment](#deployment)
+- [Wireframes](#wireframes)
+- [Credits](#credits)
 
-## Gitpod Reminders
+## Features
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Future Features
+<hr>
 
-`python3 -m http.server`
+## Target Market
+When designing the website for our bath bomb and wax melt business, we carefully considered the characteristics and preferences of our target market to create a compelling user experience.
 
-A blue button should appear to click: _Make Public_,
+**Primary Demographic:** The primary demographic consists predominantly of women, yet it also includes individuals who share a passion for self-care and indulgence. This broad range of customers spans various age groups, encompassing children, teenagers, young adults, and middle-aged individuals, allowing us to cater to a diverse customer base.
 
-Another blue button should appear to click: _Open Browser_.
+**Focus on Self-Care:** Our target market comprises individuals who prioritize self-care, seeking stress relief and tranquility in their daily lives. Whether it's unwinding in a soothing bath or basking in the calming aroma of wax melts, these customers crave relaxation and moments of serenity.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+**Interest in Natural and Eco-Friendly Products:** Their interest in natural and eco-friendly products aligns with our commitment to providing sustainable and wellness-oriented offerings.
 
-A blue button should appear to click: _Make Public_,
+**Gift Shoppers:** An essential segment of our target market includes gift shoppers who view our bath bombs and wax melts as thoughtful presents for their loved ones. By recognizing this opportunity, we aim to emphasize the gifting aspect of our products, making them a perfect choice for special occasions.
 
-Another blue button should appear to click: _Open Browser_.
+**Online Shoppers:** Given the e-commerce nature of our business, we specifically targeted online shoppers who prefer the convenience and ease of purchasing products from their digital devices. Thus, we focused on optimizing the website for seamless navigation and an effortless checkout process, ensuring a hassle-free shopping experience.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+To effectively reach and appeal to our target market, we consider marketing strategies that showcase the products' soothing and relaxing properties, highlight the use of natural ingredients, and emphasize the unique scents and designs of the bath bombs and wax melts. Social media marketing, email newsletters, and engaging website content can all be valuable tools to connect with the target audience and build brand loyalty.
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Marketing Plan
+This website employs a B2C (business-to-consumer) business model, meaning that our primary focus is to sell directly to our customers. To achieve this, our website will prioritize user-friendliness and accessibility, making it effortless for consumers to find and purchase our products, including the ability to view immediate prices.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**Homepage Design:** The homepage will be designed to be clear, attractive, and instantly engage users. We'll prominently feature a well-defined call-to-action button upon entering the page, ensuring users understand the purpose of our site right away.
 
-------
+**User-Friendly Navigation:** User-friendly navigation is crucial for our B2C business model. By providing an intuitive and seamless browsing experience, we aim to encourage users to spend more time on the site, ultimately leading to increased sales. Additionally, our responsive design will ensure that customers can enjoy a consistent experience across all devices, enhancing accessibility.
 
-## Release History
+**Smooth Checkout Process:** The shopping cart functionality will be easy to use, allowing users to add and delete items effortlessly. We'll also provide instant feedback to users as they make changes to their cart, ensuring a smooth checkout process.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+**Customer Communication:** In order to facilitate communication with our customers, we will provide accessible contact information for store admin. This will allow users to reach out with any queries or concerns they may have, promoting a positive customer experience.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+**Brand Engagement:** To foster brand engagement and communication, our website will feature links to our social media accounts. Additionally, we'll offer the option for users to sign up for our mailing list/newsletter, allowing us to keep them informed about new products, promotions, and other relevant updates.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+By implementing these features and functionalities, our B2C website aims to create a seamless and enjoyable shopping experience, encouraging repeat visits and capitalizing on impulse purchases.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<hr>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Agile Development - Epics
+### Epics
+#### **Customer's Point of View:**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+1. **User Registration and Authentication:**
+   - Customers can create new accounts or log in with existing ones to view order history and manage their profile information.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+2. **Browse Products and Categories:**
+   - Customers can easily search and browse through a wide range of bath bombs, wax melts, and accessories, sorted by categories, prices, and other filters.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+3. **Product Details:**
+   - Customers can view detailed information about each product, including descriptions, images, and prices.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+4. **Add to Cart:**
+   - Customers can add desired products to their shopping cart to collect items for purchase.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+5. **Manage Shopping Cart:**
+   - Customers can view, edit, and remove items from their shopping cart before proceeding to checkout.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+6. **Checkout and Payment:**
+   - Customers can securely check out and complete purchases using various payment methods.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+7. **Sale and Clearance:**
+   - Customers can view sale and clearance items.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+8. **Customer Support:**
+   - Customers can access help, submit inquiries, and receive support regarding products, orders, or general assistance.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+9. **Create and View Testimonials:**
+   - Customers can create and view testimonials to be able to leave reviews about the products they have ordered and experiences they’ve had.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### **Admin's Point of View:**
+1. **Admin Dashboard:**
+   - Admins can access a centralized dashboard to monitor and manage the entire e-commerce platform.
 
-------
+2. **Product Management:**
+   - Admins can add, edit, and remove products, as well as manage product categories and inventory.
 
-## FAQ about the uptime script
+3. **Order Management:**
+   - Admins can view and process incoming orders.
 
-**Why have you added this script?**
+4. **User Management:**
+   - Admins can manage user accounts and handle user inquiries.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+5. **Promotions and Discounts:**
+   - Admins can create sales and also add items to clearance.
 
-**How will this affect me?**
+6. **Customer Feedback and Reviews:**
+   - Admins can monitor and moderate customer reviews and feedback to maintain product quality and customer satisfaction.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+7. **Inventory Management:**
+   - Admins can update stock levels.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+8. **Content Management:**
+   - Admins can manage website content, such as updating product descriptions, names, and images.
+<hr>
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Entity Relationship Diagram
 
-**So….?**
+![FizzyBeese Entity Relationship Diagram](readme/fizzybeese-er-diagram.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Model Descriptions:
+- **Products**
+    - The purpose of this model is to represent individual products available for purchase. It contains essential information about each product, including its name, detailed description, price, weight, available stock quantity, associated categories, specific fragrance names, fragrance types, sale price (if applicable), clearance status, product images, and ingredients label.
 
-**Can I opt out?**
+<br>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- **ProductCategory**
+    - The purpose of this model is to store various categories of products, such as "Bath Bomb," "Wax Melt," "Candle," etc. This categorisation enables users to easily find and filter products based on their preferences. A single product can belong to multiple categories, providing versatility and better search results. For instance, a wax melt gift set may be categorised under "Wax Melt," "Gift Set," and "Wax Burner," allowing customers to find it under any of these categories. 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<br>
 
-**Anything more?**
+- **FragranceName**
+    - The purpose of this model is to store different names of available fragrances. It allows products to be associated with specific scents, enhancing the customer's understanding of the product. Some products may have multiple fragrance names attached to them if they come in various scents, like a gift set with multiple different products/scents.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<br>
 
----
+- **FragranceType**
+    - The purpose of this model is to store generic fragrance types, such as "Fresh," "Fruity," "Perfume," etc. These fragrance types provide additional filtering options for customers. Users can choose a preferred fragrance type, and the system will display products that match their desired fragrance category, simplifying the product search process.
 
-Happy coding!
+<br>
+
+- **Images**
+    - The purpose of this model is to store additional images related to products for their detailed display. Each image is associated with a specific product ID, making it easily retrievable and allowing customers to view multiple product images on the product detail page.
+
+<br>
+
+- **Order**
+    - The purpose of this model is to store comprehensive information about customer orders. It includes details related to the order, such as the order number, customer information, delivery address, order date, delivery class, delivery cost, order total, and grand total.
+
+<br>
+
+- **OrderLineItem**
+    - The purpose of this model is to store individual line items within an order, representing specific products and their corresponding quantities. It facilitates the organisation of orders and allows easy access to product-specific details within an order.
+
+<br>
+
+- **User**
+    - The purpose of this model is to handle user accounts and authentication using Django's built-in user authentication system. It stores essential user information, including the username, email address, and securely hashed password, ensuring secure user authentication. This model enables users to create accounts, log in securely, and access various features based on their authentication status within the platform.
+
+<br>
+
+- **UserProfile**
+    - The purpose of this model is to store additional information about a user, such as their full name and delivery information. This information streamlines the checkout process for returning customers, as they can save their details for future purchases, providing a more convenient shopping experience. 
+
+<br>
+
+- **Testimonial**
+    - The purpose of this model is to enable users to leave reviews and provide feedback about their experiences with the business and its products. It allows customers to share their opinions and recommendations, which can influence other potential customers and help maintain product quality and customer satisfaction.
+
+### Model Relationships:
+
+- **Product and ProductCategory:**
+    - Relationship: Many-to-Many
+    - Products can belong to multiple categories, and categories can have multiple associated products.
+
+<br>
+
+- **Product and FragranceName:**
+    - Relationship: Many-to-Many
+    - Description: Each product can have multiple fragrance names associated with it.
+
+<br>
+
+- **Product and FragranceType:**
+   - Relationship: Many-to-Many
+   - Description: Products can have multiple fragrance types, and fragrance types can be associated with multiple products.
+
+<br>
+
+- **Product and Images:**
+   - Relationship: One-to-Many
+   - Description: Each product can have multiple images associated with it.
+
+<br>
+
+- **UserProfile and User:**
+   - Relationship: One-to-One
+   - Description: Each user account has a corresponding user profile with additional information.
+
+<br>
+
+- **Testimonial and UserProfile:**
+   - Relationship: One-to-Many
+   - Description: Each user profile can have multiple testimonials associated with it.
+
+<br>
+
+- **Order and UserProfile:**
+   - Relationship: Many-to-One
+   - Description: Each order is linked to a specific user profile, representing the customer who placed the order.
+
+<br>
+
+- **OrderLineItem and Order:**
+   - Relationship: Many-to-One
+   - Description: Each order line item is associated with a specific order.
+
+<br>
+
+- **OrderLineItem and Product:**
+   - Relationship: Many-to-One
+   - Description: Each order line item corresponds to a specific product that was ordered.
+
+
+## Testing
+### Manual Testing
+### Automated Testing
+### Validator Testing
+### Bugs
+
+## Deployment
+
+## Wireframes
+
+## Credits 
