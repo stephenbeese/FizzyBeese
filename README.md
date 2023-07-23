@@ -235,4 +235,8 @@ By implementing these features and functionalities, our B2C website aims to crea
 
 ## Wireframes
 
+You can view my wireframes for this project [here](WIREFRAMES.md)
+
+
+
 ## Credits 
