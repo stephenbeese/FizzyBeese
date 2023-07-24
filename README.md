@@ -3,7 +3,6 @@ FizzyBeese is an small independently run business that sells bath bombs, wax mel
 
 ## [INSERT IMAGE HERE]
 
-
 ## Table of Contents
 - [Features](#features)
    - [Existing Features](#existing-features)
@@ -11,6 +10,12 @@ FizzyBeese is an small independently run business that sells bath bombs, wax mel
 - [Target Market](#target-market)
 - [Marketing Plan](#marketing-plan)
 - [Agile Development](#agile-development)
+   - [Five Planes of UX/UI Design](#5-planes-of-ux-and-ui-design)
+      - [Strategy](#strategy)
+      - [Scope](#scope)
+      - [Structure](#structure)
+      - [Skeleton](#skeleton)
+      - [Surface](#surface)
    - [Epics](#epics)
 - [Testing](#testing)
    - [Manual Testing](#manual-testing)
@@ -60,7 +65,35 @@ By implementing these features and functionalities, our B2C website aims to crea
 
 <hr>
 
-## Agile Development - Epics
+## Agile Development
+### 5 Planes of UX and UI Design
+#### Strategy:
+The target market for this website is primarily women of most ages. They tend to be individuals who prioritise self-care and indulgence. These people also tend to be interested in natural and eco-friendly products. The marketing goals for this website are to increase brand awareness, generate leads, and drive sales. The marketing strategies that will be used to achieve these goals include social media marketing, email newsletters, and engaging website content. The main goal of the website is to attract users into purchasing the products on offer.
+
+#### Scope:
+The products that will be sold on this website are bath bombs, wax melts, other scented products and various accessories for these products. The audience for this website is online shoppers who prefer the convenience and ease of purchasing products from their digital devices.
+
+The features that will be included on this website are:
+- Clear, attractive, and engaging homepage
+- Call to action button on the homepage
+- User-friendly navigation
+- Smooth checkout process
+- Accessible contact information for the store admin
+- Links to social media accounts
+- Option to sign up for a mailing list
+- Responsive design for all devices
+
+#### Structure:
+The homepage of this website will feature a clear call-to-action button, product categories and featured products. The individual product pages will provide detailed product information, including images, descriptions, and prices. The shopping cart will be easy to use and will provide instant feedback to users as they make changes to their cart. The checkout process will be smooth and will have clear instructions. The contact information for the store admin will be accessible and easy to find. The social media links and the mailing list sign-up will be displayed in the footer throughout the website. These pages will all be accessible via the header/nav bar displayed on all the pages. Users will be able to view their account or shopping bag from their respective icons at the top of the header, displayed on every page. The products will be displayed by category, for example, bath bombs, wax melts, etc. They will also have extra filtering such as alphabetically, by price and by fragrance type. From the products pages, you will be able to click on an individual product that will take you to view more details about a new product including some pictures of the product in use, description and the option to add it to your shopping bag.
+
+You can view my wireframes diagrams [here](WIREFRAMES.md)
+
+#### Skeleton:
+The colours that will be used on this website will be soft, calming colours that invoke a sense of relaxation. The fonts used will be clean and simple fonts that are easy to read and scan. The images used on this website will be high-quality and showcase the products and their benefits. The layout of this website will be simple and uncluttered making it easy to navigate.
+
+#### Surface:
+The text on this website will be clear and concise, making it easy to understand. The buttons on this website will be large and easy to click, they will be labelled clearly so users know exactly what to do. The forms on the website will be simple and easy to fill out, with clear instructions. The error messages on this website will be clear and helpful, helping users correct their mistakes.
+
 ### Epics
 #### **Customer's Point of View:**
 
