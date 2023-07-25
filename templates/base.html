@@ -60,7 +60,7 @@
 
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0">FizzyBeese</h2>
+                    <h2 class="logo-font my-0">FizzyBeese</h2>
                 </a>
             </div>
 
@@ -70,7 +70,8 @@
                         <input type="text" class="form-control border border-black rounded-0" name="q"
                             placeholder="Search our products">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0 search-button" type="submit">
+                            <button class="form-control btn btn-black border border-black rounded-0 search-button"
+                                type="submit">
                                 <span class="icon">
                                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                                 </span>
@@ -83,8 +84,8 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-end my-0 me-3">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-xl"></i></div>
                                 <p class="my-0">My Account</p>
@@ -104,7 +105,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link"
                             href="">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-bag fa-xl"></i></div>
@@ -123,9 +124,8 @@
         </div>
         <div class="row bg-white">
             <nav class="navbar navbar-expand-lg w-100">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-top-header.html' %}
@@ -144,7 +144,42 @@
     {% block content %}
     {% endblock %}
 
-
+    <footer>
+        <div class="row w-100 bg-white m-0">
+            <div class="col-3">
+                <ul class="list-unstyled ms-3">
+                    <li>
+                        <a href="">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul class="list-inline list-unstyled text-center align-middle">
+                    <li class="list-inline-item">
+                        <a href="#" class="icon">
+                            <i class="fa-brands fa-square-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-3">
+                <!-- placeholder for mailing list -->
+            </div>
+        </div>
+    </footer>
     {% block postloadjs %}
     {% endblock %}
     <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>
