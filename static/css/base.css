@@ -13,6 +13,59 @@ body {
     font-weight: 900;
 }
 
+.search-button:hover {
+    background-color: #ffb7ce;
+}
+
+.navbar {
+    background-color: #ffb7ce;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    margin-top: 15px;}
+
 .nav-item {
     font-size: 1.25rem;
+    color: black;
+    padding-bottom: 2px;
+}
+
+.nav-item:hover {
+    border-bottom: 2px solid black;
+    padding-bottom: 0px;
+}
+
+.dropdown-menu {
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+.dropdown-item:hover {
+    background-color: #ffb7ce;
+}
+
+.home-image {
+    background: url('/media/bath-bomb-home.jpeg') repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.home-button {
+    width: fit-content;
+    height: fit-content;
+    font-size: 2em;
+}
+
+.landing-text {
+    margin-top: 20vh;
+    color: white;
+    /* background-color: rgba(75, 29, 87, 0.35); */
+}
+
+.landing-text h3 {
+    font-size: 2.7em;
+    font-weight: 300;
+    padding: 15px;
+    background-color: rgba(75, 29, 87, 0.45);
+    border-radius: 30px;
 }
