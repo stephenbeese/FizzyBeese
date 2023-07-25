@@ -114,7 +114,53 @@ a.icon {
 }
 
 
+/* Home page products section */
 
+.home-products-container {
+    height: 66vh;
+}
+
+
+/* Our values section */
+
+.our-values {
+    height: 50vh;
+}
+
+.our-values hr {
+    width: 50px;
+    color: black;
+    border-top: 3px solid black;
+}
+
+
+/* Testimonials */
+
+.testimonials-container {
+    height: 58vh;
+}
+
+.testimonials-container hr {
+    width: 50px;
+    color: black;
+    border-top: 3px solid black;
+}
+
+/* Location Section */
+
+.location-container {
+    height: 70vh;
+}
+
+.location-container hr {
+    width: 50px;
+    color: black;
+    border-top: 3px solid black;
+}
+
+.home-address {
+    font-size: 1.2rem;
+}
 
 /* Reusable classes */
 
