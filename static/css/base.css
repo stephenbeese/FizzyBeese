@@ -8,7 +8,10 @@ body {
 }
 
 
-/* Base.html */
+/* 
+    base.html 
+*/
+
 .logo-font {
     font-size: 3.5rem;
     font-weight: 900;
@@ -18,14 +21,11 @@ body {
     background-color: #ffb7ce;
 }
 
-
-/* index.html */
-
 /* Navigation Menu */
 .navbar {
     background-color: #ffb7ce;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
+    /* border-bottom: 2px solid black;
+    border-top: 2px solid black; */
     margin-top: 15px;}
 
 .nav-item {
@@ -48,34 +48,6 @@ body {
     background-color: #ffb7ce;
 }
 
-
-/* Home page image and call to action */
-.home-image {
-    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-}
-
-.home-button {
-    width: fit-content;
-    height: fit-content;
-    font-size: 2em;
-}
-
-.landing-text {
-    margin-top: 20vh;
-    color: white;
-}
-
-.landing-text h3 {
-    font-size: 2.7em;
-    font-weight: 300;
-    padding: 15px;
-    background-color: rgba(75, 29, 87, 0.45);
-    border-radius: 30px;
-}
-
 /* Footer */
 footer {
     height: 100px;
@@ -93,4 +65,60 @@ a.icon {
     color: black;
     font-size: 2.5em;
     padding: 10px;
+}
+
+
+/* 
+    index.html 
+*/
+
+/* Home page image and call to action */
+.home-image {
+    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: 70vh;
+    width: 100vw;
+}
+
+.home-button {
+    width: fit-content;
+    height: fit-content;
+    font-size: 2em;
+}
+
+.landing-text {
+    margin-top: 15vh;
+    color: white;
+}
+
+.landing-text h3 {
+    font-size: 2.7em;
+    font-weight: 300;
+    padding: 15px;
+    background-color: rgba(75, 29, 87, 0.45);
+    border-radius: 30px;
+}
+
+/* Our Products section */
+
+.our-products {
+    height: 80vh;
+    /* position: relative;
+    bottom: 30vh; */
+}
+
+.our-products hr {
+    width: 50px;
+    color: black;
+    border-top: 3px solid black;
+}
+
+
+
+
+/* Reusable classes */
+
+.border-top-and-bottom {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
