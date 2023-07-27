@@ -1,9 +1,10 @@
 from django.contrib import admin
 from .models import Product, ProductCategory, FragranceCategory, AdditionalImages
+from import_export.admin import ImportExportModelAdmin
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ImportExportModelAdmin):
     list_display = (
         'name',
         'price',
@@ -18,7 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 @admin.register(ProductCategory)
-class ProductCategoryAdmin(admin.ModelAdmin):
+class ProductCategoryAdmin(ImportExportModelAdmin):
     list_display = (
         'friendly_name',
         'name',
@@ -26,7 +27,7 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(FragranceCategory)
-class FragranceCategoryAdmin(admin.ModelAdmin):
+class FragranceCategoryAdmin(ImportExportModelAdmin):
     list_display = (
         'friendly_name',
         'name',

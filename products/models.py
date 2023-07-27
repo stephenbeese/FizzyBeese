@@ -34,17 +34,17 @@ class FragranceCategory(Category):
 class Product(models.Model):
     """ A model to store all product data """
     name = models.CharField(max_length=254)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     stock_remaining = models.IntegerField(null=False)
-    product_categories = models.ManyToManyField(ProductCategory) # Links to ProductCategory
-    fragrance_categories = models.ManyToManyField(FragranceCategory) # Links to FragranceCategory
+    product_categories = models.ManyToManyField(ProductCategory)  # Links to ProductCategory
+    fragrance_categories = models.ManyToManyField(FragranceCategory)  # Links to FragranceCategory
     weight = models.IntegerField()
     sale_price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     is_clearance = models.BooleanField()
     is_featured = models.BooleanField()
     is_hidden = models.BooleanField()
-    image = models.ImageField()
+    image = models.ImageField(null=True, blank=True)
     label_image = models.ImageField(null=True, blank=True)
     uploaded_on = models.DateTimeField(auto_now=True)
 
