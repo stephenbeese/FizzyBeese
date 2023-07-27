@@ -87,7 +87,7 @@ a.icon {
 }
 
 .landing-text {
-    margin-top: 15vh;
+    /* margin-top: 15vh; */
     color: white;
 }
 
@@ -124,7 +124,7 @@ a.icon {
 /* Our values section */
 
 .our-values {
-    height: 50vh;
+    height: fit-content;
 }
 
 .our-values hr {
