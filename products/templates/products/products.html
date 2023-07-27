@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+All Products
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center my-4">All Products</h1>
+
+
+    <div class="row">
+    {% for product in products %}
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }} {{ product.image }}">
+            <p class="product-name d-inline">{{ product.name }}</p>
+            <p class="float-end product-price d-inline">£{{ product.price }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

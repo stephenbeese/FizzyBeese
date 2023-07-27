@@ -168,3 +168,24 @@ a.icon {
     border-bottom: 2px solid black;
     border-top: 2px solid black;
 }
+
+
+
+
+
+/* 
+    All Products Page 
+*/
+
+.product-image {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.product-price {
+    margin-right: 10%;
+}
+
+.product-name {
+    margin-left: 10%;
+}

@@ -21,6 +21,7 @@ class ProductAdmin(ImportExportModelAdmin):
 @admin.register(ProductCategory)
 class ProductCategoryAdmin(ImportExportModelAdmin):
     list_display = (
+        'id',
         'friendly_name',
         'name',
     )
@@ -29,6 +30,7 @@ class ProductCategoryAdmin(ImportExportModelAdmin):
 @admin.register(FragranceCategory)
 class FragranceCategoryAdmin(ImportExportModelAdmin):
     list_display = (
+        'id',
         'friendly_name',
         'name',
     )
