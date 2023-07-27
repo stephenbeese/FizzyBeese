@@ -12,9 +12,32 @@ All Products
     <div class="row">
     {% for product in products %}
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <img class="product-image" src="/media/{{ product.image }}" alt="{{ product.name }} {{ product.image }}">
-            <p class="product-name d-inline">{{ product.name }}</p>
-            <p class="float-end product-price d-inline">£{{ product.price }}</p>
+            <a href="">
+                <img class="product-image ml-10" src="/media/{{ product.image }}" alt="{{ product.name }} {{ product.image }}">
+            </a>
+            <div class="product-card ml-10">
+                <a class="text-decoration-none" href="">
+                    <p class="text-black mb-0">{{ product.name }}</p>
+                </a>
+                <p class="fw-bold mb-0">£{{ product.price }}</p>
+                <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
+                <a class="text-decoration-none" href="">
+                    <p class="d-inline text-muted text-uppercase categories">
+                        {% for product_category in product.product_categories.all %}
+                            {{ product_category.friendly_name }}
+                            {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </a>
+                <a class="text-decoration-none" href="">
+                    <p class="d-inline text-muted text-uppercase categories">
+                        {% for fragrance_category in product.fragrance_categories.all %}
+                            {{ fragrance_category.friendly_name }}
+                            {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </a>
+            </div>
         </div>
         {% endfor %}
 

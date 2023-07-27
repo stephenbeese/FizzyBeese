@@ -169,6 +169,9 @@ a.icon {
     border-top: 2px solid black;
 }
 
+.ml-10 {
+    margin-left: 10%;
+}
 
 
 
@@ -179,13 +182,20 @@ a.icon {
 
 .product-image {
     width: 80%;
-    margin-left: 10%;
 }
 
-.product-price {
-    margin-right: 10%;
+
+
+.categories,
+.product-card span {
+    font-size: 0.7rem;
 }
 
-.product-name {
-    margin-left: 10%;
+.product-card a p:hover {
+    color: black;
+    text-decoration: underline;
 }
+
+
+
+
