@@ -10,8 +10,29 @@
     <div class="product-detail-container col-10 offset-1">
         <div class="row">
             <div class="col-7 text-center">
-                <img src="/media/{{ product.image }}" class="product-detail-image my-5" alt="{{ product.name }}{% for product_category in product.product_categories.all %}{{ product_category.friendly_name }}{% endfor %}">
+                <div class="image-container">
+                    <img src="/media/{{ product.image }}" class="product-detail-image mt-5 mb-2" alt="{{ product.name }}{% for product_category in product.product_categories.all %}{{ product_category.friendly_name }}{% endfor %}">
+                    <ul class="image-list mb-2">
+                        <li class="active">
+                            <img src="/media/{{ product.image }}" alt="">
+                        </li>
+                        {% for image in additional_images %}
+                        <li>
+                            <img src="/media/{{image.image}}" alt="">
+                        </li>
+                        {% endfor %}
+                        {% if product.label_image %}
+                        <li class="">
+                            <img src="/media/{{ product.label_image }}" alt="">
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
+
+
+
+
             <div class="col-5 mt-5">
                 <p class="fw-bold mt-3 mb-0">{{ product.name }}</p>
                 <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
@@ -43,4 +64,21 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+    const imageMain = document.querySelector(".image-container img")
+    const imageList = document.querySelector(".image-list");
+
+    Array.from(imageList.children).forEach((imageListElm, i, list)=>{
+        imageListElm.addEventListener('click', function(){
+            const newSrc = imageListElm.querySelector('img').src;
+            imageMain.src = newSrc;
+
+            list.forEach(image => image.classList.remove('active'));
+            imageListElm.classList.add('active');
+        });
+    });
+</script>
 {% endblock %}

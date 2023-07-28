@@ -89,6 +89,7 @@ a.icon {
 .landing-text {
     /* margin-top: 15vh; */
     color: white;
+    max-width: 75%;
 }
 
 .landing-text h3 {
@@ -214,9 +215,46 @@ a.icon {
 
 .product-detail-image {
     max-width: 80%;
+    border-radius: 20px;
 }
 
 .product-detail-container span.icon {
     font-size: 0.7rem;
+}
+
+.image-container {
+    max-width: 40vw;
+}
+
+/* .image-container img {
+    display: block;
+} */
+
+.image-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin-top: 1rem;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.image-list li {
+    width: 22%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-list li img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.image-list li.active {
+    padding: .2rem;
+    border-radius: 5px;
+    border: 1px solid #ffb7ce;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
