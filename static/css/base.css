@@ -180,13 +180,11 @@ a.icon {
     All Products Page 
 */
 
-.product-image {
+/* .product-image {
     width: 80%;
-}
+} */
 
-
-
-.categories,
+/* .categories,
 .product-card span {
     font-size: 0.7rem;
 }
@@ -194,6 +192,18 @@ a.icon {
 .product-card a p:hover {
     color: black;
     text-decoration: underline;
+} */
+
+
+.card-body a p:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+
+.categories,
+.card-body span {
+    font-size: 0.7rem;
 }
 
 

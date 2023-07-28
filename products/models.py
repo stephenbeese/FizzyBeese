@@ -38,7 +38,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     stock_remaining = models.IntegerField(null=False)
     product_categories = models.ManyToManyField(ProductCategory)  # Links to ProductCategory
-    fragrance_categories = models.ManyToManyField(FragranceCategory, null=True, blank=True)  # Links to FragranceCategory
+    fragrance_categories = models.ManyToManyField(FragranceCategory)  # Links to FragranceCategory
     weight = models.IntegerField()
     sale_price = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     is_clearance = models.BooleanField()
@@ -56,3 +56,6 @@ class AdditionalImages(models.Model):
     """ stores additional images for products that have them """
     product_id = models.ForeignKey('Product', null=False, blank=False, on_delete=models.CASCADE)
     image = models.ImageField()
+
+    class Meta:
+        verbose_name_plural = 'Additional Images'
