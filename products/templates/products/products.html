@@ -15,11 +15,11 @@ All Products
             {% for product in products %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card">
-                    <a href="">
+                    <a href="{% url 'product_detail' product.id %}">
                         <img src="/media/{{ product.image }}" class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
-                        <a class="text-decoration-none" href="">
+                        <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
                             <p class="text-black mb-0">{{ product.name }}</p>
                         </a>
                         <p class="fw-bold mb-0">£{{ product.price }}</p>

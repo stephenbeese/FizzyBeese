@@ -208,4 +208,15 @@ a.icon {
 
 
 
+/* 
+    Product Details Page
+*/
+
+.product-detail-image {
+    max-width: 80%;
+}
+
+.product-detail-container span.icon {
+    font-size: 0.7rem;
+}
 
