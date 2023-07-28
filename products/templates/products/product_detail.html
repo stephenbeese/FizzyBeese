@@ -35,21 +35,21 @@
             <div class="col-5 mt-5">
                 <p class="fw-bold mt-3 mb-0">{{ product.name }}</p>
                 <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
-                <a class="text-decoration-none" href="">
+                {% for product_category in product.product_categories.all %}
+                <a class="text-decoration-none" href="{% url 'products' %}?product_categories={{ product_category.name }}">
                     <p class="d-inline text-muted text-uppercase categories">
-                        {% for product_category in product.product_categories.all %}
                         {{ product_category.friendly_name }},
-                        {% endfor %}
                     </p>
                 </a>
-                <a class="text-decoration-none" href="">
+                {% endfor %}
+                {% for fragrance_category in product.fragrance_categories.all %}
+                <a class="text-decoration-none" href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
                     <p class="d-inline text-muted text-uppercase categories">
-                        {% for fragrance_category in product.fragrance_categories.all %}
                         {{ fragrance_category.friendly_name }}
                         {% if not forloop.last %}, {% endif %}
-                        {% endfor %}
                     </p>
                 </a>
+                {% endfor %}
 
                 <p class="mt-3">{{ product.description }}</p>
 

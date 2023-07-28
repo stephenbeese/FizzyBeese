@@ -6,9 +6,19 @@ All Products
 {% endblock %}
 
 {% block content %}
-<h1 class="text-center my-4">All Products</h1>
+<h1 class="text-center my-4">Products</h1>
 
 <div class="row">
+    <div class="col-12 col-md-6">
+        <p class="text-muted mt-3 text-center text-md-left">
+            {% if search_term or current_categories or current_sorting != 'None_None' %}
+            <span class="small"><a href="{% url 'products' %}" class="text-muted">Products Home</a> | </span>
+            {% endif %}
+            {{ products|length }} Products {% if search_term %} found for
+            <strong>"{{ search_term }}"</strong>{% endif %}
+        </p>
+    </div>
+
     <div class="product-container col-10 offset-1">
         <div class="row"></div>
         <div class="row">
@@ -24,61 +34,28 @@ All Products
                         </a>
                         <p class="fw-bold mb-0">£{{ product.price }}</p>
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
-                        <a class="text-decoration-none" href="">
+                        {% for product_category in product.product_categories.all %}
+                        <a class="text-decoration-none"
+                            href="{% url 'products' %}?product_categories={{ product_category.name }}">
                             <p class="d-inline text-muted text-uppercase categories">
-                                {% for product_category in product.product_categories.all %}
                                 {{ product_category.friendly_name }},
-                                {% endfor %}
                             </p>
                         </a>
-                        <a class="text-decoration-none" href="">
+                        {% endfor %}
+                        {% for fragrance_category in product.fragrance_categories.all %}
+                        <a class="text-decoration-none"
+                            href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
                             <p class="d-inline text-muted text-uppercase categories">
-                                {% for fragrance_category in product.fragrance_categories.all %}
                                 {{ fragrance_category.friendly_name }}
                                 {% if not forloop.last %}, {% endif %}
-                                {% endfor %}
                             </p>
                         </a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
-</div>
-
-
-<!-- <div class="row">
-    {% for product in products %}
-    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-        <a href="">
-            <img class="product-image ml-10" src="/media/{{ product.image }}"
-                alt="{{ product.name }} {{ product.image }}">
-        </a>
-        <div class="product-card ml-10">
-            <a class="text-decoration-none" href="">
-                <p class="text-black mb-0">{{ product.name }}</p>
-            </a>
-            <p class="fw-bold mb-0">£{{ product.price }}</p>
-            <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
-            <a class="text-decoration-none" href="">
-                <p class="d-inline text-muted text-uppercase categories">
-                    {% for product_category in product.product_categories.all %}
-                    {{ product_category.friendly_name }},
-                    {% endfor %}
-                </p>
-            </a>
-            <a class="text-decoration-none" href="">
-                <p class="d-inline text-muted text-uppercase categories">
-                    {% for fragrance_category in product.fragrance_categories.all %}
-                    {{ fragrance_category.friendly_name }}
-                    {% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-                </p>
-            </a>
-        </div>
-    </div>
-    {% endfor %} -->
-
 </div>
 {% endblock %}

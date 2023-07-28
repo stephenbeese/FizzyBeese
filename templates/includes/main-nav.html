@@ -19,7 +19,7 @@
                 <a href="" class="dropdown-item">By Price</a>
                 <a href="" class="dropdown-item">By Category</a>
                 <a href="" class="dropdown-item">By Fragrance</a>
-                <a href="" class="dropdown-item">All Bath Bombs</a>
+                <a href="{% url 'products' %}?product_categories=bath_bomb" class="dropdown-item">All Bath Bombs</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -30,7 +30,7 @@
                 <a href="" class="dropdown-item">By Price</a>
                 <a href="" class="dropdown-item">By Category</a>
                 <a href="" class="dropdown-item">By Fragrance</a>
-                <a href="" class="dropdown-item">All Products</a>
+                <a href="{% url 'products' %}?product_categories=wax_melt" class="dropdown-item">All Products</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -38,12 +38,12 @@
                 Home Essentials
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="home-essentials-link">
-                <a href="" class="dropdown-item">Candles</a>
-                <a href="" class="dropdown-item">Wax Burners</a>
-                <a href="" class="dropdown-item">Vacuum Disks</a>
-                <a href="" class="dropdown-item">Soap Sponges</a>
-                <a href="" class="dropdown-item">Carpet Freshners</a>
-                <a href="" class="dropdown-item">Car Air Freshners</a>
+                <a href="{% url 'products' %}?product_categories=candle" class="dropdown-item">Candles</a>
+                <a href="{% url 'products' %}?product_categories=wax_burner" class="dropdown-item">Wax Burners</a>
+                <a href="{% url 'products' %}?product_categories=vacuum_disc" class="dropdown-item">Vacuum Disks</a>
+                <a href="{% url 'products' %}?product_categories=soap_sponge" class="dropdown-item">Soap Sponges</a>
+                <a href="{% url 'products' %}?product_categories=carpet_freshner" class="dropdown-item">Carpet Freshners</a>
+                <a href="{% url 'products' %}?product_categories=car_freshner" class="dropdown-item">Car Air Freshners</a>
             </div>
         </li>
         <li class="nav-item dropdown">

@@ -12,6 +12,10 @@ body {
     base.html 
 */
 
+.main-container {
+    min-height: calc(100vh - 150px);
+}
+
 .logo-font {
     font-size: 3.5rem;
     font-weight: 900;
