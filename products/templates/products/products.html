@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-All Products
+Products
 {% endblock %}
 
 {% block content %}
@@ -18,44 +18,55 @@ All Products
             <strong>"{{ search_term }}"</strong>{% endif %}
         </p>
     </div>
-
-    <div class="product-container col-10 offset-1">
-        <div class="row"></div>
+    {% if products|length == 0 %}
         <div class="row">
-            {% for product in products %}
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card">
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img src="/media/{{ product.image }}" class="card-img-top" alt="...">
-                    </a>
-                    <div class="card-body">
-                        <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                            <p class="text-black mb-0">{{ product.name }}</p>
+            <div class="col-6 offset-3 text-center">
+                <h3 class="my-3 fw-bold">Oops, we don't have what you're looking for!</h3>
+                <a href="{% url 'products' %}" class="btn btn-outline-dark">
+                    <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
+                    <span>Go Back</span>
+                </a>
+            </div>
+        </div>
+    {% else %}
+        <div class="product-container col-10 offset-1">
+            <div class="row"></div>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img src="/media/{{ product.image }}" class="card-img-top" alt="{{ product.image }}">
                         </a>
-                        <p class="fw-bold mb-0">£{{ product.price }}</p>
-                        <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
-                        {% for product_category in product.product_categories.all %}
-                        <a class="text-decoration-none"
-                            href="{% url 'products' %}?product_categories={{ product_category.name }}">
-                            <p class="d-inline text-muted text-uppercase categories">
-                                {{ product_category.friendly_name }},
-                            </p>
-                        </a>
-                        {% endfor %}
-                        {% for fragrance_category in product.fragrance_categories.all %}
-                        <a class="text-decoration-none"
-                            href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
-                            <p class="d-inline text-muted text-uppercase categories">
-                                {{ fragrance_category.friendly_name }}
-                                {% if not forloop.last %}, {% endif %}
-                            </p>
-                        </a>
-                        {% endfor %}
+                        <div class="card-body">
+                            <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
+                                <p class="text-black mb-0">{{ product.name }}</p>
+                            </a>
+                            <p class="fw-bold mb-0">£{{ product.price }}</p>
+                            <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
+                            {% for product_category in product.product_categories.all %}
+                            <a class="text-decoration-none"
+                                href="{% url 'products' %}?product_categories={{ product_category.name }}">
+                                <p class="d-inline text-muted text-uppercase categories">
+                                    {{ product_category.friendly_name }},
+                                </p>
+                            </a>
+                            {% endfor %}
+                            {% for fragrance_category in product.fragrance_categories.all %}
+                            <a class="text-decoration-none"
+                                href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
+                                <p class="d-inline text-muted text-uppercase categories">
+                                    {{ fragrance_category.friendly_name }}
+                                    {% if not forloop.last %}, {% endif %}
+                                </p>
+                            </a>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
-    </div>
+    {% endif %}
 </div>
 {% endblock %}

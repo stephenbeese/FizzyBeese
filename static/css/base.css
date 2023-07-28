@@ -13,7 +13,8 @@ body {
 */
 
 .main-container {
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 280px);
+    max-height: max-content;
 }
 
 .logo-font {
