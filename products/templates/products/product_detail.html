@@ -9,6 +9,7 @@
 <div class="row">
     <div class="product-detail-container col-10 offset-1">
         <div class="row">
+
             <div class="col-7 text-center">
                 <div class="image-container">
                     <img src="/media/{{ product.image }}" class="product-detail-image mt-5 mb-2" alt="{{ product.name }}{% for product_category in product.product_categories.all %}{{ product_category.friendly_name }}{% endfor %}">
@@ -22,15 +23,13 @@
                         </li>
                         {% endfor %}
                         {% if product.label_image %}
-                        <li class="">
+                        <li>
                             <img src="/media/{{ product.label_image }}" alt="">
                         </li>
                         {% endif %}
                     </ul>
                 </div>
             </div>
-
-
 
 
             <div class="col-5 mt-5">
@@ -60,6 +59,7 @@
                 </a>
                 <input type="submit" class="btn btn-dark" value="Add to Bag">
             </div>
+            
         </div>
     </div>
 </div>
