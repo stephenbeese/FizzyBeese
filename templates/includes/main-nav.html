@@ -8,6 +8,7 @@
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=product_category&direction=asc" class="dropdown-item">By Product Category</a>
                 <a href="{% url 'products' %}?sort=fragrance_category&direction=asc" class="dropdown-item">By Fragrance Type</a>
+                <a href="{% url 'products' %}?sort=uploaded_on&direction=asc" class="dropdown-item">By Latest Products</a>
                 <a href="{% url 'products' %}?sort=name&direction=asc" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -17,7 +18,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="bath-bomb-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc&product_categories=bath_bomb" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Latest Products</a>
+                <a href="{% url 'products' %}?sort=uploaded_on&direction=asc&product_categories=bath_bomb" class="dropdown-item">By Latest Products</a>
                 <a href="{% url 'products' %}?sort=fragrance_category&direction=asc&product_categories=bath_bomb" class="dropdown-item">By Fragrance Type</a>
                 <a href="{% url 'products' %}?sort=name&direction=asc&product_categories=bath_bomb" class="dropdown-item">All Bath Bombs</a>
             </div>
@@ -28,7 +29,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="wax-melt-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc&product_categories=wax_melt" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item">By Latest Products</a>
+                <a href="{% url 'products' %}?sort=uploaded_on&direction=asc&product_categories=wax_melt" class="dropdown-item">By Latest Products</a>
                 <a href="{% url 'products' %}?sort=fragrance_category&direction=asc&product_categories=wax_melt" class="dropdown-item">By Fragrance Type</a>
                 <a href="{% url 'products' %}?sort=name&direction=asc&product_categories=wax_melt" class="dropdown-item">All Wax Melts</a>
             </div>
