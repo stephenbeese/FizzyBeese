@@ -48,6 +48,8 @@ def all_products(request):
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query)
+            category_queries = Q(product_categories__friendly_name__icontains=query) | Q(fragrance_categories__friendly_name__icontains=query)
+            queries = queries | category_queries
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
