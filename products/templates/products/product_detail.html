@@ -33,7 +33,7 @@
 
 
             <div class="col-5 mt-5">
-                <p class="fw-bold mt-3 mb-0">{{ product.name }}</p>
+                <p class="fw-bold mt-3 mb-0 fs-2">{{ product.name }}</p>
                 <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                 {% for product_category in product.product_categories.all %}
                 <a class="text-decoration-none" href="{% url 'products' %}?product_categories={{ product_category.name }}">
@@ -52,12 +52,50 @@
                 {% endfor %}
 
                 <p class="mt-3">{{ product.description }}</p>
+                {% for product_category in product.product_categories.all %}
+                    {% if product_category.name == 'bath_bomb' %}
+                        <div class="small text-muted">
+                            <hr>
+                            <p>Our bath bombs will leave your skin feeling soft.</p>
 
-                <a href="{% url 'products' %}" class="btn btn-outline-dark">
-                    <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
-                    <span>Keep Shopping</span>
-                </a>
-                <input type="submit" class="btn btn-dark" value="Add to Bag">
+                            <p>
+                                Just fill your bath with water that's comfortable to the touch. <br>(You should be able to dip your hand into the water comfortably for 10 seconds!)
+                            </p>
+                            <p>
+                                Place your  handmade bath bomb into your bath water. Watch it fizz and foam away leaving a gorgeous fragrance and some amazing colourful bath art
+                            </p>
+                            <p>
+                                Get into your bath relax and enjoy!
+                            </p>
+                            <p>
+                                Remember to rinse and wipe away any remaining foam and colour, ready for next time!
+                            </p>
+                            <hr>
+                        </div>
+                    {% endif %}
+                    {% if product_category.name == 'wax_melt' %}
+                    <div class="small text-muted">
+                        <hr>
+                        <p class="fw-bold">Wax Melt Care Instructions</p>
+                            <ol>
+                                <li>Place your wax melts in a melt approved wax warmer.</li>
+                                <li>Never leave burner/warmer unattended. Put it out/turn it off before leaving the room.</li>
+                                <li>Keep out of reach of children and pets.</li>
+                                <li>You can reuse your wax melt until the scent has faded. Once faded, remove wax residue and add a new wax melt.</li>
+                            </ol>
+                        <hr>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                <p class="d-inline-block fs-2"><strong>£{{ product.price }}</strong></p>
+                <p class="d-inline-block small text-muted">({{ product.weight }}g)</p>
+                <div class="text-center mb-5">
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark">
+                        <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
+                        <span>Keep Shopping</span>
+                    </a>
+                    <input type="submit" class="btn btn-dark" value="Add to Bag">
+                </div>
             </div>
             
         </div>
