@@ -9,8 +9,8 @@ def all_products(request):
     """ A view to render all products """
     products = Product.objects.all()
     query = None
-    product_categories = None
-    fragrance_categories = None
+    product_category = None
+    fragrance_category = None
     sort = None
     direction = None
 
@@ -32,14 +32,14 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'product_categories' in request.GET:
-            categories = request.GET.getlist('product_categories')
-            products = products.filter(product_categories__name__in=categories)
-            categories = ProductCategory.objects.filter(name__in=categories)
+            product_category = request.GET.getlist('product_categories')
+            products = products.filter(product_categories__name__in=product_category)
+            product_category = ProductCategory.objects.filter(name__in=product_category)
 
         if 'fragrance_categories' in request.GET:
-            categories = request.GET.getlist('fragrance_categories')
-            products = products.filter(fragrance_categories__name__in=categories)
-            categories = FragranceCategory.objects.filter(name__in=categories)
+            fragrance_category = request.GET.getlist('fragrance_categories')
+            products = products.filter(fragrance_categories__name__in=fragrance_category)
+            fragrance_category = FragranceCategory.objects.filter(name__in=fragrance_category)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -55,7 +55,8 @@ def all_products(request):
     context = {
         'products': products,
         'search_term': query,
-        'current_product_categories': product_categories,
+        'current_product_categories': product_category,
+        'current_fragrance_categories': fragrance_category,
         'current_sorting': current_sorting,
     }
 

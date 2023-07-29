@@ -6,67 +6,104 @@ Products
 {% endblock %}
 
 {% block content %}
-<h1 class="text-center my-4">Products</h1>
+<div class="row">
+    <div class="col text-center">
+        <h1 class="text-center my-4">Products</h1>
+    </div>
+</div>
 
 <div class="row">
-    <div class="col-12 col-md-6">
-        <p class="text-muted mt-3 text-center text-md-left">
-            {% if search_term or current_categories or current_sorting != 'None_None' %}
-            <span class="small"><a href="{% url 'products' %}" class="text-muted">Products Home</a> | </span>
-            {% endif %}
-            {{ products|length }} Products {% if search_term %} found for
-            <strong>"{{ search_term }}"</strong>{% endif %}
-        </p>
-    </div>
-    {% if products|length == 0 %}
-        <div class="row">
-            <div class="col-6 offset-3 text-center">
-                <h3 class="my-3 fw-bold">Oops, we don't have what you're looking for!</h3>
-                <a href="{% url 'products' %}" class="btn btn-outline-dark">
-                    <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
-                    <span>Go Back</span>
-                </a>
-            </div>
+    <div class="row d-flex justify-content-evenly">
+        <div class="col-5">
+            <p class="text-muted mt-3 text-center text-md-left">
+                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                <span class="small"><a href="{% url 'products' %}" class="text-muted">Products
+                        Home</a> | </span>
+                {% endif %}
+                {{ products|length }} Products {% if search_term %} found for
+                <strong>"{{ search_term }}"</strong>{% endif %}
+            </p>
         </div>
-    {% else %}
-        <div class="product-container col-10 offset-1">
-            <div class="row"></div>
+        <div class="col-5">
+            <select id="sort-selector" class="form-select" aria-label="Product sorting">
+                <option value="reset" {% if current_sorting == 'reset' %}selected{% endif %}>Sort by...</option>
+                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)
+                </option>
+                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to
+                    low)</option>
+                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A to Z)
+                </option>
+                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z to A)
+                </option>
+                <option value="fragrance_category_asc"
+                    {% if current_sorting == 'fragrance_category_asc' %}selected{% endif %}>Fragrance Type (A to Z)
+                </option>
+                <option value="fragrance_category_desc"
+                    {% if current_sorting == 'fragrance_category_desc' %}selected{% endif %}>Fragrance Type (Z to A)
+                </option>
+                <option value="uploaded_on_asc" {% if current_sorting == 'uploaded_on_asc' %}selected{% endif %}>Newest
+                    to Oldest</option>
+                <option value="uploaded_on_desc" {% if current_sorting == 'uploaded_on_desc' %}selected{% endif %}>
+                    Oldest to Newest</option>
+                {% if current_sorting == 'product_category_asc' or current_sorting == 'product_category_desc' %}
+                <option value="product_category_asc"
+                    {% if current_sorting == 'product_category_asc' %}selected{% endif %}>Product Category (A to Z)
+                </option>
+                <option value="product_category_desc"
+                    {% if current_sorting == 'product_category_desc' %}selected{% endif %}>Product Category (Z to A)
+                </option>
+                {% endif %}
+            </select>
+        </div>
+        <hr class="mx-auto w-75">
+    </div>
+    <div class="product-container col-10 offset-1">
+        <div class="row">
+            {% if products|length == 0 %}
             <div class="row">
-                {% for product in products %}
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card">
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img src="/media/{{ product.image }}" class="card-img-top" alt="{{ product.image }}">
+                <div class="col-6 offset-3 text-center">
+                    <h3 class="my-3 fw-bold">Oops, we don't have what you're looking for!</h3>
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark">
+                        <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
+                        <span>Go Back</span>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+            {% for product in products %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card">
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img src="/media/{{ product.image }}" class="card-img-top" alt="{{ product.image }}">
+                    </a>
+                    <div class="card-body">
+                        <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
+                            <p class="text-black mb-0">{{ product.name }}</p>
                         </a>
-                        <div class="card-body">
-                            <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                                <p class="text-black mb-0">{{ product.name }}</p>
-                            </a>
-                            <p class="fw-bold mb-0">£{{ product.price }}</p>
-                            <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
-                            {% for product_category in product.product_categories.all %}
-                            <a class="text-decoration-none"
-                                href="{% url 'products' %}?product_categories={{ product_category.name }}">
-                                <p class="d-inline text-muted text-uppercase categories">
-                                    {{ product_category.friendly_name }},
-                                </p>
-                            </a>
-                            {% endfor %}
-                            {% for fragrance_category in product.fragrance_categories.all %}
-                            <a class="text-decoration-none"
-                                href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
-                                <p class="d-inline text-muted text-uppercase categories">
-                                    {{ fragrance_category.friendly_name }}
-                                    {% if not forloop.last %}, {% endif %}
-                                </p>
-                            </a>
-                            {% endfor %}
-                        </div>
+                        <p class="fw-bold mb-0">£{{ product.price }}</p>
+                        <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
+                        {% for product_category in product.product_categories.all %}
+                        <a class="text-decoration-none"
+                            href="{% url 'products' %}?product_categories={{ product_category.name }}">
+                            <p class="d-inline text-muted text-uppercase categories">
+                                {{ product_category.friendly_name }},
+                            </p>
+                        </a>
+                        {% endfor %}
+                        {% for fragrance_category in product.fragrance_categories.all %}
+                        <a class="text-decoration-none"
+                            href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
+                            <p class="d-inline text-muted text-uppercase categories">
+                                {{ fragrance_category.friendly_name }}
+                                {% if not forloop.last %}, {% endif %}
+                            </p>
+                        </a>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
-    {% endif %}
+    </div>
 </div>
 {% endblock %}
