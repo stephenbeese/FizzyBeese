@@ -27,11 +27,32 @@ body {
     background-color: #ffb7ce;
 }
 
+
+.home-products-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.featured-products-container,
+.latest-products-container {
+    display: inline-block;
+    width: fit-content;
+    margin: 10px;
+    vertical-align: top;
+}
+
+/* Adjust the width and height of the images */
+.featured-image,
+.latest-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
 /* Navigation Menu */
 .navbar {
     background-color: #ffb7ce !important;
-    /* border-bottom: 2px solid black;
-    border-top: 2px solid black; */
     margin-top: 15px;
 }
 
@@ -92,6 +113,13 @@ a.icon {
     width: 100vw;
 }
 
+.home-products-image {
+    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    height: 92vh;
+    width: 100vw;
+}
+
 .home-button {
     width: fit-content;
     height: fit-content;
@@ -120,6 +148,14 @@ a.icon {
     bottom: 30vh; */
 }
 
+.our-products h2 {
+    font-size: 2.7em;
+}
+
+.our-products p {
+    font-size: 1.3em;
+}
+
 .our-products hr {
     width: 50px;
     color: black;
@@ -130,7 +166,7 @@ a.icon {
 /* Home page products section */
 
 .home-products-container {
-    height: 66vh;
+    height: 88vh;
 }
 
 
@@ -163,6 +199,7 @@ a.icon {
 
 .location-container {
     height: 70vh;
+    border: 2px solid black;
 }
 
 .location-container hr {
@@ -182,21 +219,6 @@ a.icon {
 /* 
 All Products Page 
 */
-
-/* .product-image {
-    width: 80%;
-} */
-
-/* .categories,
-.product-card span {
-    font-size: 0.7rem;
-}
-
-.product-card a p:hover {
-    color: black;
-    text-decoration: underline;
-} */
-
 
 .card-body a p:hover {
     color: black;

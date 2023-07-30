@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Category(models.Model):
@@ -46,10 +47,15 @@ class Product(models.Model):
     is_hidden = models.BooleanField()
     image = models.ImageField(null=True, blank=True)
     label_image = models.ImageField(null=True, blank=True)
-    uploaded_on = models.DateTimeField(auto_now=True)
+    uploaded_on = models.DateTimeField()
 
     def __str__(self):
         return str(self.name)
+
+    def save(self, *args, **kwargs):
+        if self.pk is None:  # ensures uploaded_on isn't updated on product modification
+            self.uploaded_on = timezone.now()
+        super(Product, self).save(*args, **kwargs)
 
 
 class AdditionalImages(models.Model):
