@@ -16,7 +16,7 @@ Products
     <div class="row d-flex justify-content-evenly">
         <div class="col-5">
             <p class="text-muted mt-3 text-center text-md-left">
-                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                {% if search_term or current_product_categories or current_fragrance_categories or current_sorting != 'None_None' %}
                 <span class="small"><a href="{% url 'products' %}" class="text-muted">Products
                         Home</a> | </span>
                 {% endif %}
@@ -35,22 +35,22 @@ Products
                 </option>
                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z to A)
                 </option>
-                <option value="fragrance_category_asc"
-                    {% if current_sorting == 'fragrance_category_asc' %}selected{% endif %}>Fragrance Type (A to Z)
+                <option value="fragrance_categories_asc"
+                    {% if current_sorting == 'fragrance_categories_asc' %}selected{% endif %}>Fragrance Type (A to Z)
                 </option>
-                <option value="fragrance_category_desc"
-                    {% if current_sorting == 'fragrance_category_desc' %}selected{% endif %}>Fragrance Type (Z to A)
+                <option value="fragrance_categories_desc"
+                    {% if current_sorting == 'fragrance_categories_desc' %}selected{% endif %}>Fragrance Type (Z to A)
                 </option>
-                <option value="uploaded_on_asc" {% if current_sorting == 'uploaded_on_asc' %}selected{% endif %}>Newest
-                    to Oldest</option>
                 <option value="uploaded_on_desc" {% if current_sorting == 'uploaded_on_desc' %}selected{% endif %}>
-                    Oldest to Newest</option>
-                {% if current_sorting == 'product_category_asc' or current_sorting == 'product_category_desc' %}
-                <option value="product_category_asc"
-                    {% if current_sorting == 'product_category_asc' %}selected{% endif %}>Product Category (A to Z)
+                    Newest to Oldest</option>
+                <option value="uploaded_on_asc" {% if current_sorting == 'uploaded_on_asc' %}selected{% endif %}>Oldest to Newest</option>
+                
+                {% if current_product_categories is None %}
+                <option value="product_categories_asc"
+                    {% if current_sorting == 'product_categories_asc' %}selected{% endif %}>Product Category (A to Z)
                 </option>
-                <option value="product_category_desc"
-                    {% if current_sorting == 'product_category_desc' %}selected{% endif %}>Product Category (Z to A)
+                <option value="product_categories_desc"
+                    {% if current_sorting == 'product_categories_desc' %}selected{% endif %}>Product Category (Z to A)
                 </option>
                 {% endif %}
             </select>
@@ -106,4 +106,45 @@ Products
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+        
+            var selectedVal = selector.val();
+            if (selectedVal != "reset"){
+                var sort = selectedVal.split('_')[0];
+                var direction = selectedVal.split('_')[1];
+
+                if (sort == "uploaded") {
+                    sort = "uploaded_on"
+                    direction = selectedVal.split('_')[2];
+                }
+
+                if (sort == "fragrance") {
+                    sort = "fragrance_categories"
+                    direction = selectedVal.split('_')[2];
+                }
+
+                if (sort == "product") {
+                    sort = "product_categories"
+                    direction = selectedVal.split('_')[2];
+                }
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort")
+                currentUrl.searchParams.delete("direction")
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
