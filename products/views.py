@@ -41,6 +41,12 @@ def all_products(request):
             products = products.filter(fragrance_categories__name__in=fragrance_category)
             fragrance_category = FragranceCategory.objects.filter(name__in=fragrance_category)
 
+        if 'sale' in request.GET:
+            products = Product.objects.filter(sale_price__isnull=False)
+
+        if 'is_clearance' in request.GET:
+            products = products.filter(is_clearance=True)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:

@@ -71,6 +71,7 @@ Products
             </div>
             {% endif %}
             {% for product in products %}
+            {% if product.is_hidden == False %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card">
                     <a href="{% url 'product_detail' product.id %}">
@@ -80,7 +81,18 @@ Products
                         <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
                             <p class="text-black mb-0">{{ product.name }}</p>
                         </a>
-                        <p class="fw-bold mb-0">£{{ product.price }}</p>
+                        {% if product.sale_price %}
+                        <div class="row">
+                            <div class="col-3 pe-0">
+                                <p class="fw-bold text-danger mb-0">£{{ product.sale_price }}</p>
+                            </div>
+                            <div class="col-3 p-0">
+                                <p class="mb-0 text-muted text-decoration-line-through d-inline old-price ">£{{ product.price }}</p>
+                            </div>
+                        </div>
+                        {% else %}
+                            <p class="fw-bold mb-0">£{{ product.price }}</p>
+                        {% endif %}
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                         {% for product_category in product.product_categories.all %}
                         <a class="text-decoration-none"
@@ -102,6 +114,7 @@ Products
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
