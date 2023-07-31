@@ -212,8 +212,11 @@ a.icon {
     font-size: 1.2rem;
 }
 
-
-
+#map {
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+}
 
 
 /* 

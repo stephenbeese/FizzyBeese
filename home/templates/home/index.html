@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_js %}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+{% endblock %}
+
 {% block title %}
 Home
 {% endblock %}
@@ -145,18 +149,58 @@ Home
             <div class="row">
                 <div class="col-3 offset-1">
                     <h4 class="mt-4 fs-2">Address</h4>
-                    <div class="text-start mt-5 ms-5 lh-1 home-address">
-                        <p>38 Long Road</p>
-                        <p>Mangotsfield</p>
-                        <p>Bristol</p>
-                        <p>BS16 9HQ</p>
+                    <div class="text-start mt-3 ms-5 lh-1 home-address">
+                        <p class="mb-2">38 Long Road</p>
+                        <p class="mb-2">Mangotsfield</p>
+                        <p class="mb-2">Bristol</p>
+                        <p class="mb-2">BS16 9HQ</p>
+                    </div>
+                    <h4 class="mt-4 fs-2">Opening Hours</h4>
+                    <div class="text-start ms-5">
+                        <p>
+                            <strong>Monday:</strong> 10am - 4pm <br>
+                            <strong>Tuesday:</strong> Closed <br>
+                            <strong>Wednesday:</strong> 10am - 4pm <br>
+                            <strong>Thursday:</strong> Closed <br>
+                            <strong>Friday:</strong> 10am - 4pm <br>
+                            <strong>Saturday:</strong> 10am - 4pm <br>
+                            <strong>Sunday:</strong> Closed
+                        </p>
                     </div>
                 </div>
                 <div class="col-7">
-                    <h4 class="mt-4 fs-2">Find us on Google Maps</h4>
+                    <h4 class="mt-4 mb-3 fs-2">Find us on Google Maps</h4>
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+{% endblock %}
+
+{% block postloadjs %}
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+        defer></script>
+
+    <script type="text/javascript">
+        function initMap() {
+            const myLatLng = {
+                lat: 51.48499496067841,
+                lng: -2.4910626311418307
+            };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: myLatLng,
+            });
+
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "FizzyBeese",
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
 {% endblock %}
