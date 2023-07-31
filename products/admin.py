@@ -9,6 +9,7 @@ class ProductAdmin(ImportExportModelAdmin):
         'name',
         'price',
         'stock_remaining',
+        'sale_price',
         'is_clearance',
         'is_featured',
         'is_hidden',
