@@ -1,4 +1,7 @@
+from decimal import Decimal
 from django.conf import settings
+from django.shortcuts import get_object_or_404
+from products.models import Product
 
 
 def bag_contents(request):
@@ -6,6 +9,18 @@ def bag_contents(request):
     total = 0
     product_count = 0
     total_weight = 0
+    bag = request.session.get('bag', {})
+
+    for item_id, quantity in bag.items():
+        product = get_object_or_404(Product, pk=item_id)
+        total += quantity * product.price
+        product_count += quantity
+        total_weight += quantity * product.weight
+        bag_items.append({
+            'item_id': item_id,
+            'quantity': quantity,
+            'product': product,
+        })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         if product_count == 0:
@@ -13,11 +28,13 @@ def bag_contents(request):
         else:
             # Calculate shipping by weight in grams
             if total_weight <= 100:
-                delivery = 1.60
+                delivery = Decimal(1.60)
             elif total_weight <= 2000:
-                delivery = 3.69
+                delivery = Decimal(3.69)
             else:
-                delivery = 5.29
+                delivery = Decimal(5.29)
+
+        # delivery = round(delivery, 2)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
@@ -29,6 +46,7 @@ def bag_contents(request):
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
+        'total_weight': total_weight,
         'delivery': delivery,
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,

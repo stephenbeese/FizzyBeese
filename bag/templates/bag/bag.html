@@ -15,7 +15,29 @@ Shopping Bag
         </div>
         <div class="row">
             {% if bag_items %}
-            
+            <div class="table-responsive">
+                <table class="table">
+                    {{ bag_items }}
+                    Delivery Cost: £{{ delivery|floatformat:2 }}
+                    Total Weight: {{ total_weight }}g
+                    <!-- <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    </tbody> -->
+                  </table>
+            </div>
             {% else %}
                 <p class="mb-3 mt-5 fw-bold text-center fs-2">Oops!<br>Looks like your bag is empty...</p>
                 <a href="{% url 'products' %}" class="btn btn-outline-dark w-25 mx-auto">
