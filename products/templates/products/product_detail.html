@@ -87,7 +87,21 @@
                     </div>
                     {% endif %}
                 {% endfor %}
-                <p class="d-inline-block fs-2 mb-1"><strong>£{{ product.price }}</strong></p>
+
+                {% if product.sale_price %}
+                <p class="d-inline-block fs-2 mb-1 text-danger"><strong>£{{ product.sale_price }}</strong></p>
+                <p class="mb-0 text-muted text-decoration-line-through d-inline">£{{ product.price }}</p>
+<!-- 
+                    <div class="row">
+                        <div class="col-3 pe-0">
+                            <p class="fw-bold text-danger mb-0">£{{ product.sale_price }}</p>
+                        </div>
+                        <div class="col-3 p-0">
+                        </div>
+                    </div> -->
+                {% else %}
+                    <p class="d-inline-block fs-2 mb-1"><strong>£{{ product.price }}</strong></p>
+                {% endif %}
                 <p class="d-inline-block small text-muted mb-1">({{ product.weight }}g)</p>
 
 
