@@ -292,6 +292,15 @@ Product Details Page
 
 
 
+/* Bag page */
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
+
 
 /* 
     Reusable classes
