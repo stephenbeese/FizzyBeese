@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    {{ product.name }}
+{{ product.name }}
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,8 @@
 
             <div class="col-7 text-center">
                 <div class="image-container">
-                    <img src="/media/{{ product.image }}" class="product-detail-image mt-5 mb-2" alt="{{ product.name }}{% for product_category in product.product_categories.all %}{{ product_category.friendly_name }}{% endfor %}">
+                    <img src="/media/{{ product.image }}" class="product-detail-image mt-5 mb-2"
+                        alt="{{ product.name }}{% for product_category in product.product_categories.all %}{{ product_category.friendly_name }}{% endfor %}">
                     <ul class="image-list mb-2">
                         <li class="active">
                             <img src="/media/{{ product.image }}" alt="">
@@ -36,14 +37,16 @@
                 <p class="fw-bold mt-3 mb-0 fs-2">{{ product.name }}</p>
                 <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                 {% for product_category in product.product_categories.all %}
-                <a class="text-decoration-none" href="{% url 'products' %}?product_categories={{ product_category.name }}">
+                <a class="text-decoration-none"
+                    href="{% url 'products' %}?product_categories={{ product_category.name }}">
                     <p class="d-inline text-muted text-uppercase categories">
                         {{ product_category.friendly_name }},
                     </p>
                 </a>
                 {% endfor %}
                 {% for fragrance_category in product.fragrance_categories.all %}
-                <a class="text-decoration-none" href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
+                <a class="text-decoration-none"
+                    href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
                     <p class="d-inline text-muted text-uppercase categories">
                         {{ fragrance_category.friendly_name }}
                         {% if not forloop.last %}, {% endif %}
@@ -53,54 +56,49 @@
 
                 <p class="mt-3">{{ product.description }}</p>
                 {% for product_category in product.product_categories.all %}
-                    {% if product_category.name == 'bath_bomb' %}
-                        <div class="small text-muted">
-                            <hr>
-                            <p>Our bath bombs will leave your skin feeling soft.</p>
+                {% if product_category.name == 'bath_bomb' %}
+                <div class="small text-muted">
+                    <hr>
+                    <p>Our bath bombs will leave your skin feeling soft.</p>
 
-                            <p>
-                                Just fill your bath with water that's comfortable to the touch. <br>(You should be able to dip your hand into the water comfortably for 10 seconds!)
-                            </p>
-                            <p>
-                                Place your  handmade bath bomb into your bath water. Watch it fizz and foam away leaving a gorgeous fragrance and some amazing colourful bath art
-                            </p>
-                            <p>
-                                Get into your bath relax and enjoy!
-                            </p>
-                            <p>
-                                Remember to rinse and wipe away any remaining foam and colour, ready for next time!
-                            </p>
-                            <hr>
-                        </div>
-                    {% endif %}
-                    {% if product_category.name == 'wax_melt' %}
-                    <div class="small text-muted">
-                        <hr>
-                        <p class="fw-bold">Wax Melt Care Instructions</p>
-                            <ol>
-                                <li>Place your wax melts in a melt approved wax warmer.</li>
-                                <li>Never leave burner/warmer unattended. Put it out/turn it off before leaving the room.</li>
-                                <li>Keep out of reach of children and pets.</li>
-                                <li>You can reuse your wax melt until the scent has faded. Once faded, remove wax residue and add a new wax melt.</li>
-                            </ol>
-                        <hr>
-                    </div>
-                    {% endif %}
+                    <p>
+                        Just fill your bath with water that's comfortable to the touch. <br>(You should be able to dip
+                        your hand into the water comfortably for 10 seconds!)
+                    </p>
+                    <p>
+                        Place your handmade bath bomb into your bath water. Watch it fizz and foam away leaving a
+                        gorgeous fragrance and some amazing colourful bath art
+                    </p>
+                    <p>
+                        Get into your bath relax and enjoy!
+                    </p>
+                    <p>
+                        Remember to rinse and wipe away any remaining foam and colour, ready for next time!
+                    </p>
+                    <hr>
+                </div>
+                {% endif %}
+                {% if product_category.name == 'wax_melt' %}
+                <div class="small text-muted">
+                    <hr>
+                    <p class="fw-bold">Wax Melt Care Instructions</p>
+                    <ol>
+                        <li>Place your wax melts in a melt approved wax warmer.</li>
+                        <li>Never leave burner/warmer unattended. Put it out/turn it off before leaving the room.</li>
+                        <li>Keep out of reach of children and pets.</li>
+                        <li>You can reuse your wax melt until the scent has faded. Once faded, remove wax residue and
+                            add a new wax melt.</li>
+                    </ol>
+                    <hr>
+                </div>
+                {% endif %}
                 {% endfor %}
 
                 {% if product.sale_price %}
                 <p class="d-inline-block fs-2 mb-1 text-danger"><strong>£{{ product.sale_price }}</strong></p>
                 <p class="mb-0 text-muted text-decoration-line-through d-inline">£{{ product.price }}</p>
-<!-- 
-                    <div class="row">
-                        <div class="col-3 pe-0">
-                            <p class="fw-bold text-danger mb-0">£{{ product.sale_price }}</p>
-                        </div>
-                        <div class="col-3 p-0">
-                        </div>
-                    </div> -->
                 {% else %}
-                    <p class="d-inline-block fs-2 mb-1"><strong>£{{ product.price }}</strong></p>
+                <p class="d-inline-block fs-2 mb-1"><strong>£{{ product.price }}</strong></p>
                 {% endif %}
                 <p class="d-inline-block small text-muted mb-1">({{ product.weight }}g)</p>
 
@@ -109,10 +107,28 @@
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12 ms-2">
-                            <p class="mb-0">Quantity:</p>
+                            <p class="mb-1">Quantity:</p>
                             <div class="form-group w-50">
                                 <div class="input-group input-group-{{ product.id }}">
-                                    <input class="form-control qty-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id}}" id="id_qty_{{product.id}}">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty btn btn-black" data-item_id="{{ product.id }}"
+                                            id="decrement-qty_{{ product.id }}">
+                                            <span>
+                                                <i class="fa-solid fa-minus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <input class="form-control qty-input" type="number" name="quantity" value="1"
+                                        min="1" max="99" data-item_id="{{ product.id}}" id="id_qty_{{product.id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty btn btn-black" data-item_id="{{ product.id }}"
+                                            id="increment-qty_{{ product.id }}">
+                                            <span>
+                                                <i class="fa-solid fa-plus"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -136,26 +152,28 @@
                     <input type="submit" class="btn btn-dark" value="Add to Bag">
                 </div>
             </div> -->
-            
+
+            </div>
         </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
-<script type="text/javascript">
-    const imageMain = document.querySelector(".image-container img")
-    const imageList = document.querySelector(".image-list");
-
-    Array.from(imageList.children).forEach((imageListElm, i, list)=>{
-        imageListElm.addEventListener('click', function(){
-            const newSrc = imageListElm.querySelector('img').src;
-            imageMain.src = newSrc;
-
-            list.forEach(image => image.classList.remove('active'));
-            imageListElm.classList.add('active');
-        });
-    });
-</script>
-{% endblock %}
+    {% block postloadjs %}
+        <script type="text/javascript">
+            const imageMain = document.querySelector(".image-container img")
+            const imageList = document.querySelector(".image-list");
+            
+            Array.from(imageList.children).forEach((imageListElm, i, list) => {
+                imageListElm.addEventListener('click', function () {
+                    const newSrc = imageListElm.querySelector('img').src;
+                    imageMain.src = newSrc;
+                    
+                    list.forEach(image => image.classList.remove('active'));
+                    imageListElm.classList.add('active');
+                });
+            });
+        </script>
+    {{ block.super }}
+    {% include 'includes/quantity_input_script.html' %}
+    {% endblock %}
