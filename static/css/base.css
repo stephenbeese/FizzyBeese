@@ -41,6 +41,17 @@ body {
     vertical-align: top;
 }
 
+.message-container {
+    position: fixed;
+    top: 150px;
+    right: 5px;
+    z-index: 99999;
+}
+
+.toast-capper {
+    height: 3px
+}
+
 /* Adjust the width and height of the images */
 .featured-image,
 .latest-image {
