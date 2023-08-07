@@ -273,3 +273,15 @@ You can view my wireframes for this project [here](WIREFRAMES.md)
 
 
 ## Credits 
+
+This project was heavily inspired by the Boutique Ado walkthrough project. 
+
+In particular:
+- The bag app logic
+- Quantity button logic
+- Mobile top header
+- Product sorting functionality
+
+To complete this project I did follow along with the walkthrough lessons provided which helped me be able complete the features in a logical order. 
+I have not directly copied and pasted these sections and the have been altered to fit this projects needs. However the core concepts are similar to the Boutique Ado walkthrough project.
+
