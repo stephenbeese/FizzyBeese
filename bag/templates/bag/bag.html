@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block title %}
 Shopping Bag
@@ -45,7 +46,7 @@ Shopping Bag
                             {% endif %}
                         </td>
                         <td>
-                            <form class="form update-form" method="POST" action="">
+                            <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group input-group-{{ item.item_id }}">
@@ -59,7 +60,7 @@ Shopping Bag
                                         </div>
     
                                         <input class="form-control qty-input" type="number" name="quantity" value="{{ item.quantity }}"
-                                            min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                            min="1" max="{{ item.product.stock_remaining }}" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-black" data-item_id="{{ item.item_id }}"
                                                 id="increment-qty_{{ item.item_id }}">
@@ -77,9 +78,9 @@ Shopping Bag
                         <td>
                             <!-- Placeholder for subtotal -->
                             {% if item.product.sale_price %}
-                                <p class="fw-bold fs-5">£{{ item.product.sale_price }}</p>
+                                <p class="fw-bold fs-5">£{{ item.product.sale_price | calculate_subtotal:item.quantity }}</p>
                             {% else %}
-                                <p class="fw-bold fs-5">£{{ item.product.price }}</p>
+                                <p class="fw-bold fs-5">£{{ item.product.price | calculate_subtotal:item.quantity }}</p>
                             {% endif %}
                         </td>
                     </tr>
@@ -104,7 +105,6 @@ Shopping Bag
                                 <span class="icon me-2 fw-bold"><i class="fa-solid fa-lock"></i></span>
                                 <span>Secure Checkout</span>
                             </a>
-
                         </td>
                     </tr>
                 </tbody>
@@ -135,7 +135,7 @@ Shopping Bag
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
+        var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken,}
 
         $.post(url, data)
