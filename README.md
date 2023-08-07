@@ -281,6 +281,7 @@ In particular:
 - Quantity button logic
 - Mobile top header
 - Product sorting functionality
+- Toasts
 
 To complete this project I did follow along with the walkthrough lessons provided which helped me be able complete the features in a logical order. 
 I have not directly copied and pasted these sections and the have been altered to fit this projects needs. However the core concepts are similar to the Boutique Ado walkthrough project.
