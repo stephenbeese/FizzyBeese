@@ -48,8 +48,25 @@ body {
     z-index: 99999;
 }
 
+/* Toasts */
+
 .toast-capper {
     height: 3px
+}
+
+.toast-product-name {
+    text-decoration: none;
+}
+
+.toast-product-name:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.toast-wrapper {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Adjust the width and height of the images */
@@ -155,8 +172,6 @@ a.icon {
 
 .our-products {
     height: 80vh;
-    /* position: relative;
-    bottom: 30vh; */
 }
 
 .our-products h2 {
