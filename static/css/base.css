@@ -341,6 +341,10 @@ Product Details Page
     margin-left: 10%;
 }
 
+.product-name:hover {
+    text-decoration: underline;
+}
+
 
 /* 
     Media Queries

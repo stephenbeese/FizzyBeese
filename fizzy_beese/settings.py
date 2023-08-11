@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-dhr$%ds@it(=d*@@+aavg#kkweczmsh3st=(ku2q129u+2*zj+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu102.gitpod.io']
+ALLOWED_HOSTS = ['8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu103.gitpod.io']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu102.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu103.gitpod.io']
 
 # Application definition
 
@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     'products',
     'bag',
     'checkout',
+
+    # Other
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +65,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'fizzy_beese.urls'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 TEMPLATES = [
     {
@@ -78,6 +86,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
                 'home.contexts.offers',
+            ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
             ],
         },
     },

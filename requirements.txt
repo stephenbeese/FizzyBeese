@@ -2,9 +2,11 @@ asgiref==3.7.2
 backports.zoneinfo==0.2.1
 black==23.7.0
 click==8.1.6
+crispy-bootstrap5==0.7
 diff-match-patch==20230430
 Django==4.2.3
 django-allauth==0.54.0
+django-crispy-forms==1.14.0
 django-import-export==3.2.0
 et-xmlfile==1.1.0
 MarkupPy==1.14

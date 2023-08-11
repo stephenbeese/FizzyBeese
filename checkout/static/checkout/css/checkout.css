@@ -1,0 +1,8 @@
+.checkout-container {
+    max-width: 100vw;
+    margin-top: 20px;
+}
+
+.bold-hover:hover {
+    font-weight: bold;
+}
