@@ -75,6 +75,11 @@ class CheckoutView(View):
                         quantity=item_data,
                     )
                     order_line_item.save()
+
+                    # Deduct purchased quantity from product's stock_remaining
+                    product.stock_remaining -= item_data
+                    product.save()
+
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of thhe products in your bag wasn't found in our database."

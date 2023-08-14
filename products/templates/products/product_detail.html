@@ -145,7 +145,11 @@
                                 <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
                                 <span>Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-dark my-3 mx-2" value="Add to Bag">
+                            {% if product.stock_remaining == 0 %}
+                                <input type="submit" class="btn btn-danger my-3 mx-2" value="Out of Stock" disabled>
+                            {% else %}
+                                <input type="submit" class="btn btn-dark my-3 mx-2" value="Add to Bag">
+                            {% endif %}
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
