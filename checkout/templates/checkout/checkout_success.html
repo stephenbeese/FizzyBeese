@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Checkout Success
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 text-center mt-3">
+            <h2 class="fw-bold">Thank you, {{ order.full_name }} for your order!</h2>
+            <p>A confirmation will be sent to your email address <span class="fw-bold">({{ order.email }})</span></p>
+            <p>Your order details are below:</p>
+        </div>
+    </div>
+{% endblock %}
