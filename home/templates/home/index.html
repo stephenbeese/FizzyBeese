@@ -34,27 +34,27 @@ Home
     </div>
 </section>
 <div class="row w-100 m-0">
-    <div class="home-products-image">
-        <div class="row">
+    <div class="featured-products-image pb-3">
+        <div class="row mw-100 mx-auto">
             <div class="col-10 offset-1 w-80 mt-3 bg-white home-products-container">
                 <div class="container">
                     <div class="row justify-content-evenly">
                         <div class="col-12 mt-4 mb-2">
                             <h3 class="text-center fw-bold">Featured Products</h3>
                         </div>
-                        <div class="col-7 overflow-x-scroll d-flex">
+                        <div class="col-9 justify-content-evenly overflow-x-scroll d-flex">
                             {% for f in featured_products %}
                             <div class="row featured-products-container">
                                 <div class="col">
                                     <div class="row">
                                         <a href="{% url 'product_detail' f.id %}">
-                                            <img src="/media/{{ f.image }}" class="featured-image" alt="{{ f.image }}">
+                                            <img src="/media/{{ f.image }}" class="featured-image rounded" alt="{{ f.image }}">
                                         </a>
                                     </div>
                                     <div class="row w-100 m-0">
                                         <div class="col-9 p-0">
                                             <a class="text-decoration-none" href="{% url 'product_detail' f.id %}">
-                                                <p class="text-black mb-0 text-wrap">{{ f.name }}</p>
+                                                <p class="text-black mb-0 text-wrap bold-underline-hover z-3">{{ f.name }}</p>
                                             </a>
                                         </div>
                                         <div class="col-3 p-0">
@@ -72,19 +72,19 @@ Home
                         <div class="col-12 mt-4 mb-2">
                             <h3 class="text-center fw-bold">Latest Products</h3>
                         </div>
-                        <div class="col-7 overflow-x-scroll d-flex">
+                        <div class="col-9 overflow-x-scroll d-flex pb-3">
                             {% for l in latest_products %}
                             <div class="row latest-products-container">
                                 <div class="col">
                                     <div class="row">
                                         <a href="{% url 'product_detail' l.id %}">
-                                            <img src="/media/{{ l.image }}" class="latest-image" alt="{{ l.image }}">
+                                            <img src="/media/{{ l.image }}" class="latest-image rounded" alt="{{ l.image }}">
                                         </a>
                                     </div>
                                     <div class="row w-100 m-0">
                                         <div class="col-9 p-0">
                                             <a class="text-decoration-none" href="{% url 'product_detail' l.id %}">
-                                                <p class="text-black mb-0 text-wrap">{{ l.name }}</p>
+                                                <p class="text-black mb-0 text-wrap bold-underline-hover">{{ l.name }}</p>
                                             </a>
                                         </div>
                                         <div class="col-3 p-0">
@@ -150,7 +150,7 @@ Home
         <div class="col-12 text-center">
             <h2 class="mt-3">Why not pop into our shop?</h2>
             <hr class="mx-auto mt-0">
-            <div class="row">
+            <div class="row mb-5">
                 <div class="col-3 offset-1">
                     <h4 class="mt-4 fs-2">Address</h4>
                     <div class="text-start mt-3 ms-5 lh-1 home-address">
