@@ -110,18 +110,22 @@ Checkout Success
                                     <td class="text-muted">Address 1:</td>
                                     <td>{{ order.street_address1 }}</td>
                                 </tr>
-                                <tr>
-                                    <td class="text-muted">Address 2:</td>
-                                    <td>{{ order.street_address2 }}</td>
-                                </tr>
+                                {% if order.street_address2 %}
+                                    <tr>
+                                        <td class="text-muted">Address 2:</td>
+                                        <td>{{ order.street_address2 }}</td>
+                                    </tr>
+                                {% endif %}
                                 <tr>
                                     <td class="text-muted">Town or City:</td>
                                     <td>{{ order.town_or_city }}</td>
                                 </tr>
-                                <tr>
-                                    <td class="text-muted">County:</td>
-                                    <td>{{ order.county }}</td>
-                                </tr>
+                                {% if order.county %}
+                                    <tr>
+                                        <td class="text-muted">County:</td>
+                                        <td>{{ order.county }}</td>
+                                    </tr>
+                                {% endif %}
                                 <tr>
                                     <td class="text-muted">Postcode:</td>
                                     <td>{{ order.postcode }}</td>
