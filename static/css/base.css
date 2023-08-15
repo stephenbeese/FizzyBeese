@@ -39,6 +39,7 @@ body {
     width: fit-content;
     margin: 10px;
     vertical-align: top;
+    /* overflow-x: scroll; */
 }
 
 .message-container {
@@ -148,19 +149,9 @@ a.icon {
     width: 100vw;
 }
 
-/* .featured-products-image {
-    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
-    background-size: cover;
-    max-height: fit-content;
-    min-height: 97vh;
-    width: 100vw;
-} */
-
 .featured-products-image {
     background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
     background-size: cover;
-    top: 0;
-    z-index: -1;
     width: 100%;
     max-width: none;
     margin: 0;
@@ -210,10 +201,10 @@ a.icon {
 
 /* Home page products section */
 
-.home-products-container {
-    /* height: 88vh; */
+/* .home-products-container {
+    /* height: 88vh;
     min-height: fit-content;
-}
+} */
 
 
 /* Our values section */
