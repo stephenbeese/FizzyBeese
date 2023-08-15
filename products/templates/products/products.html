@@ -43,8 +43,9 @@ Products
                 </option>
                 <option value="uploaded_on_desc" {% if current_sorting == 'uploaded_on_desc' %}selected{% endif %}>
                     Newest to Oldest</option>
-                <option value="uploaded_on_asc" {% if current_sorting == 'uploaded_on_asc' %}selected{% endif %}>Oldest to Newest</option>
-                
+                <option value="uploaded_on_asc" {% if current_sorting == 'uploaded_on_asc' %}selected{% endif %}>Oldest
+                    to Newest</option>
+
                 {% if current_product_categories is None %}
                 <option value="product_categories_asc"
                     {% if current_sorting == 'product_categories_asc' %}selected{% endif %}>Product Category (A to Z)
@@ -70,6 +71,7 @@ Products
                 </div>
             </div>
             {% endif %}
+
             {% for product in products %}
             {% if product.is_hidden == False %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -81,17 +83,19 @@ Products
                         <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
                             <p class="text-black mb-0">{{ product.name }}</p>
                         </a>
+
                         {% if product.sale_price %}
                         <div class="row">
-                            <div class="col-3 pe-0">
-                                <p class="fw-bold text-danger mb-0">£{{ product.sale_price }}</p>
-                            </div>
-                            <div class="col-3 p-0">
-                                <p class="mb-0 text-muted text-decoration-line-through d-inline old-price ">£{{ product.price }}</p>
+                            <div class="col-6 pe-0">
+                                <p class="fw-bold text-danger mb-0">
+                                    £{{ product.sale_price }}
+                                    <span
+                                        class="mb-0 text-muted text-decoration-line-through d-inline old-price ms-1">£{{ product.price }}</span>
+                                </p>
                             </div>
                         </div>
                         {% else %}
-                            <p class="fw-bold mb-0">£{{ product.price }}</p>
+                        <p class="fw-bold mb-0">£{{ product.price }}</p>
                         {% endif %}
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                         {% for product_category in product.product_categories.all %}
@@ -122,42 +126,42 @@ Products
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        $('#sort-selector').change(function() {
-            var selector = $(this);
-            var currentUrl = new URL(window.location);
-        
-            var selectedVal = selector.val();
-            if (selectedVal != "reset"){
-                var sort = selectedVal.split('_')[0];
-                var direction = selectedVal.split('_')[1];
+{{ block.super }}
+<script type="text/javascript">
+    $('#sort-selector').change(function () {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
 
-                if (sort == "uploaded") {
-                    sort = "uploaded_on"
-                    direction = selectedVal.split('_')[2];
-                }
+        var selectedVal = selector.val();
+        if (selectedVal != "reset") {
+            var sort = selectedVal.split('_')[0];
+            var direction = selectedVal.split('_')[1];
 
-                if (sort == "fragrance") {
-                    sort = "fragrance_categories"
-                    direction = selectedVal.split('_')[2];
-                }
-
-                if (sort == "product") {
-                    sort = "product_categories"
-                    direction = selectedVal.split('_')[2];
-                }
-
-                currentUrl.searchParams.set("sort", sort);
-                currentUrl.searchParams.set("direction", direction);
-
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete("sort")
-                currentUrl.searchParams.delete("direction")
-
-                window.location.replace(currentUrl);
+            if (sort == "uploaded") {
+                sort = "uploaded_on"
+                direction = selectedVal.split('_')[2];
             }
-        })
-    </script>
+
+            if (sort == "fragrance") {
+                sort = "fragrance_categories"
+                direction = selectedVal.split('_')[2];
+            }
+
+            if (sort == "product") {
+                sort = "product_categories"
+                direction = selectedVal.split('_')[2];
+            }
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort")
+            currentUrl.searchParams.delete("direction")
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>
 {% endblock %}
