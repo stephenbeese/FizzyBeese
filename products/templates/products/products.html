@@ -75,7 +75,7 @@ Products
             {% for product in products %}
             {% if product.is_hidden == False %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card">
+                <div class="card card-shadow">
                     <a href="{% url 'product_detail' product.id %}">
                         <img src="/media/{{ product.image }}" class="card-img-top" alt="{{ product.image }}">
                     </a>
