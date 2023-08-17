@@ -12,7 +12,11 @@ def add_to_bag(request, item_id):
     """ Add quantity of the specified product to the bag """
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
-    redirect_url = request.POST.get('redirect_url')
+    # redirect_url = request.POST.get('redirect_url')
+
+    # Redirects to the previous page with filter criteria
+    redirect_url = request.META.get('HTTP_REFERER', '/')
+
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
@@ -31,6 +35,7 @@ def add_to_bag(request, item_id):
             )
 
     request.session['bag'] = bag
+    print(redirect_url)
     return redirect(redirect_url)
 
 
@@ -44,7 +49,8 @@ def adjust_bag(request, item_id):
         messages.error(
             request,
             f'Sorry, there is not enough stock for {product.name}. \
-            You can only add up to {product.stock_remaining} items.')
+            You can only add up to {product.stock_remaining} items. \
+            Please review your shopping bag.')
     elif quantity > 0:
         bag[item_id] = quantity
         messages.success(
