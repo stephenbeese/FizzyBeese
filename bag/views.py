@@ -16,12 +16,19 @@ def add_to_bag(request, item_id):
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
-        bag[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
-
+        new_quantity = bag[item_id] + quantity
     else:
-        bag[item_id] = quantity
+        new_quantity = quantity
+
+    if new_quantity <= product.stock_remaining:
+        bag[item_id] = new_quantity
         messages.success(request, f'Added {product.name} to your bag!')
+    else:
+        messages.error(
+            request,
+            f'Sorry, there is not enough stock for {product.name}. \
+              You can only add up to {product.stock_remaining} items.'
+            )
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -33,9 +40,16 @@ def adjust_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
-    if quantity > 0:
+    if quantity > product.stock_remaining:
+        messages.error(
+            request,
+            f'Sorry, there is not enough stock for {product.name}. \
+            You can only add up to {product.stock_remaining} items.')
+    elif quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f'Updated {product.name} quantity to {bag[item_id]}')
+        messages.success(
+            request, f'Updated {product.name} quantity to {bag[item_id]}'
+            )
     else:
         bag.pop(item_id)
         messages.success(request, f'Removed {product.name} from your bag!')

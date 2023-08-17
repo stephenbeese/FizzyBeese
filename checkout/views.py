@@ -86,7 +86,6 @@ class CheckoutView(View):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
-            # print(request.POST)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
@@ -101,6 +100,11 @@ class CheckoutView(View):
                     )
                     order_line_item.save()
 
+                    # Prevents user from checking out if quantity > stock remaining
+                    if item_data > product.stock_remaining:
+                        messages.error(request, f'Sorry, there is not enough stock for {product.name}. You can only add up to {product.stock_remaining} items.')
+                        return redirect(reverse('checkout'))
+
                     # Deduct purchased quantity from product's stock_remaining
                     product.stock_remaining -= item_data
                     product.save()
@@ -114,7 +118,9 @@ class CheckoutView(View):
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+                )
         else:
             messages.error(request, 'There was an error with your order form. \
                 Please double check your order information.')
