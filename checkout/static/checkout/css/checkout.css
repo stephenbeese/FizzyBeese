@@ -41,6 +41,21 @@
     background-color: #fefde5 !important;
 }
 
+select,
+select option {
+    color: #000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #595c5f !important;
+}
+
+#div_id_country > select {
+    height: fit-content;
+    border: 1px solid #000;
+}
+
 #loading-overlay {
     display: none;
     position: fixed;
