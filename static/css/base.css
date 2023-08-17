@@ -291,6 +291,10 @@ All Products Page
     font-size: 0.7rem;
 }
 
+.categories:hover {
+    text-decoration: underline;
+}
+
 .old-price {
     font-size: 0.8em;
 }

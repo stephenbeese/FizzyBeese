@@ -75,29 +75,15 @@ Products
             {% for product in products %}
             {% if product.is_hidden == False %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="card card-shadow">
+                <div class="card card-shadow border-dark">
                     <a href="{% url 'product_detail' product.id %}">
-                        <img src="/media/{{ product.image }}" class="card-img-top" alt="{{ product.image }}">
+                        <img src="/media/{{ product.image }}" class="card-img-top border-bottom border-dark" alt="{{ product.image }}">
                     </a>
-                    <div class="card-body">
+                    <div class="card-body pb-0">
                         <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                            <p class="text-black mb-0">{{ product.name }}</p>
+                            <!-- <p class="text-black mb-0 fs-5">{{ product.name }}</p> -->
+                            <p class="text-black mb-0 fs-5">{{ product.name }}</p>
                         </a>
-
-                        {% if product.sale_price %}
-                        <div class="row">
-                            <div class="col-6 pe-0">
-                                <p class="fw-bold text-danger mb-0">
-                                    £{{ product.sale_price }}
-                                    <span class="mb-0 text-muted text-decoration-line-through d-inline old-price ms-1">
-                                        £{{ product.price }}
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        {% else %}
-                        <p class="fw-bold mb-0">£{{ product.price }}</p>
-                        {% endif %}
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                         {% for product_category in product.product_categories.all %}
                         <a class="text-decoration-none"
@@ -116,6 +102,52 @@ Products
                             </p>
                         </a>
                         {% endfor %}
+                    </div>
+                    <div class="card-footer bg-white border-top-0">
+                        <div class="row">
+                            <div class="col-lg-6 p-0 text-start">
+                                {% if product.sale_price %}
+                                <p class="fw-bold text-danger mb-0 fs-5 ms-2">
+                                    £{{ product.sale_price }}
+                                    <span class="mb-0 text-muted text-decoration-line-through d-inline old-price ms-1">
+                                        £{{ product.price }}
+                                    </span>
+                                </p>
+                                {% else %}
+                                <p class="fw-bold mb-0 fs-5 ms-2">£{{ product.price }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-6 p-0 text-end">
+                                <form action="{% url 'add_to_bag' product.id %}" method="POST" class="form">
+                                    {% csrf_token %}
+                                    <input type="number" name="quantity" value="1" class="d-none">
+                                    {% if product.stock_remaining == 0 %}
+                                        <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock" disabled>
+                                    {% else %}
+                                        <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag">
+                                    {% endif %}
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                </form>
+                            </div>
+                        </div>
+                        <!-- <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
+                        {% for product_category in product.product_categories.all %}
+                        <a class="text-decoration-none"
+                            href="{% url 'products' %}?product_categories={{ product_category.name }}">
+                            <p class="d-inline text-muted text-uppercase categories">
+                                {{ product_category.friendly_name }},
+                            </p>
+                        </a>
+                        {% endfor %}
+                        {% for fragrance_category in product.fragrance_categories.all %}
+                        <a class="text-decoration-none"
+                            href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
+                            <p class="d-inline text-muted text-uppercase categories">
+                                {{ fragrance_category.friendly_name }}
+                                {% if not forloop.last %}, {% endif %}
+                            </p>
+                        </a>
+                        {% endfor %} -->
                     </div>
                 </div>
             </div>
