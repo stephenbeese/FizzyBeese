@@ -38,13 +38,13 @@ class Order(models.Model):
         """
         Update grand total each time
         """
-        # self.order_total = self.lineitems.aggregate(sum('lineitem_total'))['lineitem_total__sum']
-        self.total_weight = self.lineitems.aggregate(sum_weight=Sum('product__weight', output_field=models.IntegerField()))['sum_weight'] or 0
-
+        total_weight = 0
         order_total = Decimal('0.00')
         for line_item in self.lineitems.all():
             order_total += line_item.lineitem_total
+            total_weight += line_item.product.weight * line_item.quantity
 
+        self.total_weight = total_weight
 
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             if self.total_weight <= 100:
