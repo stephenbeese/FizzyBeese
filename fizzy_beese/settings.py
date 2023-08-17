@@ -28,9 +28,9 @@ SECRET_KEY = 'django-insecure-dhr$%ds@it(=d*@@+aavg#kkweczmsh3st=(ku2q129u+2*zj+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-us103.gitpod.io', '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu103.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu104.gitpod.io', 'localhost']
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-us103.gitpod.io', 'https://8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu103.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu104.gitpod.io',]
 
 # Application definition
 
@@ -177,6 +177,9 @@ FREE_DELIVERY_THRESHOLD = 50
 
 # Stripe
 STRIPE_CURRENCY = 'gbp'
+# STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+# STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+# STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
