@@ -110,6 +110,10 @@ body {
     background-color: #ffb7ce;
 }
 
+input[name='q']::placeholder {
+    color: #595c5f;
+}
+
 /* Footer */
 footer {
     height: 100px;
@@ -319,10 +323,6 @@ Product Details Page
     margin: 0 auto;
 }
 
-/* .image-container img {
-    display: block;
-} */
-
 .image-list {
     list-style: none;
     display: flex;
@@ -360,7 +360,24 @@ Product Details Page
     cursor: pointer;
 }
 
+/* Allauth forms */
 
+.allauth-form-inner-content p {
+    margin-top: 1rem;
+    color: #000;
+}
+
+.allauth-form-inner-content input {
+    border: 1px solid #000;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #595c5f;
+}
 
 
 /* 
