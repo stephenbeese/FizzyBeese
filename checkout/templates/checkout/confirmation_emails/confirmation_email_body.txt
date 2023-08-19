@@ -1,0 +1,38 @@
+Hello {{ order.full_name }}!
+
+We are thrilled to confirm your order with FizzyBeese!
+
+Your order information is below!
+
+Order Details:
+Order Number: {{ order.order_number }}
+Order Date: {{ order.date }}
+Estimated Delivery Date (3 to 5 working days): {{ estimated_delivery_lower }} - {{ estimated_delivery_higher }} 
+
+Your Items:
+{% for item in order.lineitems.all %}
+- {{ item.product.name }} (x{{ item.quantity }}) @ {% if not item.product.sale_price %}£{{ item.product.price }}{% else %}£{{ item.product.sale_price }}{% endif %} each
+{% endfor %}
+
+Order Summary:
+Order Total: £{{ order.order_total }}
+Delivery: £{{ order.delivery_cost }}
+Grand Total: £{{ order.grand_total }}
+
+Shipping Information:
+Address 1: {{ order.street_address1 }}
+Address 2: {{ order.street_address2 }}
+Town or City: {{ order.town_or_city }}
+County: {{ order.county }}
+Postcode: {{ order.postcode }}
+Country {{ order.country }}
+Phone Number: {{ order.phone_number }}
+
+If you have any questions regarding your order, don't hesitate to get in touch at {{ contact_email }}
+
+Thank you again for choosing FizzyBeese. 
+
+We look forward to being a part of your well-deserved moments of indulgence.
+
+Warm regards, 
+FizzyBeese
