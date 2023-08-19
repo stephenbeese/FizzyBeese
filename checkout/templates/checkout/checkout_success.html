@@ -11,155 +11,154 @@ Checkout Success
 
 
 {% block content %}
-<!-- <div class="checkout-success-container"> -->
-<div class="row mw-100">
+<div class="row mw-100 m-0">
     <div class="col-12 text-center mt-3">
         <h2 class="fw-bold">Thank you, {{ order.full_name }} for your order!</h2>
         <p>A confirmation will be sent to your email address <span class="fw-bold">({{ order.email }})</span></p>
-        <!-- <p>Your order details are below:</p> -->
     </div>
 </div>
 
-        <div class="row mw-100">
-            <div class="col-12 col-lg-5 order-lg-last">
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                        <h3 class="my-4 fw-bold">Order Summary:</h3>
-                    </div>
+<div class="row mw-100">
+    <div class="col-12 col-lg-5 order-lg-last">
+        <div class="row justify-content-center mb-3">
+            <div class="col-10">
+                <h3 class="my-4 fw-bold">Order Summary:</h3>
+            </div>
+        </div>
+        {% for item in order.lineitems.all %}
+        <div class="row justify-content-start">
+            <div class="col-6 col-xl-4 mb-1">
+                <img class="rounded float-end w-100 checkout-image" src="/media/{{ item.product.image }}" alt="">
+            </div>
+            <div class="col-5">
+                <div class="ms-3">
+                    <a class="text-dark text-decoration-none" href="{% url 'product_detail' item.product.id %}">
+                        <p class="fs-5 fw-bold mb-0 product-name bold-hover">{{ item.product.name }}</p>
+                    </a>
+                    <p class="text-muted fs-5">{{ item.quantity }} @
+                        {% if item.product.sale_price %}
+                        £{{ item.product.sale_price }}
+                        {% else %}
+                        £{{ item.product.price }}
+                        {% endif %}
+                        each
+                    </p>
                 </div>
-                {% for item in order.lineitems.all %}
-                <div class="row justify-content-start">
-                    <div class="col-6 col-xl-4 mb-1">
-                        <img class="rounded float-end w-100 checkout-image" src="/media/{{ item.product.image }}" alt="">
-                    </div>
-                    <div class="col-5">
-                        <div class="ms-3">
-                            <a class="text-dark text-decoration-none" href="{% url 'product_detail' item.product.id %}">
-                                <p class="fs-5 fw-bold mb-0 product-name bold-hover">{{ item.product.name }}</p>
-                            </a>
-                            <p class="text-muted fs-5">{{ item.quantity }} @ 
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-12 col-lg-5 offset-lg-1">
+        <div class="row mb-3">
+            <div class="col-12">
+                <table class="table-responsive border mx-auto mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="fs-4">Order Info:</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Order Number:</th>
+                            <td>
+                                <small>{{ order.order_number }}</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Order Date:</th>
+                            <td>{{ order.date }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Product Details:</th>
+                            <td></td>
+                        </tr>
+                        {% for item in order.lineitems.all %}
+                        <tr class="text-muted">
+                            <td scope="row">{{ item.product.name }}</td>
+                            <td>{{ item.quantity }} @
                                 {% if item.product.sale_price %}
-                                    £{{ item.product.sale_price }}
+                                £{{ item.product.sale_price }}
                                 {% else %}
-                                    £{{ item.product.price }}
+                                £{{ item.product.price }}
                                 {% endif %}
                                 each
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                    {% endfor %}
-
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <th scope="row">Delivering To:</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Full Name:</td>
+                            <td>{{ order.full_name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Email Address:</td>
+                            <td>{{ order.email }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Phone Number:</td>
+                            <td>{{ order.phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Address 1:</td>
+                            <td>{{ order.street_address1 }}</td>
+                        </tr>
+                        {% if order.street_address2 %}
+                        <tr>
+                            <td class="text-muted">Address 2:</td>
+                            <td>{{ order.street_address2 }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="text-muted">Town or City:</td>
+                            <td>{{ order.town_or_city }}</td>
+                        </tr>
+                        {% if order.county %}
+                        <tr>
+                            <td class="text-muted">County:</td>
+                            <td>{{ order.county }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="text-muted">Postcode:</td>
+                            <td>{{ order.postcode }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Country:</td>
+                            <td>{{ order.country }}</td>
+                        </tr>
+                        <tr>
+                            <th>Billing Info:</th>
+                            <td></td>
+                        </tr>
+                        <tr class="text-muted">
+                            <td>Order Total:</td>
+                            <td class="text-dark fw-bold">£{{ order.order_total }}</td>
+                        </tr>
+                        <tr class="text-muted">
+                            <td>Delivery Cost:</td>
+                            <td class="text-dark fw-bold">£{{ order.delivery_cost }}</td>
+                        </tr>
+                        <tr class="text-muted">
+                            <td>Grand Total:</td>
+                            <td class="text-dark fw-bold">£{{ order.grand_total }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div class="col-12 col-lg-5 offset-lg-1">
-                <div class="row">
-                    <div class="col-12">
-                        <table class="table-responsive border mx-auto mt-4">
-                            <thead>
-                                <tr>
-                                    <th scope="col" class="fs-4">Order Info:</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Order Number:</th>
-                                    <td>
-                                        <small>{{ order.order_number }}</small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Order Date:</th>
-                                    <td>{{ order.date }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Product Details:</th>
-                                    <td></td>
-                                </tr>
-                                {% for item in order.lineitems.all %}
-                                    <tr class="text-muted">
-                                        <td scope="row">{{ item.product.name }}</td>
-                                        <td>{{ item.quantity }} @ 
-                                            {% if item.product.sale_price %}
-                                                £{{ item.product.sale_price }}
-                                            {% else %}
-                                                £{{ item.product.price }}
-                                            {% endif %}
-                                            each
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                                <tr>
-                                    <th scope="row">Delivering To:</th>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Full Name:</td>
-                                    <td>{{ order.full_name }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Email Address:</td>
-                                    <td>{{ order.email }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Phone Number:</td>
-                                    <td>{{ order.phone_number }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Address 1:</td>
-                                    <td>{{ order.street_address1 }}</td>
-                                </tr>
-                                {% if order.street_address2 %}
-                                    <tr>
-                                        <td class="text-muted">Address 2:</td>
-                                        <td>{{ order.street_address2 }}</td>
-                                    </tr>
-                                {% endif %}
-                                <tr>
-                                    <td class="text-muted">Town or City:</td>
-                                    <td>{{ order.town_or_city }}</td>
-                                </tr>
-                                {% if order.county %}
-                                    <tr>
-                                        <td class="text-muted">County:</td>
-                                        <td>{{ order.county }}</td>
-                                    </tr>
-                                {% endif %}
-                                <tr>
-                                    <td class="text-muted">Postcode:</td>
-                                    <td>{{ order.postcode }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="text-muted">Country:</td>
-                                    <td>{{ order.country }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Billing Info:</th>
-                                    <td></td>
-                                </tr>
-                                <tr class="text-muted">
-                                    <td>Order Total:</td>
-                                    <td class="text-dark fw-bold">£{{ order.order_total }}</td>
-                                </tr>
-                                <tr class="text-muted">
-                                    <td>Delivery Cost:</td>
-                                    <td class="text-dark fw-bold">£{{ order.delivery_cost }}</td>
-                                </tr>
-                                <tr class="text-muted">
-                                    <td>Grand Total:</td>
-                                    <td class="text-dark fw-bold">£{{ order.grand_total }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
-
-
-
-<!-- </div> -->
+    </div>
+    <div class="col-12 col-lg-7 text-end mb-3">
+        {% if from_profile %}
+            <a href="{% url 'profile' %}" class="btn btn-dark">
+                <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
+                <span>Back to Profile</span>
+            </a>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
