@@ -11,11 +11,11 @@
                 <hr class="w-100 my-1">
             </div>
         </div>
-        {% if grand_total %}
+        {% if grand_total and not on_profile_page %}
             <p><strong>Your Bag</strong> ({{ product_count }} Items)</p>
-            <div class="toast-wrapper">
+            <div class="toast-wrapper bg-white">
                 {% for item in bag_items %}
-                    <div class="row bg-white">
+                    <div class="row">
                         <div class="col-3 my-1">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 <img class="w-100 rounded" src="/media/{{ item.product.image }}" alt="">
@@ -37,7 +37,7 @@
                 {% endfor %}
             </div>
 
-            <div class="row bg-white">
+            <div class="row">
                 <div class="col">
                     <p class="my-1 fw-bold">Total {% if free_delivery_delta > 0 %}(Exc. delivery){% endif %}:
                         <span class="fw-bold float-end">£{{ total|floatformat:2 }}</span>
