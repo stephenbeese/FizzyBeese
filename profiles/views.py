@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 
 
 from .models import UserProfile
@@ -9,8 +9,12 @@ from .forms import UserProfileForm
 from checkout.models import Order
 
 
-@staff_member_required
+@login_required
 def all_orders(request):
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that!')
+        return redirect(reverse('home'))
+
     orders = Order.objects.all().order_by('-date')
     template = 'profiles/all_orders.html'
     context = {
@@ -18,7 +22,7 @@ def all_orders(request):
     }
     return render(request, template, context)
 
-
+@login_required
 def profile(request):
     """ Display the user's profile """
     profile = get_object_or_404(UserProfile, user=request.user)
