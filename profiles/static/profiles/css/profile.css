@@ -3,6 +3,11 @@
     overflow-y: auto;
 }
 
+.order-history-all {
+    max-height: 65vh;
+    overflow-y: auto;
+}
+
 #profile-update-form .form-control {
     color: #000;
 }

@@ -1,10 +1,22 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.admin.views.decorators import staff_member_required
+
 
 from .models import UserProfile
 from .forms import UserProfileForm
 
 from checkout.models import Order
+
+
+@staff_member_required
+def all_orders(request):
+    orders = Order.objects.all().order_by('-date')
+    template = 'profiles/all_orders.html'
+    context = {
+        'orders': orders,
+    }
+    return render(request, template, context)
 
 
 def profile(request):
