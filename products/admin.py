@@ -15,6 +15,7 @@ class ProductAdmin(ImportExportModelAdmin):
         'is_hidden',
         'uploaded_on',
     )
+    readonly_fields = ('uploaded_on',)
 
     ordering = ('uploaded_on',)
 

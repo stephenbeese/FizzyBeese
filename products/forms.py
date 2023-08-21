@@ -5,7 +5,15 @@ from .models import Product, ProductCategory, FragranceCategory
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ['uploaded_on']
+        labels = {
+            'price': 'Price (£)',
+            'product_categories': 'Product categories (Hold "ctrl" or "cmd" to select more than one)',
+            'fragrance_categories': 'Fragrance categories (Hold "ctrl" or "cmd" to select more than one)',
+            'weight': 'Weight (g)',
+            'sale_price': 'Sale Price (£)',
+
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
