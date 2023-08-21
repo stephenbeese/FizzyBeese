@@ -34,7 +34,7 @@ class FragranceCategory(Category):
 
 class Product(models.Model):
     """ A model to store all product data """
-    name = models.CharField(max_length=254)
+    name = models.CharField(max_length=254, unique=True)
     description = models.TextField(null=True, blank=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     stock_remaining = models.IntegerField(null=False)
