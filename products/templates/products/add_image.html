@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bag_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block title %}
+Add Image
+{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2 class="text-center mt-2">Product Management</h2>
+            <h5 class="text-muted text-center">Add additional images</h5>
+            <p class="fs-5 text-center mt-4"><strong>{{ product.name }}</strong></p>
+        </div>
+        <div class="col-10 col-lg-6">
+            <form method="POST" action="{% url 'add_image' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-end">
+                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Cancel</a>
+                    <button class="btn btn-dark" type="submit">Add Image</button>
+                </div>
+            </form>
+            {% if additional_images %}
+            <h3 class="my-3 text-center">Existing additional images for {{ product.name }}</h3>
+                <ul class="list-unstyled list-inline text-center">
+                    {% for image in additional_images %}
+                        <li class="list-inline-item">
+                            <img class="additional_image rounded" src="/media/{{ image.image }}" alt="{{ product.name }}">
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

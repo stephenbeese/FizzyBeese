@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, ProductCategory, FragranceCategory
+from .models import Product, ProductCategory, FragranceCategory, AdditionalImages
 
 
 class ProductForm(forms.ModelForm):
@@ -26,3 +26,9 @@ class ProductForm(forms.ModelForm):
         self.fields['product_categories'].choices = product_friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black'
+
+
+class AdditionalImagesForm(forms.ModelForm):
+    class Meta:
+        model = AdditionalImages
+        fields = ['image']

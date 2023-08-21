@@ -350,7 +350,10 @@ Product Details Page
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-
+.additional_image {
+    width: 150px;
+    /* height: 200px; */
+}
 
 /* Bag page */
 

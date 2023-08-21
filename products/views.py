@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, ProductCategory, FragranceCategory
-from .forms import ProductForm
+from .forms import ProductForm, AdditionalImagesForm
 
 
 def all_products(request):
@@ -137,3 +137,28 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
+
+def add_image(request, product_id):
+    """ Add additional images for specific products """
+    product = get_object_or_404(Product, pk=product_id)
+    additional_images = product.additionalimages_set.all()
+    if request.method == 'POST':
+        form = AdditionalImagesForm(request.POST, request.FILES)
+        if form.is_valid():
+            image_instance = form.save(commit=False)
+            image_instance.product_id = product
+            image_instance.save()
+            messages.success(request, 'Successfully added more images')
+            return redirect(reverse('product_detail', args=[product.id]))
+        else: 
+            messages.error(request, 'Failed to add additional images please ensure the form is valid.')
+    else:
+        form = AdditionalImagesForm()
+
+    template = 'products/add_image.html'
+    context = {
+        'form': form,
+        'product': product,
+        'additional_images': additional_images,
+    }
+    return render(request, template, context)
