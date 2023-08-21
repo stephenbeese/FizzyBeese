@@ -33,6 +33,10 @@ Add Image
                     {% for image in additional_images %}
                         <li class="list-inline-item">
                             <img class="additional_image rounded" src="/media/{{ image.image }}" alt="{{ product.name }}">
+                            <form method="post" action="{% url 'delete_additional_image' image.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </li>
                     {% endfor %}
                 </ul>

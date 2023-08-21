@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, ProductCategory, FragranceCategory
+from .models import Product, ProductCategory, FragranceCategory, AdditionalImages
 from .forms import ProductForm, AdditionalImagesForm
 
 
@@ -162,3 +162,12 @@ def add_image(request, product_id):
         'additional_images': additional_images,
     }
     return render(request, template, context)
+
+
+def delete_additional_image(request, image_id):
+    """ View to delete additional images"""
+    image = get_object_or_404(AdditionalImages, pk=image_id)
+    product_id = image.product_id.id
+    image.delete()
+    messages.success(request, 'Additional Image deleted!')
+    return redirect('product_detail', product_id=product_id)

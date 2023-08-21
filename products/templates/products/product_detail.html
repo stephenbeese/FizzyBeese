@@ -172,9 +172,9 @@
                         {% if request.user.is_superuser %}
                         <div class="row justify-content-center">
                             <div class="col-12">
-                                <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-success">Edit Product</a>
-                                <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger">Delete</a>
-                                <a href="{% url 'add_image' product.id %}" class="btn btn-outline-info">Add Image</a>
+                                <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-success">Edit Product Info</a>
+                                <a href="{% url 'delete_product' product.id %}" class="btn btn-outline-danger">Delete Product</a>
+                                <a href="{% url 'add_image' product.id %}" class="btn btn-outline-primary">Edit/Delete Images</a>
 
                             </div>
                         </div>
