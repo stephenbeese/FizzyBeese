@@ -23,7 +23,7 @@ Add Image
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-end">
-                    <a href="{% url 'products' %}" class="btn btn-outline-dark">Cancel</a>
+                    <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-dark">Cancel</a>
                     <button class="btn btn-dark" type="submit">Add Image</button>
                 </div>
             </form>
