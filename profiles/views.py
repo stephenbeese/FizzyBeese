@@ -39,7 +39,7 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     orders = profile.orders.all().order_by('-date')
-    testimonials = profile.testimonials.all().order-by('-created_on')
+    testimonials = profile.testimonials.all().order_by('-created_on')
     template = 'profiles/profile.html/'
     context = {
         'form': form,

@@ -67,6 +67,42 @@
             {% endif %}
         </div>
     </div>
+
+    {% if testimonials %}
+    <div class="row justify-content-center mt-4">
+        <div class="col-6">
+            <h3 class="text-center">My Testimonials</h3>
+            <table class="table table-sm">
+                <thead>
+                    <th>Name</th>
+                    <th>Body</th>
+                    <th>Created On</th>
+                    <th>Front Page?</th>
+                </thead>
+                <tbody>
+                    {% for testimonial in testimonials %}
+                    <tr>
+                        <td>{{ testimonial.name }}</td>
+                        <td class="mw-50">{{ testimonial.body }}</td>
+                        <td>{{ testimonial.created_on }}</td>
+                        <td class="text-center">
+                            {% if testimonial.approved %}
+                            <span class="text-success">
+                                <i class="fa-solid fa-check"></i>
+                            </span>
+                            {% else %}
+                            <span class="text-danger">
+                                <i class="fa-solid fa-xmark"></i>
+                            </span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
 {% endblock %}
 
 
