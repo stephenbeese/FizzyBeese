@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load bag_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block title %}
+Add Image
+{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2 class="text-center">Testimonials</h2>
+        </div>
+        <div class="col-10">
+            <form method="POST" action="{% url 'testimonial' %}" class="form mb-2">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-end">
+                    <a href="{% url 'testimonial' %}" class="btn btn-outline-dark">Cancel</a>
+                    <button class="btn btn-dark" type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
