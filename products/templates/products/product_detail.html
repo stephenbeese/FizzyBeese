@@ -12,11 +12,18 @@
 
             <div class="col-11 col-lg-7 text-center">
                 <div class="image-container">
-                    <img src="{{ product.image.url }}" class="product-detail-image mt-5 mb-2 img-fluid"
-                        alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
+                        {% if product.image %}
+                        <img src="{{ product.image.url }}" class="product-detail-image mt-5 mb-2 img-fluid border-dark" alt="{{ product.image }}">
+                        {% else %}
+                        <img src="/media/no-image.png" class="product-detail-image mt-5 mb-2 img-fluid border-dark" alt="">
+                        {% endif %}
                     <ul class="image-list mb-2">
                         <li class="active">
-                            <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.image }}">
+                            {% else %}
+                                <img src="/media/no-image.png" class="img-fluid" alt="">
+                            {% endif %}
                         </li>
                         {% for image in additional_images %}
                         <li>
