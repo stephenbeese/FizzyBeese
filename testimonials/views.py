@@ -31,5 +31,5 @@ class TestimonialView(View):
             testimonial.user_profile = profile
             testimonial.save()
         
-        return redirect(reverse('home'))
+        return redirect(reverse('profile'))
 

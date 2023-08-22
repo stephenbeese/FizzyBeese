@@ -4,25 +4,26 @@
 {% load bag_tools %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+<link rel="stylesheet" href="{% static 'testimonials/css/testimonials.css' %}">
 {% endblock %}
 
 {% block title %}
-Add Image
+Testimonial
 {% endblock %}
 
 {% block content %}
     <div class="row justify-content-center">
         <div class="col-12">
-            <h2 class="text-center">Testimonials</h2>
+            <h2 class="text-center mt-3">Testimonials</h2>
+            <p class="text-center">Let us know what you think by leaving us a review!</p>
         </div>
-        <div class="col-10">
+        <div class="col-10 col-md-8 col-lg-6">
             <form method="POST" action="{% url 'testimonial' %}" class="form mb-2">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-end">
-                    <a href="{% url 'testimonial' %}" class="btn btn-outline-dark">Cancel</a>
-                    <button class="btn btn-dark" type="submit">Add Product</button>
+                    <a href="{% url 'home' %}" class="btn btn-outline-dark">Cancel</a>
+                    <button class="btn btn-dark" type="submit">Submit</button>
                 </div>
             </form>
         </div>
