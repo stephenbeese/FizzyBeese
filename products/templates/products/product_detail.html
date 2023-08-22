@@ -12,20 +12,20 @@
 
             <div class="col-11 col-lg-7 text-center">
                 <div class="image-container">
-                    <img src="/media/{{ product.image }}" class="product-detail-image mt-5 mb-2 img-fluid"
+                    <img src="{{ product.image.url }}" class="product-detail-image mt-5 mb-2 img-fluid"
                         alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
                     <ul class="image-list mb-2">
                         <li class="active">
-                            <img class="img-fluid" src="/media/{{ product.image }}" alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
+                            <img class="img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
                         </li>
                         {% for image in additional_images %}
                         <li>
-                            <img class="img-fluid" src="/media/{{image.image}}" alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
+                            <img class="img-fluid" src="{{ image.image.url }}" alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
                         </li>
                         {% endfor %}
                         {% if product.label_image %}
                         <li>
-                            <img class="img-fluid" src="/media/{{ product.label_image }}" alt="{{ product.name }} ingredients label">
+                            <img class="img-fluid" src="{{ product.label_image.url }}" alt="{{ product.name }} ingredients label">
                         </li>
                         {% endif %}
                     </ul>

@@ -12,7 +12,6 @@ class ProductForm(forms.ModelForm):
             'fragrance_categories': 'Fragrance categories (Hold "ctrl" or "cmd" to select more than one)',
             'weight': 'Weight (g)',
             'sale_price': 'Sale Price (£)',
-
         }
 
     def __init__(self, *args, **kwargs):

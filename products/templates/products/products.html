@@ -77,11 +77,11 @@ Products
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card card-shadow border-dark">
                     <a href="{% url 'product_detail' product.id %}">
-                        <img src="/media/{{ product.image }}" class="card-img-top border-bottom border-dark" alt="{{ product.image }}">
+                        <!-- <img src="/media/{{ product.image }}" class="card-img-top border-bottom border-dark" alt="{{ product.image }}"> -->
+                        <img src="{{ product.image.url }}" class="card-img-top border-bottom border-dark" alt="{{ product.image }}">
                     </a>
                     <div class="card-body pb-0">
                         <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                            <!-- <p class="text-black mb-0 fs-5">{{ product.name }}</p> -->
                             <p class="text-black mb-0 fs-5">{{ product.name }}</p>
                         </a>
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
@@ -89,8 +89,7 @@ Products
                         <a class="text-decoration-none"
                             href="{% url 'products' %}?product_categories={{ product_category.name }}">
                             <p class="d-inline text-muted text-uppercase categories">
-                                {{ product_category.friendly_name }},
-                            </p>
+                                {{ product_category.friendly_name }} |</p>
                         </a>
                         {% endfor %}
                         {% for fragrance_category in product.fragrance_categories.all %}
@@ -98,7 +97,8 @@ Products
                             href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
                             <p class="d-inline text-muted text-uppercase categories">
                                 {{ fragrance_category.friendly_name }}
-                                {% if not forloop.last %}, {% endif %}
+                                {% if not forloop.last %}| {% endif %}
+
                             </p>
                         </a>
                         {% endfor %}

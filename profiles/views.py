@@ -22,6 +22,7 @@ def all_orders(request):
     }
     return render(request, template, context)
 
+
 @login_required
 def profile(request):
     """ Display the user's profile """
