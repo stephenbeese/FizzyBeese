@@ -44,6 +44,7 @@ Home
                         </div>
                         <div class="col-9 overflow-x-scroll d-flex">
                             {% for f in featured_products %}
+                            {% if f.is_hidden == False %}
                             <div class="row featured-products-container">
                                 <div class="col">
                                     <div class="row">
@@ -63,6 +64,7 @@ Home
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -74,6 +76,7 @@ Home
                         </div>
                         <div class="col-9 overflow-x-scroll d-flex pb-3">
                             {% for l in latest_products %}
+                            {% if l.is_hidden == False %}
                             <div class="row latest-products-container">
                                 <div class="col">
                                     <div class="row">
@@ -93,6 +96,7 @@ Home
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>

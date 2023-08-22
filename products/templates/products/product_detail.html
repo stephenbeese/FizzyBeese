@@ -122,7 +122,7 @@
                         {% endif %}
                         <p class="d-inline-block small text-muted mb-1">({{ product.weight }}g)</p>
 
-                        {% if product.stock_remaining == 0 %}
+                        {% if product.stock_remaining <= 0 %}
                         <p class="text-danger">This product is out of stock.</p>
                         {% elif product.stock_remaining <= 5 %}
                         <p class="text-danger">Only {{ product.stock_remaining }} left in stock!</p>
@@ -167,7 +167,7 @@
                                                 class="fa-solid fa-chevron-left fa-xl"></i></span>
                                         <span>Keep Shopping</span>
                                     </a>
-                                    {% if product.stock_remaining == 0 %}
+                                    {% if product.stock_remaining <= 0 %}
                                     <input type="submit" class="btn btn-danger my-3 mx-2" value="Out of Stock" disabled>
                                     {% else %}
                                     <input type="submit" class="btn btn-dark my-3 mx-2" value="Add to Bag">

@@ -49,6 +49,9 @@ def all_products(request):
         if 'is_clearance' in request.GET:
             products = products.filter(is_clearance=True)
 
+        # if 'is_hidden' in request.GET:
+        #     products = products.filter(is_hidden=True)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -72,6 +75,19 @@ def all_products(request):
 
     return render(request, 'products/products.html', context)
 
+
+def hidden_products(request):
+    """
+    Allows the admin to view all hidden products
+    and change the hidden status without the use
+    of the admin pannel
+    """
+    products = Product.objects.filter(is_hidden=True)
+    template = 'products/hidden_products.html'
+    context = {
+        'products': products,
+    }
+    return render(request, template, context)
 
 def product_detail(request, product_id):
     """ A view to render individual product details """

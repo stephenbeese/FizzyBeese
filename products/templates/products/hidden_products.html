@@ -63,7 +63,7 @@ Products
             {% if products|length == 0 %}
             <div class="row">
                 <div class="col-6 offset-3 text-center">
-                    <h3 class="my-3 fw-bold">Oops, we don't have what you're looking for!</h3>
+                    <h3 class="my-3 fw-bold">No hidden products!</h3>
                     <a href="{% url 'products' %}" class="btn btn-outline-dark">
                         <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
                         <span>Go Back</span>
@@ -73,7 +73,6 @@ Products
             {% endif %}
 
             {% for product in products %}
-            {% if product.is_hidden == False %}
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card card-shadow border-dark">
                     <a href="{% url 'product_detail' product.id %}">
@@ -144,7 +143,6 @@ Products
                     </div>
                 </div>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
     </div>
