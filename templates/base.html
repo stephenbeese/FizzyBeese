@@ -100,6 +100,7 @@
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                             <a href="{% url 'hidden_products' %}" class="dropdown-item">Hidden Products</a>
+                            <a href="{% url 'products' %}?stock_remaining" class="dropdown-item">Products (by stock)</a>
                             <a href="{% url 'all_orders' %}" class="dropdown-item">Customer Orders</a>
                             {% endif %}
                             <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>

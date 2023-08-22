@@ -138,6 +138,7 @@ Products
                                 <div class="col-12 mt-2 p-0 fw-bold">
                                     <a href="{% url 'edit_product' product.id %}" class="text-success mx-1">Edit Product</a>
                                     <a href="{% url 'delete_product' product.id %}" class="text-danger mx-1">Delete</a>
+                                    <p class="small text-muted mx-1 mb-0">Stock Remaining ({{ product.stock_remaining }})</p>
                                 </div>
                             </div>
                         {% endif %}

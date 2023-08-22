@@ -49,8 +49,8 @@ def all_products(request):
         if 'is_clearance' in request.GET:
             products = products.filter(is_clearance=True)
 
-        # if 'is_hidden' in request.GET:
-        #     products = products.filter(is_hidden=True)
+        if 'stock_remaining' in request.GET:
+            products = products.order_by('stock_remaining')
 
         if 'q' in request.GET:
             query = request.GET['q']
