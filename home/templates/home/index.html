@@ -142,8 +142,15 @@ Home
     <div class="home-image">
         <div class="row">
             <div class="col-8 offset-2 w-80 mt-5 bg-white testimonials-container">
-                <h4 class="text-center mt-3">Don't just take our word for it...</h4>
-                <hr class="mx-auto mt-0">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <h4 class="text-center mt-3">Don't just take our word for it...</h4>
+                        <hr class="mx-auto mt-0">
+                    </div>
+                    <div class="col-10">
+                        {% include 'includes/testimonials.html' %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

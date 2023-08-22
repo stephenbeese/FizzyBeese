@@ -1,0 +1,36 @@
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        {% for testimonial in testimonials %}
+        <div class="carousel-item active">
+            <img src="/media/testimonial-background.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <p class="text-dark">{{ testimonial.body }}</p>
+                <hr class="mx-auto mt-0">
+                <p class="text-dark mb-0 fw-bold">By {{ testimonial.name }}</p>
+                <p class="small text-muted">on {{ testimonial.created_on }}</p>
+                <p class="small text-dark m-0">Shopped with us before?
+                    <a class="small text-black bold-underline-hover m-0" href="#">Leave us a review!</a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon text-dark" aria-hidden="true"><i
+                class="fa-solid fa-chevron-left"></i></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon text-dark" aria-hidden="true"><i
+                class="fa-solid fa-chevron-right"></i></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

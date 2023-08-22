@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bag',
     'checkout',
     'profiles',
+    'testimonials',
 
     # Other
     'crispy_forms',
@@ -89,6 +90,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.contexts.bag_contents',
                 'home.contexts.offers',
+                'testimonials.contexts.testimonial_context',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',

@@ -236,6 +236,37 @@ a.icon {
     border-top: 3px solid black;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: unset !important;
+    z-index: 9999;
+}
+
+.carousel-inner,
+.carousel-item,
+.carousel-item > img {
+    max-height: 450px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 25%;
+    border: 1px solid black;
+    padding: 20px;
+    min-height: 210px;
+}
+
+/* .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Adjust this value if needed */
+}
+
+.carousel-caption {
+    text-align: center;
+} */
+
 /* Location Section */
 
 .location-container {
