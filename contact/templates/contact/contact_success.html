@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact Success
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-10">
+        <h2 class="text-center mt-3 fw-bold">Success!</h2>
+        <div class="text-center mt-2">
+            <p class="mb-1">Thank you for getting in touch!</p>
+            <p>We will email you back at <strong>{{ contact.email }}</strong> as soon as we can!</p>
+        </div>
+    </div>
+    <div class="col-10 col-md-8 col-lg-6">
+        <h4 class="fw-bold">Your Enquiry:</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Your Name:</strong> {{ contact.name }}</li>
+            <li class="list-group-item"><strong>Your Email:</strong> {{ contact.email }}</li>
+            <li class="list-group-item"><strong>Subject:</strong> {{ contact.subject }}</li>
+            <li class="list-group-item"><strong>Message:</strong> {{ contact.body }}</li>
+        </ul>
+        <!-- <div class="text-center mt-4">
+            <p class="mb-1">Thank you for getting in touch!</p>
+            <p>We will email you back at <strong>{{ contact.email }}</strong> as soon as we can!</p>
+        </div> -->
+    </div>
+</div>
+{% endblock %}

@@ -463,6 +463,10 @@ Product Details Page
     max-width: 100vw !important;
 }
 
+.form-control {
+    border: 1px solid black;
+}
+
 
 /* 
     Media Queries
