@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.views import View
 from django.contrib import messages
 
+from .models import Event
 from .forms import EventForm
 
 
@@ -31,3 +32,13 @@ class CreateEvent(View):
                 form.save()
                 messages.success(request, 'Event successfully added!')
                 return redirect('home')
+
+
+class Events(View):
+    def get(self, request):
+        events = Event.objects.all()
+        template = 'events/events_list.html'
+        context = {
+            'events': events,
+        }
+        return render(request, template, context)

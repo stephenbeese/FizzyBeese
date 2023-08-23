@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Events
+{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2 class="text-center mt-3 fw-bold">Events</h2>
+            <p class="text-center">View our upcoming events!</p>
+        </div>
+        <div class="col-10 col-md-8 col-lg-6">
+            <table class=" table table-responsive borderless mx-auto mt-4">
+                <thead>
+                    <tr>
+                        <th scope="col">What?</th>
+                        <th scope="col"></th>
+                        <th scope="col">Where?</th>
+                        <th scope="col">When?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for event in events %}
+                    <tr>
+                        <td class="fw-bold">{{ event.title }}</td>
+                        <td>{{ event.description }}</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                <li>{{ event.street_address1 }}</li>
+                                {% if street_address2 %}<li>{{ event.street_address2 }}</li>{% endif %}
+                                <li>{{ event.town_or_city }}</li>
+                                {% if county %}<li>{{ event.county }}</li>{% endif %}
+                                <li>{{ event.postcode }}</li>
+                            </ul>
+                        </td>
+                        <td>{{ event.start_time }} - {{ event.end_time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

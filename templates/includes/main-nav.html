@@ -62,29 +62,13 @@
             </div>
         </li>
         {% else %}{% endif %}
-
-        <!-- <li class="nav-item">
-            <a href="#" class="nav-link" id="about-us-link">
-                About Us
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link" id="about-us-link">
-                Contact
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link" id="about-us-link">
-                Events
-            </a>
-        </li> -->
         <li class="nav-item dropdown">
             <a href="#" class="nav-link" id="offers-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="offers-link">
                 <a href="#" class="dropdown-item">Our Story</a>
-                <a href="#" class="dropdown-item">Events</a>
+                <a href="{% url 'events_list' %}" class="dropdown-item">Events</a>
                 <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
             </div>
         </li>
