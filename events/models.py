@@ -9,9 +9,17 @@ class Event(models.Model):
     description = models.TextField(blank=False, null=False)
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    location = models.CharField(max_length=256, blank=False, null=False)
+    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address2 = models.CharField(max_length=80, null=True, blank=True)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    county = models.CharField(max_length=80, null=True, blank=True)
+    postcode = models.CharField(max_length=20, null=False, blank=False)
     organiser = models.CharField(max_length=256, blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        """ Orders events by date """
+        ordering = ['-start_time']
+
     def __str__(self):
-        return self.title
+        return f'{self.title}'

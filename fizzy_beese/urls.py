@@ -29,8 +29,5 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('testimonials/', include('testimonials.urls')),
     path('contact/', include('contact.urls')),
+    path('events/', include('events.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
