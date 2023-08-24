@@ -27,8 +27,6 @@ class ProductForm(forms.ModelForm):
 
         self.fields['fragrance_categories'].choices = fragrance_friendly_names
         self.fields['product_categories'].choices = product_friendly_names
-        for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'border-black'
 
 
 class AdditionalImagesForm(forms.ModelForm):

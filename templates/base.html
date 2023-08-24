@@ -88,14 +88,14 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-inline">
                 <ul class="list-inline list-unstyled text-center text-lg-end my-0 me-3">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                        <a class="nav-link d-none d-lg-block" href="#" id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-xl"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0 me-3" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0 me-3" aria-labelledby="user-options-desktop">
                             {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                             <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
@@ -150,17 +150,17 @@
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
-            {% with message.level as level %}
-                {% if level == 40 %}
-                    {% include 'includes/toasts/toast_error.html' %}
-                {% elif level == 30 %}
-                    {% include 'includes/toasts/toast_warning.html' %}
-                {% elif level == 25 %}
-                    {% include 'includes/toasts/toast_success.html' %}
-                {% else %}
-                    {% include 'includes/toasts/toast_info.html' %}
-                {% endif %}
-            {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
     </div>
     {% endif %}
@@ -211,7 +211,7 @@
     </footer>
     {% block postloadjs %}
     {% endblock %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>

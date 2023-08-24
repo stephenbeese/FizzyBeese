@@ -149,9 +149,9 @@
                                                     </span>
                                                 </button>
                                             </div>
-                                            <input class="form-control qty_input id_qty_{{ product.id }} rounded" type="number"
-                                                name="quantity" value="1" min="1" max="{{ product.stock_remaining }}"
-                                                data-item_id="{{ product.id }}">
+                                            <input class="form-control qty_input id_qty_{{ product.id }} rounded"
+                                                type="number" name="quantity" value="1" min="1"
+                                                max="{{ product.stock_remaining }}" data-item_id="{{ product.id }}">
                                             <div class="input-group-append">
                                                 <button
                                                     class="increment-qty btn btn-black increment-qty_{{ product.id }} border border-0"
@@ -198,24 +198,26 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        {% endblock %}
+{% endblock %}
 
-        {% block postloadjs %}
-        <script type="text/javascript">
-            const imageMain = document.querySelector(".image-container img")
-            const imageList = document.querySelector(".image-list");
+{% block postloadjs %}
+<script>
+    const imageMain = document.querySelector(".image-container img")
+    const imageList = document.querySelector(".image-list");
 
-            Array.from(imageList.children).forEach((imageListElm, i, list) => {
-                imageListElm.addEventListener('click', function () {
-                    const newSrc = imageListElm.querySelector('img').src;
-                    imageMain.src = newSrc;
+    Array.from(imageList.children).forEach((imageListElm, i, list) => {
+        imageListElm.addEventListener('click', function () {
+            const newSrc = imageListElm.querySelector('img').src;
+            imageMain.src = newSrc;
 
-                    list.forEach(image => image.classList.remove('active'));
-                    imageListElm.classList.add('active');
-                });
-            });
-        </script>
-        {{ block.super }}
-        {% include 'includes/quantity_input_script.html' %}
-        {% endblock %}
+            list.forEach(image => image.classList.remove('active'));
+            imageListElm.classList.add('active');
+        });
+    });
+</script>
+{{ block.super }}
+{% include 'includes/quantity_input_script.html' %}
+{% endblock %}

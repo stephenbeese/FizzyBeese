@@ -78,7 +78,8 @@ Products
                 <div class="card card-shadow border-dark">
                     <a href="{% url 'product_detail' product.id %}">
                         {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top border-bottom border-dark" alt="{{ product.image }}">
+                        <img src="{{ product.image.url }}" class="card-img-top border-bottom border-dark"
+                            alt="{{ product.image }}">
                         {% else %}
                         <img src="/media/no-image.png" class="card-img-top border-bottom border-dark" alt="">
                         {% endif %}
@@ -125,22 +126,24 @@ Products
                                     {% csrf_token %}
                                     <input type="number" name="quantity" value="1" class="d-none">
                                     {% if product.stock_remaining <= 0 %}
-                                        <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock" disabled>
+                                    <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock"
+                                        disabled>
                                     {% else %}
-                                        <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag">
+                                    <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag">
                                     {% endif %}
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>
                             </div>
                         </div>
                         {% if request.user.is_superuser %}
-                            <div class="row p-0">
-                                <div class="col-12 mt-2 p-0 fw-bold">
-                                    <a href="{% url 'edit_product' product.id %}" class="text-success mx-1">Edit Product</a>
-                                    <a href="{% url 'delete_product' product.id %}" class="text-danger mx-1">Delete</a>
-                                    <p class="small text-muted mx-1 mb-0">Stock Remaining ({{ product.stock_remaining }})</p>
-                                </div>
+                        <div class="row p-0">
+                            <div class="col-12 mt-2 p-0 fw-bold">
+                                <a href="{% url 'edit_product' product.id %}" class="text-success mx-1">Edit Product</a>
+                                <a href="{% url 'delete_product' product.id %}" class="text-danger mx-1">Delete</a>
+                                <p class="small text-muted mx-1 mb-0">Stock Remaining ({{ product.stock_remaining }})
+                                </p>
                             </div>
+                        </div>
                         {% endif %}
                     </div>
                 </div>
@@ -154,7 +157,7 @@ Products
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
