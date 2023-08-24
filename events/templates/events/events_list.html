@@ -12,38 +12,53 @@ Events
             <p class="text-center">View our upcoming events!</p>
         </div>
         <div class="col-11 col-md-8 col-lg-6">
-            <table class=" table table-responsive borderless mx-auto mt-4">
-                <thead>
-                    <tr>
-                        <th scope="col">What?</th>
-                        <th scope="col"></th>
-                        <th scope="col">Where?</th>
-                        <th scope="col">When?</th>
-                        {% if user.is_superuser %}
-                        <th scope="col">Delete?</th>
-                        {% endif %}
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for event in events %}
-                    <tr>
-                        <td class="fw-bold">{{ event.title }}</td>
-                        <td>{{ event.description }}</td>
-                        <td>
-                            <ul class="list-unstyled">
-                                <li>{{ event.street_address1 }},</li>
-                                {% if street_address2 %}<li>{{ event.street_address2 }},</li>{% endif %}
-                                <li>{{ event.town_or_city }},</li>
-                                {% if county %}<li>{{ event.county }},</li>{% endif %}
-                                <li>{{ event.postcode }}</li>
-                            </ul>
-                        </td>
-                        <td>{{ event.start_time }} - {{ event.end_time }}</td>
-                        <td><a href="" class="text-danger bold-underline-hover">Delete</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            {% if events|length == 0 %}
+                <div class="row">
+                    <div class="col-6 offset-3 text-center">
+                        <h3 class="my-3 fw-bold">No upcoming events...<br>Check back later!</h3>
+                        <a href="{% url 'home' %}" class="btn btn-outline-dark">
+                            <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
+                            <span>Go Back</span>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <table class=" table table-responsive borderless mx-auto mt-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">What?</th>
+                            <th scope="col"></th>
+                            <th scope="col">Where?</th>
+                            <th scope="col">When?</th>
+                            {% if user.is_superuser %}
+                            <th scope="col">Delete?</th>
+                            {% endif %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for event in events %}
+                        <tr>
+                            <td class="fw-bold">{{ event.title }}</td>
+                            <td>{{ event.description }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    <li>{{ event.street_address1 }},</li>
+                                    {% if street_address2 %}<li>{{ event.street_address2 }},</li>{% endif %}
+                                    <li>{{ event.town_or_city }},</li>
+                                    {% if county %}<li>{{ event.county }},</li>{% endif %}
+                                    <li>{{ event.postcode }}</li>
+                                </ul>
+                            </td>
+                            <td>{{ event.start_time }} - {{ event.end_time }}</td>
+                            {% if user.is_superuser %}
+                            <td><a href="{% url 'delete_event' event.id %}" class="text-danger bold-underline-hover">Delete</a></td>
+                            <td><a href="{% url 'edit_event' event.id %}" class="text-success bold-underline-hover">Edit</a></td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -1,7 +1,5 @@
-from django.shortcuts import redirect
 from django import forms
 from .models import Event
-from django.contrib import messages
 
 
 class EventForm(forms.ModelForm):
