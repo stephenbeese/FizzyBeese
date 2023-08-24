@@ -15,8 +15,10 @@ class ProductForm(forms.ModelForm):
             'sale_price': 'Sale Price (£)',
         }
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
-    label_image = forms.ImageField(label='Label Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(label='Image', required=False,
+                             widget=CustomClearableFileInput)
+    label_image = forms.ImageField(label='Label Image', required=False,
+                                   widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
