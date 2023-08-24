@@ -6,7 +6,7 @@
                 <p class="my-0">Search</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+        <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0 search-bar" aria-labelledby="mobile-search">
             <form class="form" method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -28,13 +28,14 @@
                 <p class="my-0">My Account</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+        <div class="dropdown-menu border-0 account-dropdown" aria-labelledby="user-options">
             {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
-                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                    <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
                     <a href="{% url 'hidden_products' %}" class="dropdown-item">Hidden Products</a>
                     <a href="{% url 'products' %}?stock_remaining" class="dropdown-item">Products (by stock)</a>
                     <a href="{% url 'all_orders' %}" class="dropdown-item">Customer Orders</a>
+                    <a href="{% url 'create_event' %}" class="dropdown-item">Add Event</a>
                 {% endif %}
                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
