@@ -51,19 +51,19 @@ Shopping Bag
                                 <div class="form-group">
                                     <div class="input-group input-group-{{ item.item_id }}">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-black" data-item_id="{{ item.item_id }}"
-                                                id="decrement-qty_{{ item.item_id }}">
+                                            <button class="decrement-qty btn btn-sm btn-black decrement-qty_{{ item.item_id }} border border-0" 
+                                                data-item_id="{{ item.item_id }}">
                                                 <span>
                                                     <i class="fa-solid fa-minus fa-sm"></i>
                                                 </span>
                                             </button>
                                         </div>
-    
-                                        <input class="form-control qty-input" type="number" name="quantity" value="{{ item.quantity }}"
-                                            min="1" max="{{ item.product.stock_remaining }}" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                        <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }} rounded" type="number"
+                                            name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock_remaining }}"
+                                            data-item_id="{{ item.item_id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-black" data-item_id="{{ item.item_id }}"
-                                                id="increment-qty_{{ item.item_id }}">
+                                            <button class="increment-qty btn btn-sm btn-black increment-qty_{{ item.item_id }} border border-0"
+                                                data-item_id="{{ item.item_id }}">
                                                 <span>
                                                     <i class="fa-solid fa-plus fa-sm"></i>
                                                 </span>
@@ -73,10 +73,9 @@ Shopping Bag
                                 </div>
                             </form>
                             <a class="update-link text-success"><small>Update</small></a>
-                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            <a class="remove-item text-danger float-end" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                         </td>
                         <td>
-                            <!-- Placeholder for subtotal -->
                             {% if item.product.sale_price %}
                                 <p class="fw-bold fs-5">£{{ item.product.sale_price | calculate_subtotal:item.quantity }}</p>
                             {% else %}
