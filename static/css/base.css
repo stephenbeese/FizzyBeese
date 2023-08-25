@@ -332,8 +332,25 @@ a.icon {
 }
 
 
+/*
+    About Page
+*/
+
+.about-text {
+    max-width: 80%;
+    min-height: 100%;
+    font-size: 1.1em;
+}
+
+.about-image {
+    max-height: fit-content;
+    max-width: 80%;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+}
+
+
 /* 
-All Products Page 
+    All Products Page 
 */
 
 .card-container {
