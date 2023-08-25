@@ -169,7 +169,7 @@ a.icon {
     background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
     background-size: cover;
     min-height: fit-content;
-    max-height: 75vh;
+    /* max-height: 75vh; */
     width: 100vw;
 }
 
@@ -204,7 +204,7 @@ a.icon {
 /* Our Products section */
 
 .our-products {
-    height: 80vh;
+    max-height: fit-content;
 }
 
 .our-products h2 {
@@ -221,10 +221,40 @@ a.icon {
     border-top: 3px solid black;
 }
 
+.product-home-div {
+    height: 35vw;
+}
 
-/* Home page products section */
+.product-home-image {
+    position: relative;
+    max-width: 35vw;
+}
 
+.product-overlay {
+    position: relative;
+    bottom: 100%;
+    max-width: 35vw;
+    height: 35vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
 
+.product-overlay hr {
+    color: white;
+}
+
+.product-overlay hr, .product-overlay p {
+    margin: 10px;
+  }
+
+.product-home-div:hover .product-overlay {
+    display: flex; /* Show the overlay on hover */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
 
 
 /* Our values section */
@@ -243,7 +273,8 @@ a.icon {
 /* Testimonials */
 
 .testimonials-container {
-    height: 80%;
+    /* height: 80%; */
+    min-height: fit-content;
 }
 
 .testimonials-container hr {
@@ -274,13 +305,14 @@ a.icon {
 
 .carousel-caption {
     text-align: center;
-} */
+}
+
 
 /* Location Section */
 
 .location-container {
-    height: 70vh;
-    border: 2px solid black;
+    height: fit-content;
+    border-top: 2px solid black;
 }
 
 .location-container hr {
@@ -499,6 +531,18 @@ Product Details Page
     .description {
         min-height: 145px;
     }
+
+    .product-home-div {
+        height: 25vw;
+    }
+
+    .product-home-image {
+        max-width: 25vw;
+    }
+    .product-overlay {
+        max-width: 25vw;
+        height: 25vw;
+    }
 }
 
 @media (min-width: 1198px) {
@@ -544,8 +588,8 @@ Product Details Page
     }
 
     .testimonials-container {
-        min-height: fit-content;
-        max-height: 60vh;
+        /* min-height: fit-content;
+        max-height: 60vh; */
         padding-bottom: 25px;
     }
 
@@ -571,31 +615,4 @@ Product Details Page
     .image-container {
         max-width: 60vw;
     }
-}
-
-
-@media (max-width: 600px) {
-    /* .carousel-caption {
-        position: absolute;
-        bottom: unset;
-        top: 0;
-        border: 1px solid black;
-        padding: 10px;
-        height: inherit;
-    }
-
-    .testimonials-container {
-        height: 60vh;
-    }
-
-    .carousel-item,
-    .carousel-item > img {
-        max-height: unset;
-        height: 390px;
-    }
-
-    .testimonial-body {
-        font-size: 0.9em;
-        color: red;
-    } */
 }
