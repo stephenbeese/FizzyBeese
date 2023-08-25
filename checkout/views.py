@@ -1,20 +1,24 @@
+import json
+
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.views import View
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
-from .forms import OrderForm
-from .models import Order, OrderLineItem
+import stripe
 
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
 
-import stripe
-import json
+from .forms import OrderForm
+from .models import Order, OrderLineItem
+
+
 
 
 @require_POST
@@ -38,8 +42,7 @@ class CheckoutView(View):
     """
     A view to render the checkout page
     """
-
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         stripe_public_key = settings.STRIPE_PUBLIC_KEY
         stripe_secret_key = settings.STRIPE_SECRET_KEY
         bag = request.session.get('bag', {})

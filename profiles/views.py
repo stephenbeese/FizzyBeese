@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -56,16 +56,21 @@ def order_history(request, order_number):
     Displays a users past order using
     the checkout success template
     """
-    order = get_object_or_404(Order, order_number=order_number)
-    messages.info(request, (
-        f'This is a past confirmation for order number {order_number}.'
-        'A confirmation email was sent on the order date.'
-    ))
+    if request.user.is_authenticated:
+        order = get_object_or_404(Order, order_number=order_number)
+        messages.info(request, (
+            f'This is a past confirmation for order number {order_number}.'
+            'A confirmation email was sent on the order date.'
+        ))
 
-    template = 'checkout/checkout_success.html'
-    context = {
-        'order': order,
-        'from_profile': True,
-    }
+        template = 'checkout/checkout_success.html'
+        context = {
+            'order': order,
+            'from_profile': True,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
+    else:
+        messages.error(request, 'You need to be logged in to view this page, \
+                       please login and try again!')
+        return redirect('home')
