@@ -112,9 +112,14 @@
   web: gunicorn fizzybeese.wsgi:application
 ```
 5. Log into Heroku and navigate to the config vars in the settings tab of your app. Add the config variable **DISABLE_COLLECTSTATIC** to **1**
-6. In your settings.py file add your Heroku app to the allowed hosts. This will be in the form ```your-app-name.herokuapp.com``` for example ```fizzybeese.herokuapp.com```
-You can add 'localhost' here also to allow you it to still work in Gitpod.
-7. You can then attempt to deploy our app by adding and commiting our changes.
+6. While on Heroku you can connect to your GitHub repository by going to the "Deploy" tab. Under the heading "Deployment Method" select GitHub. Once connected, under the heading "App connected to GitHub" select the relevant repository.
+7. Back in your project's settings.py file, add your Heroku app to the allowed hosts. This will be in the settings tab under the "Domains" heading. You can add 'localhost' here also to allow you it to still work in Gitpod. Your ALLOWED_HOSTS should look something like this.
+```
+  ALLOWED_HOSTS = ['fizzybeese-52707759b9ba.herokuapp.com', 'localhost']
+```
+
+
+8. You can then attempt to deploy our app by adding and commiting our changes.
 
  
 
