@@ -1,1 +1,1 @@
-web: gunicorn fizzybeese.wsgi:application
+web: gunicorn fizzy_beese.wsgi:application
