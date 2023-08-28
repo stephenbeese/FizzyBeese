@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
@@ -82,8 +83,8 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 d-none d-lg-inline">
                 <ul class="list-inline list-unstyled text-center text-lg-end my-0 me-3">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link d-none d-lg-block" href="#" id="user-options-desktop" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="nav-link d-none d-lg-block" href="#" id="user-options-desktop" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-xl"></i></div>
                                 <p class="my-0">My Account</p>
@@ -170,14 +171,6 @@
     <footer>
         <div class="row w-100 bg-white m-0">
             <div class="col-3">
-                <ul class="list-unstyled ms-3">
-                    <li>
-                        <a href="{% url 'contact' %}">Contact Us</a>
-                    </li>
-                    <li>
-                        <a href="">Privacy Policy</a>
-                    </li>
-                </ul>
             </div>
             <div class="col-6">
                 <ul class="list-inline list-unstyled text-center align-middle">
@@ -187,19 +180,75 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="https://www.instagram.com/fizzybeese/?hl=en-gb" class="icon" target="_blank" rel="noopener">
+                        <a href="https://www.instagram.com/fizzybeese/?hl=en-gb" class="icon" target="_blank"
+                            rel="noopener">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="https://www.tiktok.com/@fizzybeese?lang=en" class="icon" target="_blank" rel="noopener">
+                        <a href="https://www.tiktok.com/@fizzybeese?lang=en" class="icon" target="_blank"
+                            rel="noopener">
                             <i class="fa-brands fa-tiktok"></i>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="col-3">
-                <!-- placeholder for mailing list -->
+                <ul class="list-unstyled ms-3 float-end">
+                    <li>
+                        <a href="{% url 'contact' %}" class="text-dark bold-underline-hover">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="https://www.privacypolicygenerator.info/live.php?token=nLoC05ewR9sJgLUQXLNBnvLkLCunpY0v"
+                            target="_blank" rel="noopener" class="text-dark bold-underline-hover">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <div id="mc_embed_shell">
+                    <div id="mc_embed_signup">
+                        <form
+                            action="https://herokuapp.us21.list-manage.com/subscribe/post?u=72032d29e54dcd1838f1c495c&amp;id=0211e301a1&amp;f_id=00d9dfe6f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <h2>Subscribe to our Mailing List</h2>
+                                <p>For all the latest offers!</p>
+                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                                <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span
+                                            class="asterisk">*</span></label><input type="email" name="EMAIL"
+                                        class="required email" id="mce-EMAIL" required="" value=""><span
+                                        id="mce-EMAIL-HELPERTEXT" class="helper_text"></span></div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    /* real people should not fill this in and expect good things - do not remove this
+                                    or risk form bot signups */
+                                    <input type="text" name="b_72032d29e54dcd1838f1c495c_0211e301a1" tabindex="-1"
+                                        value="">
+                                </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"
+                                            value="Subscribe">
+                                        <p style="margin: 0px auto;"><a href="http://eepurl.com/iyBTtk"
+                                                title="Mailchimp - email marketing made easy and fun"><span
+                                                    style="display: inline-block; background-color: transparent; border-radius: 4px;"><img
+                                                        class="refferal_badge"
+                                                        src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                                                        alt="Intuit Mailchimp"
+                                                        style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </footer>
@@ -209,6 +258,29 @@
         $('.toast').toast('show');
     </script>
     <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>
+
+    <!-- Mail Chimp Scripts -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
+    </script>
+    <script type="text/javascript">
+        (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+            fnames[1] = 'FNAME';
+            ftypes[1] = 'text';
+            fnames[2] = 'LNAME';
+            ftypes[2] = 'text';
+            fnames[3] = 'ADDRESS';
+            ftypes[3] = 'address';
+            fnames[4] = 'PHONE';
+            ftypes[4] = 'phone';
+            fnames[5] = 'BIRTHDAY';
+            ftypes[5] = 'birthday';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
 </body>
 
 </html>
