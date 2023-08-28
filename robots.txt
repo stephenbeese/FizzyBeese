@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Sitemap: https://fizzybeese-52707759b9ba.herokuapp.com/sitemap.xml

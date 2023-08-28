@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/bag/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=product_categories&amp;direction=asc</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=fragrance_categories&amp;direction=asc</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=uploaded_on&amp;direction=desc</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=price&amp;direction=asc&amp;product_categories=bath_bomb</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=uploaded_on&amp;direction=asc&amp;product_categories=bath_bomb</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=fragrance_categories&amp;direction=asc&amp;product_categories=bath_bomb</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=name&amp;direction=asc&amp;product_categories=bath_bomb</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=price&amp;direction=asc&amp;product_categories=wax_melt</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=uploaded_on&amp;direction=asc&amp;product_categories=wax_melt</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=fragrance_categories&amp;direction=asc&amp;product_categories=wax_melt</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sort=name&amp;direction=asc&amp;product_categories=wax_melt</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=candle</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=wax_burner</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=vacuum_disc</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=soap_sponge</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=carpet_freshner</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=car_freshner</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?sale</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?is_clearance</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/about/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/events/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/contact/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=bath_bomb</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?product_categories=wax_melt</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/188/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/187/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/186/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/185/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/184/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/183/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/182/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/181/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/180/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/179/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/83/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=sweet_shop</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/84/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/88/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/93/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/95/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=fruity</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/96/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/75/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=Dupes</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/76/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/77/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/78/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/79/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/80/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/81/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/82/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/85/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=aftershave</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/86/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/87/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/91/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/92/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/143/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/144/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/145/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/146/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/147/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/148/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/149/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/150/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=laundry</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/151/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/152/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/153/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=spa</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/154/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/155/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/156/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/?fragrance_categories=perfume</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/157/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/158/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/159/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/160/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/161/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/162/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/163/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/164/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/165/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/166/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/167/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/168/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/169/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/170/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/171/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/172/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/173/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/174/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/175/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/176/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/177/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/178/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/89/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/90/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/73/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/74/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://fizzybeese-52707759b9ba.herokuapp.com/products/94/</loc>
+  <lastmod>2023-08-28T19:52:30+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
