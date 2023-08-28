@@ -492,6 +492,16 @@ Product Details Page
 }
 
 
+/* 404 page */
+
+.error-image {
+    background: url(/media/bath-bomb-home.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    height: 75vh;
+    width: 100vw;
+}
+
+
 /* 
     Reusable classes
 */
