@@ -28,7 +28,7 @@ Checkout Success
         {% for item in order.lineitems.all %}
         <div class="row justify-content-start">
             <div class="col-6 col-xl-4 mb-1">
-                <img class="rounded float-end w-100 checkout-image" src="/media/{{ item.product.image }}" alt="">
+                <img class="rounded float-end w-100 checkout-image" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="">
             </div>
             <div class="col-5">
                 <div class="ms-3">

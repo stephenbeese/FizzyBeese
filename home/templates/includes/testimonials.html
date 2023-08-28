@@ -10,7 +10,7 @@
     <div class="carousel-inner">
         {% for testimonial in testimonials %}
         <div class="carousel-item active">
-            <img src="/media/testimonial-background.png" class="d-block w-100" alt="...">
+            <img src="{{ MEDIA_URL }}testimonial-background.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-md-block">
                 <p class="text-dark testimonial-body">{{ testimonial.body }}</p>
                 <hr class="mx-auto mt-0 d-none d-sm-block">

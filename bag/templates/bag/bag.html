@@ -31,7 +31,7 @@ Shopping Bag
                     {% for item in bag_items %}
                     <tr>
                         <td class="w-25">
-                            <img class="img-fluid rounded w-75" src="/media/{{ item.product.image }}" alt="">
+                            <img class="img-fluid rounded w-75" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="">
                         </td>
                         <td class="p-3">
                             <p class="text-black mb-1 fs-5"><strong>{{ item.product.name }}</strong></p>

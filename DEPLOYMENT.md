@@ -324,5 +324,7 @@ ensuring it is the same value as is in your config variables.
 ```
 2. We can now add and commit that then push to GitHub
 3. Now go to S3 and under your app create a new folder called media and click create folder.
-4. Inside of this folder click upload, add files and then select all the product images.
+4. Inside of this folder click add files and then select all the product images.
+5. Under permissions you will find an Access Control List (ACL) heading. You will need to select the Grant public-read access button and confirm you understand the risks.
+6. You can now scroll to the bottom of the page and click upload.
 
