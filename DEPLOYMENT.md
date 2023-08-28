@@ -328,3 +328,21 @@ ensuring it is the same value as is in your config variables.
 5. Under permissions you will find an Access Control List (ACL) heading. You will need to select the Grant public-read access button and confirm you understand the risks.
 6. You can now scroll to the bottom of the page and click upload.
 
+### 9. Django admin
+- You will need to verify your superuser's email address in your deployed app.
+- To do this go to the admin panel and log in using your superuser credentials you created earlier.
+- Go to email addresses click on your email and check the verified and primary checkboxes and click save
+- **Please note:** If you do not see your email here, you will first have to attempt to login and then it will show up in the admin panel's email address section above.
+
+### 10. Set up Stripe keys and webhook endpoint
+1. Navigate to Stripe and log in.
+2. Go to the developers section and go onto the API keys tab.
+3. Copy your publishable key and create a new config var in Heroku called STRIPE_PUBLIC_KEY and paste in the publishable key as the value.
+4. Do the same with the secret key and name it STRIPE_SECRET_KEY and again, paste in the value of the secret key.
+5. To set up the new endpoint, navigate to Webhooks in the developers menu and click add endpoint.
+6. Copy your Heroku app URL to the Endpoint URL text box and add /checkout/wh/ to the end of it.
+7. Click Select events then Select all events and click the Add events button at the bottom.
+8. You can then click Add endpoint.
+9. You can now reveal your Signing secret and copy it to your clipboard.
+10. Back in Heroku you need to add that to your config variables with the key STRIPE_WH_SECRET.
+- **PLEASE NOTE:** These Stripe variables need to match the variable names used in your settings.py file. If you have used different ones, please ensure they match in Heroku.
