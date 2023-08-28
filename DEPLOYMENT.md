@@ -298,7 +298,30 @@ ensuring it is the same value as is in your config variables.
   class MediaStorage(S3Boto3Storage):
       location = settings.MEDIAFILES_LOCATION
 ```
+10. Back in our settings.py file add the following settings:
+```
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
 
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+11. Now we can add, commit and push our changes to GitHub. This will make Heroku run ```python3 manage.py collectstatic``` during the build process and upload our static files to S3.
+12. We can now go to our Heroku app page and view the build log and the click on Open app to view our app to see if our staticfiles have now been uploaded. We can also look at our S3 bucket page and we should see a static folder containing all of our static files.
 
+### 8. Media Files
+1. (Optional) We can add an optional setting to cache our static files. This will improve performance for our users. If you would like to add this functionality add the following code to the top of your ```if 'USE_AWS' in os.environ:``` statement.
+```
+  # Cache Control
+  AWS_S3_OBJECT_PARAMETERS = {
+      'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+      'CacheControl': 'max-age=94608000',
+  }
+```
+2. We can now add and commit that then push to GitHub
 
 
