@@ -584,10 +584,20 @@ Some future features I would like to include are:
    - This would be a useful feature for both the admin and the user to receive feedback on the status of an order.
 
 ## Testing
-### Manual Testing
-### Automated Testing
-### Validator Testing
+
+I have including testing details post development in a separate document called [TESTING.md](TESTING.md)
+
 ### Bugs
+
+Below is a list of bugs that occured during the development process, the cause of them and how they were solved.
+
+| Bug | Cause | Solution |
+|---|---|---|
+| <code>{{ MEDIA_URL }}</code> was not pathing correctly to the image source. Meaning that images were not displaying. This issue was happening in both of my development environment and the production environment. | The issue was that there was a missing line in my settings.py file. | Add the following line of code to the context_processors <code>'django.template.context_processors.media',</code> |
+| The image and label widget on the edit product page was not showing despite following the example in the Boutique ado project. | The template rendering the form element as a crispy form not the custom widget. | The issue here was solved by adding an if statement into the form (lines 24 to 27 in [edit_product.html](products/templates/products/edit_product.html)) to render the custom widget instead of the crispy form field. |
+Failed Build when deploying to Heroku. | Heroku failed to build due to <code>backport.zoneinfo</code> | This requirement is only needed when the python version is below 3.9 so I added the following code to only install the package when it is required. <code>backports.zoneinfo==0.2.1;python_version<"3.9"</code> |
+| I was orginally using the latest version of django (v4.2.4). Which was fine until I needed to deploy. When attempting to connect to my ElephantSQL I was unable to use the version of PostgreSQL that they have to use for free which is 11.8. | The cause of this was that the django version I was using was only compatible with postgreSQL version 12 and up. | The solution to this was to uninstall django using the terminal command <code>pip3 uninstall django</code> and then installing django version 3.2 with the following command <code>pip3 install Django==3.2</code>
+
 
 ## Deployment
 
@@ -612,6 +622,7 @@ In particular:
 To complete this project I did follow along with the walkthrough lessons provided which helped me be able to complete the features in a logical order. 
 I have not directly copied and pasted these sections and they have been altered to fit this project's needs. However, the core concepts are similar to the Boutique Ado walkthrough project.
 
+## Media
 - All images are original and were taken by me during this project.
 - All products are real products for a family member's business.
 
