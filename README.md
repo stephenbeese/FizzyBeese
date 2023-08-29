@@ -14,15 +14,17 @@ FizzyBeese is a small independently run business that sells bath bombs, wax melt
       - [Structure](#structure)
       - [Skeleton](#skeleton)
       - [Surface](#surface)
+   - [Following Agile Methodologies](#following-agile-methodologies)
    - [Epics](#epics)
+- [SEO considerations](#seo-considerations)
+- [ER Diagram](#entity-relationship-diagram)
+   - [Model Descriptions](#model-descriptions)
+   - [Model Relationships](#model-relationships)
 - [Features](#features)
    - [Existing Features](#existing-features)
    - [Future Features](#future-features)
 - [Testing](#testing)
-   - [Manual Testing](#manual-testing)
-   - [Automated Testing](#automated-testing)
-   - [Validator Testing](#validator-testing)
-   - [Bugs](#bugs)
+- [Bugs](#bugs)
 - [Deployment](#deployment)
 - [Credits](#credits)
 
@@ -36,11 +38,11 @@ When designing the website for our bath bomb and wax melt business, I carefully 
 
 **Primary Demographic:** The primary demographic consists predominantly of women, yet it also includes individuals who share a passion for self-care and indulgence. This broad range of customers spans various age groups, encompassing children, teenagers, young adults, and middle-aged individuals, allowing us to cater to a diverse customer base.
 
-**Focus on Self-Care:** Our target market comprises individuals who prioritize self-care, seeking stress relief and tranquility in their daily lives. Whether it's unwinding in a soothing bath or basking in the calming aroma of wax melts, these customers crave relaxation and moments of serenity.
+**Focus on Self-Care:** Our target market comprises individuals who prioritise self-care, seeking stress relief and tranquility in their daily lives. Whether it's unwinding in a soothing bath or basking in the calming aroma of wax melts, these customers crave relaxation and moments of serenity.
 
 **Interest in Natural and Eco-Friendly Products:** Their interest in natural and eco-friendly products aligns with our commitment to providing sustainable and wellness-oriented offerings.
 
-**Gift Shoppers:** An essential segment of our target market includes gift shoppers who view our bath bombs and wax melts as thoughtful presents for their loved ones. By recognizing this opportunity, we aim to emphasize the gifting aspect of our products, making them a perfect choice for special occasions.
+**Gift Shoppers:** An essential segment of our target market includes gift shoppers who view our bath bombs and wax melts as thoughtful presents for their loved ones. By recognising this opportunity, we aim to emphasise the gifting aspect of our products, making them a perfect choice for special occasions.
 
 **Online Shoppers:** Given the e-commerce nature of our business, we specifically targeted online shoppers who prefer the convenience and ease of purchasing products from their digital devices. Thus, we focused on optimizing the website for seamless navigation and an effortless checkout process, ensuring a hassle-free shopping experience.
 
@@ -50,6 +52,22 @@ To effectively reach and appeal to our target market, we consider marketing stra
 This website employs a B2C (business-to-consumer) business model, meaning that our primary focus is to sell directly to our customers. To achieve this, our website will prioritize user-friendliness and accessibility, making it effortless for consumers to find and purchase our products, including the ability to view immediate prices and add directly to the bag from the products list. 
 
 ## Marketing Plan
+
+As FizzyBeese is a small independent business the budget for marketing is limited. However, there are serveral ways that FizzyBeese can market itself and increase the chances of converting more customers. 
+
+**Social Media:** To foster brand engagement and communication, our website will feature links to our social media accounts. Where we will run targeted ads to reach out to a wide audience taylored to our target market. 
+
+**Mailing list:** Another way to gain more brand awareness is by sending regular newsletters to the mailing list obtained via the mailchimp form. The newsletter would contain information about the products we sell, updates about new products, promotions, and other relevant updates.
+
+**Google Ads:** The use of google ads is agreat way to increase brand awareness and help with SEO. The use of google ads can also help with the use of long-tail keywords and help with the ranking of the site.
+
+**Influencers:** Influencers are a great way to increase brand awareness. Free samples can be sent to influencers in exchange for mentions or affiliate links. Influencers tend to have a wide reach of people that follow them, therefore, increasing our brand awareness.
+
+
+
+#### Some extra marketing considerations to keep users on our website may include:
+
+
 **Homepage Design:** The homepage will be designed to be clear, attractive, and instantly engage users. We'll prominently feature a well-defined call-to-action button upon entering the page, ensuring users understand the purpose of our site right away. The home page will also feature other things useful to both users and the admin. The admin will have the ability to show off some featured products and also the latest products that have been uploaded. The home page will also feature the business's core values, testimonials, and the address and a map to show where the store is. I feel that this will build trust with the customer and ultimately enhance sales.
 
 **User-Friendly Navigation:** User-friendly navigation is crucial for our B2C business model. By providing an intuitive and seamless browsing experience, we aim to encourage users to spend more time on the site, ultimately leading to increased sales. Additionally, our responsive design will ensure that customers can enjoy a consistent experience across all devices, enhancing accessibility.
@@ -58,13 +76,10 @@ This website employs a B2C (business-to-consumer) business model, meaning that o
 
 **Customer Communication:** In order to facilitate communication with our customers, we will provide accessible contact information for store admin. This will allow users to reach out with any queries or concerns they may have, promoting a positive customer experience.
 
-**Brand Engagement:** To foster brand engagement and communication, our website will feature links to our social media accounts. Additionally, we'll offer the option for users to sign up for our mailing list/newsletter, allowing us to keep them informed about new products, promotions, and other relevant updates.
+
 
 By implementing these features and functionalities, our B2C website aims to create a seamless and enjoyable shopping experience, encouraging repeat visits and capitalizing on impulse purchases.
 
-**SEO implementation:** Some SEO features I will include are 
-
-<hr>
 
 ## Agile Development
 ### 5 Planes of UX and UI Design
@@ -98,7 +113,7 @@ The text on this website will be clear and concise, making it easy to understand
 
 ### Following Agile Methodologies
 
-The way that I followed agile principals was by creating a kanban board containing all of my user stories (below). 
+The way that I followed agile principals was by creating a kanban board containing all of my user stories. This kanban board can be found [here](https://github.com/users/stephenbeese/projects/6)
 
 When starting the project I uploaded all of my user stories to the todo section of my kanban board.
 These user stories were labeled by:
@@ -115,6 +130,7 @@ The way I justified these labels are as follows:
 
 When I would get to a position where I was ready to start working on a new feature I would move the relevant user story into the in progress section on the kanban board and start working on it.
 Once this feature was completed I would move the user story from the in progress section to the done section.
+
 
 ### Epics
 #### **Customer's Point of View:**
@@ -171,6 +187,17 @@ Once this feature was completed I would move the user story from the in progress
 8. **Content Management:**
    - Admins can manage website content, such as updating product descriptions, names, and images.
 <hr>
+
+
+## SEO considerations
+### Keywords
+
+
+### Page Titles
+Each page title contains an extra title after the business name to help assist with SEO
+
+### Robots.txt and sitemap.xml
+A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added to the site's root to help with the site's SEO.
 
 ## Entity Relationship Diagram
 
