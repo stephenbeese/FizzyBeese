@@ -55,7 +55,7 @@ This website employs a B2C (business-to-consumer) business model, meaning that o
 
 As FizzyBeese is a small independent business the budget for marketing is limited. However, there are serveral ways that FizzyBeese can market itself and increase the chances of converting more customers. 
 
-**Social Media:** To foster brand engagement and communication, our website will feature links to our social media accounts. Where we will run targeted ads to reach out to a wide audience taylored to our target market. 
+**Social Media:** To foster brand engagement and communication, our website will feature links to our social media accounts. Where we will run targeted ads to reach out to a wide audience taylored to our target market. I have created a mock facebook page which you can view [here](readme/fizzy-beese-facebook.png).
 
 **Mailing list:** Another way to gain more brand awareness is by sending regular newsletters to the mailing list obtained via the mailchimp form. The newsletter would contain information about the products we sell, updates about new products, promotions, and other relevant updates.
 
