@@ -1,4 +1,3 @@
-# from django.utils import timezone as djtimezone
 from django.utils import timezone
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import View
@@ -19,7 +18,8 @@ class CreateEvent(View):
             }
             return render(request, template, context)
         else:
-            messages.error(request, 'You need to be an admin to access this page!')
+            messages.error(
+                request, 'You need to be an admin to access this page!')
             return redirect(reverse('home'))
 
     def post(self, request):
@@ -82,7 +82,8 @@ def edit_event(request, event_id):
             return redirect(reverse('events_list'))
 
         else:
-            messages.error(request, 'Failed to update please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update please ensure the form is valid.')
     else:
         form = EventForm(instance=event)
         messages.info(request, f'You are currently editing {event.title}')

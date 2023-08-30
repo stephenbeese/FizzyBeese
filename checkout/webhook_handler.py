@@ -1,11 +1,11 @@
 import json
 import time
+from datetime import timedelta
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from datetime import datetime, timedelta
 
 import stripe
 from products.models import Product
@@ -15,6 +15,7 @@ from .models import Order, OrderLineItem
 
 class StripeWH_Handler:
     """ Handle Stripe webhooks """
+
     def __init__(self, request):
         self.request = request
 
@@ -43,7 +44,6 @@ class StripeWH_Handler:
             contact_email,
             [cust_email]
         )
-
 
     def handle_event(self, event):
         """
@@ -117,8 +117,8 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
-                    status=200)
+                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                status=200)
         else:
             order = None
             try:
@@ -151,8 +151,9 @@ class StripeWH_Handler:
             except Exception as e:
                 if order:
                     order.delete()
-                return HttpResponse(content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                status=500)
+                return HttpResponse(
+                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                    status=500)
 
         self._send_confirmation_email(order)
         return HttpResponse(

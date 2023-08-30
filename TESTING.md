@@ -1,3 +1,46 @@
+# Validator testing
+
+## Python
+
+
+errors left:
+bag/views.py:1:80: E501 line too long (87 > 79 characters)
+
+checkout/models.py:125:80: E501 line too long (80 > 79 characters)
+
+contact/models.py:20:80: E501 line too long (84 > 79 characters)
+
+events/migrations/0001_initial.py:29:80: E501 line too long (87 > 79 characters)
+
+fizzy_beese/settings.py:96:80: E501 line too long (84 > 79 characters)
+fizzy_beese/settings.py:155:80: E501 line too long (91 > 79 characters)
+fizzy_beese/settings.py:158:80: E501 line too long (81 > 79 characters)
+fizzy_beese/settings.py:161:80: E501 line too long (82 > 79 characters)
+fizzy_beese/settings.py:164:80: E501 line too long (83 > 79 characters)
+
+products/admin.py:2:80: E501 line too long (81 > 79 characters)
+products/forms.py:3:80: E501 line too long (81 > 79 characters)
+products/forms.py:12:80: E501 line too long (102 > 79 characters)
+products/forms.py:13:80: E501 line too long (106 > 79 characters)
+products/models.py:62:80: E501 line too long (88 > 79 characters)
+products/views.py:6:80: E501 line too long (81 > 79 characters)
+products/views.py:205:80: E501 line too long (83 > 79 characters)
+products/widgets.py:9:80: E501 line too long (87 > 79 characters)
+products/migrations/0001_initial.py:18:80: E501 line too long (117 > 79 characters)
+products/migrations/0001_initial.py:20:80: E501 line too long (91 > 79 characters)
+products/migrations/0001_initial.py:29:80: E501 line too long (117 > 79 characters)
+products/migrations/0001_initial.py:31:80: E501 line too long (91 > 79 characters)
+products/migrations/0001_initial.py:40:80: E501 line too long (117 > 79 characters)
+products/migrations/0001_initial.py:46:80: E501 line too long (107 > 79 characters)
+products/migrations/0001_initial.py:53:80: E501 line too long (98 > 79 characters)
+products/migrations/0001_initial.py:54:80: E501 line too long (94 > 79 characters)
+products/migrations/0001_initial.py:60:80: E501 line too long (117 > 79 characters)
+products/migrations/0001_initial.py:62:80: E501 line too long (118 > 79 characters)
+products/migrations/0005_alter_product_fragrance_categories.py:15:80: E501 line too long (86 > 79 characters)
+
+profiles/forms.py:29:80: E501 line too long (88 > 79 characters)
+
+
 # Manual Testing of Epics and User Stories
 
 ## Epics

@@ -34,7 +34,8 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is vaild.')
+            messages.error(
+                request, 'Update failed. Please ensure the form is vaild.')
     else:
         form = UserProfileForm(instance=profile)
 

@@ -35,13 +35,17 @@ def all_products(request):
 
         if 'product_categories' in request.GET:
             product_category = request.GET.getlist('product_categories')
-            products = products.filter(product_categories__name__in=product_category)
-            product_category = ProductCategory.objects.filter(name__in=product_category)
+            products = products.filter(
+                product_categories__name__in=product_category)
+            product_category = ProductCategory.objects.filter(
+                name__in=product_category)
 
         if 'fragrance_categories' in request.GET:
             fragrance_category = request.GET.getlist('fragrance_categories')
-            products = products.filter(fragrance_categories__name__in=fragrance_category)
-            fragrance_category = FragranceCategory.objects.filter(name__in=fragrance_category)
+            products = products.filter(
+                fragrance_categories__name__in=fragrance_category)
+            fragrance_category = FragranceCategory.objects.filter(
+                name__in=fragrance_category)
 
         if 'sale' in request.GET:
             products = Product.objects.filter(sale_price__isnull=False)
@@ -55,11 +59,16 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You haven't entered any search criteria!")
+                messages.error(
+                    request, "You haven't entered any search criteria!")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
-            category_queries = Q(product_categories__friendly_name__icontains=query) | Q(fragrance_categories__friendly_name__icontains=query)
+            queries = Q(
+                name__icontains=query) | Q(
+                description__icontains=query)
+            category_queries = Q(
+                product_categories__friendly_name__icontains=query) | Q(
+                fragrance_categories__friendly_name__icontains=query)
             queries = queries | category_queries
             products = products.filter(queries)
 
@@ -117,7 +126,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to add please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -145,7 +155,8 @@ def edit_product(request, product_id):
             return redirect(reverse('product_detail', args=[product.id]))
 
         else:
-            messages.error(request, 'Failed to update please ensure the form is valid.')
+            messages.error(
+                request, 'Failed to update please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are currently editing {product.name}')
@@ -188,8 +199,10 @@ def add_image(request, product_id):
             image_instance.save()
             messages.success(request, 'Successfully added more images')
             return redirect(reverse('product_detail', args=[product.id]))
-        else: 
-            messages.error(request, 'Failed to add additional images please ensure the form is valid.')
+        else:
+            messages.error(
+                request,
+                'Failed to add additional images please ensure the form is valid.')
     else:
         form = AdditionalImagesForm()
 

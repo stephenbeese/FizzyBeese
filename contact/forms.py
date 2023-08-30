@@ -3,7 +3,7 @@ from .models import Contact
 
 
 class ContactForm(forms.ModelForm):
-    """ 
+    """
     Form for user to be able to contact the admin
     """
     class Meta:

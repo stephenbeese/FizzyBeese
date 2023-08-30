@@ -2,7 +2,6 @@ import uuid
 from decimal import Decimal
 
 from django.db import models
-from django.db.models import Sum
 from django.conf import settings
 
 from django_countries.fields import CountryField
@@ -27,12 +26,24 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
     total_weight = models.IntegerField(null=False, default=0)
-    delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0.00)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    delivery_cost = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        default=0.00)
+    grand_total = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        null=False,
+        default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
-
+    stripe_pid = models.CharField(
+        max_length=254,
+        null=False,
+        blank=False,
+        default='')
 
     def _generate_order_number(self):
         """
@@ -61,7 +72,7 @@ class Order(models.Model):
                 self.delivery_cost = Decimal('5.29')
         else:
             self.delivery_cost = Decimal('0.00')
-        
+
         self.order_total = order_total
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
@@ -80,14 +91,28 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(
+        Order,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='lineitems')
+    product = models.ForeignKey(
+        Product,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    lineitem_total = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        editable=False)
 
     def save(self, *args, **kwargs):
         """
-        Override the original save method 
+        Override the original save method
         Set the lineitem total and update order total
         """
         if self.product.sale_price:
@@ -95,6 +120,6 @@ class OrderLineItem(models.Model):
         else:
             self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
- 
+
     def __str__(self):
         return f'product {self.product.name} on order {self.order.order_number}'

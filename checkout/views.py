@@ -6,7 +6,6 @@ from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.views import View
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
 
 import stripe
 
@@ -17,8 +16,6 @@ from bag.contexts import bag_contents
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-
-
 
 
 @require_POST
@@ -42,12 +39,14 @@ class CheckoutView(View):
     """
     A view to render the checkout page
     """
+
     def get(self, request):
         stripe_public_key = settings.STRIPE_PUBLIC_KEY
         stripe_secret_key = settings.STRIPE_SECRET_KEY
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "Theres nothing in your bag at the moment!")
+            messages.error(
+                request, "Theres nothing in your bag at the moment!")
             return redirect(reverse('products'))
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
@@ -123,9 +122,12 @@ class CheckoutView(View):
                     )
                     order_line_item.save()
 
-                    # Prevents user from checking out if quantity > stock remaining
+                    # Prevents user from checking out if quantity > stock
+                    # remaining
                     if item_data > product.stock_remaining:
-                        messages.error(request, f'Sorry, there is not enough stock for {product.name}. You can only add up to {product.stock_remaining} items.')
+                        messages.error(
+                            request,
+                            f'Sorry, there is not enough stock for {product.name}. You can only add up to {product.stock_remaining} items.')
                         return redirect(reverse('checkout'))
 
                     # Deduct purchased quantity from product's stock_remaining
@@ -133,17 +135,16 @@ class CheckoutView(View):
                     product.save()
 
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of thhe products in your bag wasn't found in our database."
-                        "Please contact us for assistance!"
-                    ))
+                    messages.error(
+                        request, ("One of thhe products in your bag wasn't found in our database."
+                                  "Please contact us for assistance!"))
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number])
-                )
+            )
         else:
             messages.error(request, 'There was an error with your order form. \
                 Please double check your order information.')

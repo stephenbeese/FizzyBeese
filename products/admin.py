@@ -46,9 +46,3 @@ class AdditionalImagesAdmin(admin.ModelAdmin):
     )
 
     ordering = ('product_id',)
-
-
-# admin.site.register(Product, ProductAdmin)
-# admin.site.register(ProductCategory, ProductCategoryAdmin)
-# admin.site.register(FragranceCategory, FragranceCategoryAdmin)
-# admin.site.register(AdditionalImages, AdditionalImagesAdmin)

@@ -24,8 +24,10 @@ class ProductForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         fragrance_categories = FragranceCategory.objects.all()
         product_categories = ProductCategory.objects.all()
-        fragrance_friendly_names = [(f.id, f.get_friendly_name()) for f in fragrance_categories]
-        product_friendly_names = [(p.id, p.get_friendly_name()) for p in product_categories]
+        fragrance_friendly_names = [
+            (f.id, f.get_friendly_name()) for f in fragrance_categories]
+        product_friendly_names = [(p.id, p.get_friendly_name())
+                                  for p in product_categories]
 
         self.fields['fragrance_categories'].choices = fragrance_friendly_names
         self.fields['product_categories'].choices = product_friendly_names

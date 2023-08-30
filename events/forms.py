@@ -7,6 +7,10 @@ class EventForm(forms.ModelForm):
         model = Event
         exclude = ('created_on',)
         widgets = {
-            'start_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
-            'end_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'start_time': forms.DateTimeInput(
+                attrs={
+                    'type': 'datetime-local'}),
+            'end_time': forms.DateTimeInput(
+                attrs={
+                    'type': 'datetime-local'}),
         }

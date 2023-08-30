@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.views import View
 from django.contrib import messages
-# from django.contrib.auth.decorators import login_required
 
 from profiles.models import UserProfile
 from .forms import TestimonialForm
@@ -29,6 +28,5 @@ class TestimonialView(View):
             testimonial = form.save(commit=False)
             testimonial.user_profile = profile
             testimonial.save()
-        
-        return redirect(reverse('profile'))
 
+        return redirect(reverse('profile'))

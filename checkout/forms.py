@@ -18,7 +18,7 @@ class OrderForm(forms.ModelForm):
             'phone_number': 'Phone Number',
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2 ',
-            'town_or_city': 'Town or City', 
+            'town_or_city': 'Town or City',
             'county': 'County',
             'postcode': 'Postcode',
         }
