@@ -191,6 +191,15 @@ Once this feature was completed I would move the user story from the in-progress
 
 ## SEO considerations
 ### Keywords
+To increase SEO I have used a keywords and description Meta tag in the head of my [base.html](templates/base.html) template. I initially wrote down as many short and long-tail keywords I could think of. I then typed some keywords into wordtracker.com to see which keywords had the highest volume (average number of searches) with the lowest competition.
+
+With finding this balance the list of best keywords are as follows:
+- scented wax melts, best scented wax melts, high scented wax melts, homemade muscle soak bath bomb, homemade bath bombs, homemade bath bombs uk, bath bomb set, Homemade toilet bombs, Toilet bombs uk, Cruelty free mens fragrance uk, Best selling bath products, Coconut bath products, Eco-friendly bath products.
+
+I have also included some other keywords that may be less efficient but are still relevant.
+
+
+
 
 
 ### Page Titles
