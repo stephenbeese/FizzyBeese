@@ -26,7 +26,6 @@ pathspec==0.11.1
 Pillow==10.0.0
 psycopg2==2.9.7
 pydot==1.4.2
-pygraphviz==1.11
 PyJWT==2.8.0
 pyparsing==3.1.1
 python3-openid==3.2.0
