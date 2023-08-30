@@ -146,6 +146,7 @@ a.icon {
 }
 
 /* Mailchimp */
+
 #mc_embed_signup {
     background: #fff;
     clear: left;
@@ -507,7 +508,7 @@ Product Details Page
 }
 
 
-/* 404 page */
+/* 404 and 500 error page */
 
 .error-image {
     background: url(/media/bath-bomb-home.jpeg) no-repeat center center fixed;

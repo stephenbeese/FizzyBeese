@@ -59,7 +59,8 @@ class Product(models.Model):
         return str(self.name)
 
     def save(self, *args, **kwargs):
-        if self.pk is None:  # ensures uploaded_on isn't updated on product modification
+        # ensures uploaded_on isn't updated on product modification
+        if self.pk is None:
             self.uploaded_on = timezone.now()
         super(Product, self).save(*args, **kwargs)
 

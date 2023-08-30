@@ -7,7 +7,7 @@ Your order information is below!
 Order Details:
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
-Estimated Delivery Date (3 to 5 working days): {{ estimated_delivery_lower }} - {{ estimated_delivery_higher }} 
+Estimated Delivery Date: {{ estimated_delivery_lower }} - {{ estimated_delivery_higher }} (3 to 5 working days)
 
 Your Items:
 {% for item in order.lineitems.all %}
@@ -21,14 +21,20 @@ Grand Total: £{{ order.grand_total }}
 
 Shipping Information:
 Address 1: {{ order.street_address1 }}
+{% if order.street_address2 %}
 Address 2: {{ order.street_address2 }}
+{% endif %}
 Town or City: {{ order.town_or_city }}
+{% if order.county %}
 County: {{ order.county }}
+{% endif %}
 Postcode: {{ order.postcode }}
 Country {{ order.country }}
 Phone Number: {{ order.phone_number }}
 
-If you have any questions regarding your order, don't hesitate to get in touch at {{ contact_email }}
+{% if contact_email %}
+    If you have any questions regarding your order, don't hesitate to get in touch at {{ contact_email }}
+{% endif %}
 
 Thank you again for choosing FizzyBeese. 
 

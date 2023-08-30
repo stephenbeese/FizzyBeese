@@ -1,13 +1,7 @@
-.mw-100 {
-    max-width: 100vw;
-}
-
-
 .checkout-image {
     min-width: 100px;
     max-width: 150px;
 }
-
 
 th {
     white-space: nowrap;

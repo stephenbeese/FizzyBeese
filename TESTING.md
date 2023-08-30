@@ -1,44 +1,93 @@
 # Validator testing
 
+## HTML
+
+
+
+## CSS
+I ran each css file through the W3C CSS validation service and I recieved no errors.
+
+The files I tested were:
+- static/css/base.css
+- checkout/static/checkout/css/checkout.css
+- checkout/static/checkout/css/checkout_success.css
+- profiles/static/profiles/css/profiles.css
+
+![CSS validation](readme/css-validator.png)
+
+I did recieve one warning on the checkout.css file and that was:
+
+![CSS warning](readme/css-warning.png)
+
+## Javascript
+To test my javascript I ran each file and <script></script> element through JSHint and recieved no errors except for the following that were out of my control.
+
+- stripe_elements.js - One undefined variable Stripe
+
+![Javascript error stripe](readme/js-stripe.png)
+
+
+- Google Maps API Javascript in index.html
+
+![Google maps Javascript errors](readme/js-maps.png)
+
+
+- MailChimp embed in base.html
+
+![MailChimp Javascript errors](readme/js-mailchimp.png)
+
 ## Python
+To check my Python files against pep8 I used pycodestyle to run a command that returns all the errors.
+
+The only errors remaining after correcting them with autopep8 are as follows:
+
+- **Bag app**
+    - bag/views.py:1:80: E501 line too long (87 > 79 characters)
+
+- **Checkout app**
+    - checkout/models.py:125:80: E501 line too long (80 > 79 characters)
+
+- **Contact app**
+    - contact/models.py:20:80: E501 line too long (84 > 79 characters)
+
+- **Events app**
+    - events/migrations/0001_initial.py:29:80: E501 line too long (87 > 79 characters)
+
+- **Fizzy Beese app**
+    - fizzy_beese/settings.py:96:80: E501 line too long (84 > 79 characters)
+    - fizzy_beese/settings.py:155:80: E501 line too long (91 > 79 characters)
+    - fizzy_beese/settings.py:158:80: E501 line too long (81 > 79 characters)
+    - fizzy_beese/settings.py:161:80: E501 line too long (82 > 79 characters)
+    - fizzy_beese/settings.py:164:80: E501 line too long (83 > 79 characters)
+
+- **Products app**
+    - products/admin.py:2:80: E501 line too long (81 > 79 characters)
+    - products/forms.py:3:80: E501 line too long (81 > 79 characters)
+    - products/forms.py:12:80: E501 line too long (102 > 79 characters)
+    - products/forms.py:13:80: E501 line too long (106 > 79 characters)
+    - products/models.py:62:80: E501 line too long (88 > 79 characters)
+    - products/views.py:6:80: E501 line too long (81 > 79 characters)
+    - products/views.py:205:80: E501 line too long (83 > 79 characters)
+    - products/widgets.py:9:80: E501 line too long (87 > 79 characters)
+    - products/migrations/0001_initial.py:18:80: E501 line too long (117 > 79 characters)
+    - products/migrations/0001_initial.py:20:80: E501 line too long (91 > 79 characters)
+    - products/migrations/0001_initial.py:29:80: E501 line too long (117 > 79 characters)
+    - products/migrations/0001_initial.py:31:80: E501 line too long (91 > 79 characters)
+    - products/migrations/0001_initial.py:40:80: E501 line too long (117 > 79 characters)
+    - products/migrations/0001_initial.py:46:80: E501 line too long (107 > 79 characters)
+    - products/migrations/0001_initial.py:53:80: E501 line too long (98 > 79 characters)
+    - products/migrations/0001_initial.py:54:80: E501 line too long (94 > 79 characters)
+    - products/migrations/0001_initial.py:60:80: E501 line too long (117 > 79 characters)
+    - products/migrations/0001_initial.py:62:80: E501 line too long (118 > 79 characters)
+    - products/migrations/0005_alter_product_fragrance_categories.py:15:80: E501 line too long (86 > 79 characters)
+
+- **Profiles app**
+    profiles/forms.py:29:80: E501 line too long (88 > 79 characters)
 
 
-errors left:
-bag/views.py:1:80: E501 line too long (87 > 79 characters)
+As you can see above the only errors remaining are lines that are too long for the standard pep8 guidelines.
 
-checkout/models.py:125:80: E501 line too long (80 > 79 characters)
-
-contact/models.py:20:80: E501 line too long (84 > 79 characters)
-
-events/migrations/0001_initial.py:29:80: E501 line too long (87 > 79 characters)
-
-fizzy_beese/settings.py:96:80: E501 line too long (84 > 79 characters)
-fizzy_beese/settings.py:155:80: E501 line too long (91 > 79 characters)
-fizzy_beese/settings.py:158:80: E501 line too long (81 > 79 characters)
-fizzy_beese/settings.py:161:80: E501 line too long (82 > 79 characters)
-fizzy_beese/settings.py:164:80: E501 line too long (83 > 79 characters)
-
-products/admin.py:2:80: E501 line too long (81 > 79 characters)
-products/forms.py:3:80: E501 line too long (81 > 79 characters)
-products/forms.py:12:80: E501 line too long (102 > 79 characters)
-products/forms.py:13:80: E501 line too long (106 > 79 characters)
-products/models.py:62:80: E501 line too long (88 > 79 characters)
-products/views.py:6:80: E501 line too long (81 > 79 characters)
-products/views.py:205:80: E501 line too long (83 > 79 characters)
-products/widgets.py:9:80: E501 line too long (87 > 79 characters)
-products/migrations/0001_initial.py:18:80: E501 line too long (117 > 79 characters)
-products/migrations/0001_initial.py:20:80: E501 line too long (91 > 79 characters)
-products/migrations/0001_initial.py:29:80: E501 line too long (117 > 79 characters)
-products/migrations/0001_initial.py:31:80: E501 line too long (91 > 79 characters)
-products/migrations/0001_initial.py:40:80: E501 line too long (117 > 79 characters)
-products/migrations/0001_initial.py:46:80: E501 line too long (107 > 79 characters)
-products/migrations/0001_initial.py:53:80: E501 line too long (98 > 79 characters)
-products/migrations/0001_initial.py:54:80: E501 line too long (94 > 79 characters)
-products/migrations/0001_initial.py:60:80: E501 line too long (117 > 79 characters)
-products/migrations/0001_initial.py:62:80: E501 line too long (118 > 79 characters)
-products/migrations/0005_alter_product_fragrance_categories.py:15:80: E501 line too long (86 > 79 characters)
-
-profiles/forms.py:29:80: E501 line too long (88 > 79 characters)
+I did try to shorten these lines however some were not possible so therefore I left them.
 
 
 # Manual Testing of Epics and User Stories

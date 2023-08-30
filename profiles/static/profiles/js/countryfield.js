@@ -10,4 +10,4 @@ $('#id_default_country').change(function () {
     } else {
         $(this).css('color', '#000');
     }
-})
+});

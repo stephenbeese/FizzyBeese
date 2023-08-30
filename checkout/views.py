@@ -123,7 +123,6 @@ class CheckoutView(View):
                     order_line_item.save()
 
                     # Prevents user from checking out if quantity > stock
-                    # remaining
                     if item_data > product.stock_remaining:
                         messages.error(
                             request,

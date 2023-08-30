@@ -168,17 +168,17 @@ Products
             var direction = selectedVal.split('_')[1];
 
             if (sort == "uploaded") {
-                sort = "uploaded_on"
+                sort = "uploaded_on";
                 direction = selectedVal.split('_')[2];
             }
 
             if (sort == "fragrance") {
-                sort = "fragrance_categories"
+                sort = "fragrance_categories";
                 direction = selectedVal.split('_')[2];
             }
 
             if (sort == "product") {
-                sort = "product_categories"
+                sort = "product_categories";
                 direction = selectedVal.split('_')[2];
             }
 
@@ -187,11 +187,11 @@ Products
 
             window.location.replace(currentUrl);
         } else {
-            currentUrl.searchParams.delete("sort")
-            currentUrl.searchParams.delete("direction")
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
 
             window.location.replace(currentUrl);
         }
-    })
+    });
 </script>
 {% endblock %}
