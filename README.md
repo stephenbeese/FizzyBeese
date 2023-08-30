@@ -1,7 +1,7 @@
 # FizzyBeese
 FizzyBeese is a small independently run business that sells bath bombs, wax melts, and other various accessories directly to their customers. Users can browse products by category, price, or fragrance. Users are also able to add products to their cart and checkout securely. 
 
-## [INSERT IMAGE HERE]
+![Responsive](readme/responsive.png)
 
 ## Table of Contents
 - [Site Aims](#site-aims)
