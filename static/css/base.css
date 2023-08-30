@@ -340,6 +340,11 @@ a.icon {
     margin: 0 auto;
 }
 
+#gmp-map {
+    height: 80%;
+    width: 80%;
+    margin: 0 auto;
+}
 
 /*
     About Page

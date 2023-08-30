@@ -53,13 +53,13 @@ This website employs a B2C (business-to-consumer) business model, meaning that o
 
 ## Marketing Plan
 
-As FizzyBeese is a small independent business the budget for marketing is limited. However, there are serveral ways that FizzyBeese can market itself and increase the chances of converting more customers. 
+As FizzyBeese is a small independent business the budget for marketing is limited. However, there are several ways that FizzyBeese can market itself and increase the chances of converting more customers. 
 
-**Social Media:** To foster brand engagement and communication, our website will feature links to our social media accounts. Where we will run targeted ads to reach out to a wide audience taylored to our target market. I have created a mock facebook page which you can view [here](readme/fizzy-beese-facebook.png).
+**Social Media:** To foster brand engagement and communication, our website will feature links to our social media accounts. We will run targeted ads to reach out to a wide audience tailored to our target market. I have created a mock Facebook page which you can view [here](readme/fizzy-beese-facebook.png).
 
-**Mailing list:** Another way to gain more brand awareness is by sending regular newsletters to the mailing list obtained via the mailchimp form. The newsletter would contain information about the products we sell, updates about new products, promotions, and other relevant updates.
+**Mailing list:** Another way to gain more brand awareness is by sending regular newsletters to the mailing list obtained via the MailChimp form. The newsletter would contain information about the products we sell, updates about new products, promotions, and other relevant updates.
 
-**Google Ads:** The use of google ads is agreat way to increase brand awareness and help with SEO. The use of google ads can also help with the use of long-tail keywords and help with the ranking of the site.
+**Google Ads:** The use of Google ads is a great way to increase brand awareness and help with SEO. The use of Google ads can also help with the use of long-tail keywords and help with the ranking of the site.
 
 **Influencers:** Influencers are a great way to increase brand awareness. Free samples can be sent to influencers in exchange for mentions or affiliate links. Influencers tend to have a wide reach of people that follow them, therefore, increasing our brand awareness.
 
@@ -113,9 +113,9 @@ The text on this website will be clear and concise, making it easy to understand
 
 ### Following Agile Methodologies
 
-The way that I followed agile principals was by creating a kanban board containing all of my user stories. This kanban board can be found [here](https://github.com/users/stephenbeese/projects/6)
+The way that I followed agile principles was by creating a Kanban board containing all of my user stories. This kanban board can be found [here](https://github.com/users/stephenbeese/projects/6)
 
-When starting the project I uploaded all of my user stories to the todo section of my kanban board.
+When starting the project I uploaded all of my user stories to the to-do section of my Kanban board.
 These user stories were labeled by:
    - Must Have
    - Should Have
@@ -123,13 +123,13 @@ These user stories were labeled by:
 
 labeling the user stories in this way allowed me to focus on which ones to prioritise when working through the project.
 
-The way I justified these labels are as follows:
-   - Must haves are absolutely crucial for an e-commerce site. For example, view cart, checkout and payment.
+The way I justified these labels is as follows:
+   - Must haves are absolutely crucial for an e-commerce site. For example, view cart, checkout, and payment.
    - Should have are highly desired but not crucial for the site to function as an e-commerce site. Such as filtering products and viewing order history
-   - Could haves are nice to have but not at all crucial to an e-commerce application. Such as events and contact form.
+   - Could haves are nice to have but not at all crucial to an e-commerce application. Such as events and contact forms.
 
-When I would get to a position where I was ready to start working on a new feature I would move the relevant user story into the in progress section on the kanban board and start working on it.
-Once this feature was completed I would move the user story from the in progress section to the done section.
+When I would get to a position where I was ready to start working on a new feature I would move the relevant user story into the in-progress section on the Kanban board and start working on it.
+Once this feature was completed I would move the user story from the in-progress section to the done section allowing me to easily keep track of my progress.
 
 
 ### Epics
@@ -350,13 +350,13 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 ![Footer](readme/footer.png)
 
 **Notifications (Toasts)**
-   - I have included the use of toasts in this project to give feedback to the user about the changes to the bag, any errors they may face and any relevant information that is useful.
+   - I have included the use of toasts in this project to give feedback to the user about the changes to the bag, any errors they may face, and any relevant information that is useful.
 
 ![Toast - Bag](readme/bag-toast.png)
 
 **Offers**
-   - In the navbar there is an offers dropdown menu. 
-   - This menu on displays when there are products that populate it. For example, if there are sale items, clearance items or both.
+   - In the navbar, there is an offers dropdown menu. 
+   - This menu displays when there are products that populate it. For example, if there are sale items, clearance items or both.
    - The dropdown will not show if there are no sale or clearance items.
 
 ![Offers tab](readme/offers-tab.png)
@@ -732,18 +732,18 @@ Some future features I would like to include are:
 
 ## Testing
 
-I have including testing details post development in a separate document called [TESTING.md](TESTING.md)
+I have included testing details post-development in a separate document called [TESTING.md](TESTING.md)
 
 ### Bugs
 
-Below is a list of bugs that occured during the development process, the cause of them and how they were solved.
+Below is a list of bugs that occurred during the development process, the causes of them, and how they were solved.
 
 | Bug | Cause | Solution |
 |---|---|---|
-| <code>{{ MEDIA_URL }}</code> was not pathing correctly to the image source. Meaning that images were not displaying. This issue was happening in both of my development environment and the production environment. | The issue was that there was a missing line in my settings.py file. | Add the following line of code to the context_processors <code>'django.template.context_processors.media',</code> |
-| The image and label widget on the edit product page was not showing despite following the example in the Boutique ado project. | The template rendering the form element as a crispy form not the custom widget. | The issue here was solved by adding an if statement into the form (lines 24 to 27 in [edit_product.html](products/templates/products/edit_product.html)) to render the custom widget instead of the crispy form field. |
-Failed Build when deploying to Heroku. | Heroku failed to build due to <code>backport.zoneinfo</code> | This requirement is only needed when the python version is below 3.9 so I added the following code to only install the package when it is required. <code>backports.zoneinfo==0.2.1;python_version<"3.9"</code> |
-| I was orginally using the latest version of django (v4.2.4). Which was fine until I needed to deploy. When attempting to connect to my ElephantSQL I was unable to use the version of PostgreSQL that they have to use for free which is 11.8. | The cause of this was that the django version I was using was only compatible with postgreSQL version 12 and up. | The solution to this was to uninstall django using the terminal command <code>pip3 uninstall django</code> and then installing django version 3.2 with the following command <code>pip3 install Django==3.2</code>
+| <code>{{ MEDIA_URL }}</code> was not pathing correctly to the image source. Meaning that images were not displaying. This issue was happening in both my development environment and production environment. | The issue was that there was a missing line in my settings.py file. | Add the following line of code to the context_processors <code>'django.template.context_processors.media',</code> |
+| The image and label widget on the edit product page was not showing despite following the example in the Boutique ado project. | The template was rendering the form element as a crispy form, not the custom widget. | The issue here was solved by adding an if statement into the form (lines 24 to 27 in [edit_product.html](products/templates/products/edit_product.html)) to render the custom widget instead of the crispy form field. |
+Failed Build when deploying to Heroku. | Heroku failed to build due to <code>backport.zoneinfo</code> | This requirement is only needed when the Python version is below 3.9 so I added the following code to only install the package when it is required. <code>backports.zoneinfo==0.2.1;python_version<"3.9"</code> |
+| I was originally using the latest version of Django (v4.2.4). Which was fine until I needed to deploy. When attempting to connect to my ElephantSQL I was unable to use the version of PostgreSQL that they have to use for free which is 11.8. | The cause of this was that the Django version I was using was only compatible with PostgreSQL version 12 and up. | The solution to this was to uninstall Django using the terminal command <code>pip3 uninstall django</code> and then install Django version 3.2 with the following command <code>pip3 install Django==3.2</code>
 
 
 ## Deployment

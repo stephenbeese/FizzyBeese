@@ -3,6 +3,29 @@
 
 {% block extra_js %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2yPNEdhnFwkQevJUkQWDJE9I9uX6B_L4&callback=initMap&libraries=&v=weekly" defer></script>
+<script>
+    "use strict";
+
+    function initMap() {
+        const myLatLng = {
+            lat: 51.48480987548828,
+            lng: -2.4910223484039307
+        };
+        const map = new google.maps.Map(document.getElementById("gmp-map"), {
+            zoom: 14,
+            center: myLatLng,
+            fullscreenControl: false,
+            zoomControl: true,
+            streetViewControl: false
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "My location"
+        });
+    }
+</script>
 {% endblock %}
 
 {% block title %}
@@ -32,7 +55,8 @@ Home
             <p>With our wide range of products,<br>we guarantee we have a scent for everyone!</p>
             <div class="row justify-content-center mb-3">
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
-                    <a href="{% url 'products' %}?product_categories=bath_bomb" class="text-center text-decoration-none">
+                    <a href="{% url 'products' %}?product_categories=bath_bomb"
+                        class="text-center text-decoration-none">
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}bath-bomb.jpg" alt="">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
@@ -52,7 +76,8 @@ Home
                     </a>
                 </div>
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
-                    <a href="{% url 'products' %}?product_categories=soap_sponge" class="text-center text-decoration-none">
+                    <a href="{% url 'products' %}?product_categories=soap_sponge"
+                        class="text-center text-decoration-none">
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}soap-sponge.jpg" alt="">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
@@ -72,8 +97,10 @@ Home
                     </a>
                 </div>
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
-                    <a href="{% url 'products' %}?product_categories=car_freshner" class="text-center text-decoration-none">
-                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}car-freshner.jpg" alt="">
+                    <a href="{% url 'products' %}?product_categories=car_freshner"
+                        class="text-center text-decoration-none">
+                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}car-freshner.jpg"
+                            alt="">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
                             <p class="text-white fs-1 bold-underline-hover">Car Freshners</p>
@@ -82,7 +109,8 @@ Home
                     </a>
                 </div>
                 <div class="col-6 col-lg-4 mb-5 product-home-div">
-                    <a href="{% url 'products' %}?product_categories=wax_burner" class="text-center text-decoration-none">
+                    <a href="{% url 'products' %}?product_categories=wax_burner"
+                        class="text-center text-decoration-none">
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-burner.jpg" alt="">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
@@ -119,7 +147,8 @@ Home
                                         <div class="row w-100 m-0">
                                             <div class="col-9 p-0">
                                                 <a class="text-decoration-none" href="{% url 'product_detail' f.id %}">
-                                                    <p class="text-black mb-0 bold-underline-hover text-wrap">{{ f.name }}</p>
+                                                    <p class="text-black mb-0 bold-underline-hover text-wrap">
+                                                        {{ f.name }}</p>
                                                 </a>
                                             </div>
                                             <div class="col-3 p-0">
@@ -145,8 +174,8 @@ Home
                                     <div class="col">
                                         <div class="row">
                                             <a href="{% url 'product_detail' l.id %}">
-                                                <img src="{{ MEDIA_URL }}{{ l.image }}" class="latest-image rounded card-shadow"
-                                                    alt="{{ l.image }}">
+                                                <img src="{{ MEDIA_URL }}{{ l.image }}"
+                                                    class="latest-image rounded card-shadow" alt="{{ l.image }}">
                                             </a>
                                         </div>
                                         <div class="row w-100 m-0">
@@ -257,7 +286,8 @@ Home
                 </div>
                 <div class="col-12 col-md-5 col-lg-7 mb-3 order-first order-md-last">
                     <h4 class="mt-4 mb-3 fs-2">Find us on Google Maps</h4>
-                    <div id="map"></div>
+                    <!-- <div id="map"></div> -->
+                    <div id="gmp-map"></div>
                 </div>
             </div>
         </div>
@@ -266,8 +296,8 @@ Home
 {% endblock %}
 
 {% block postloadjs %}
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+<!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBdiozrqw27M2ctumeeoo7fFpx33OSzCE&callback=initMap&v=weekly"
     defer></script>
 
 <script>
@@ -289,5 +319,42 @@ Home
     }
 
     window.initMap = initMap;
-</script>
+
+    let map;
+
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: 51.48499496067841, lng: -2.4910626311418307 },
+    zoom: 15,
+  });
+}
+
+initMap();
+</script> -->
+
+
+<!-- <script>
+    "use strict";
+
+    function initMap() {
+        const myLatLng = {
+            lat: 51.48480987548828,
+            lng: -2.4910223484039307
+        };
+        const map = new google.maps.Map(document.getElementById("gmp-map"), {
+            zoom: 14,
+            center: myLatLng,
+            fullscreenControl: false,
+            zoomControl: true,
+            streetViewControl: false
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map,
+            title: "My location"
+        });
+    }
+</script> -->
 {% endblock %}
