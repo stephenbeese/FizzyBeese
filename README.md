@@ -201,7 +201,7 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 
 ## Entity Relationship Diagram
 
-![FizzyBeese Entity Relationship Diagram](readme/fizzybeese-er-diagram.png)
+![FizzyBeese Entity Relationship Diagram](readme/erd.png)
 
 ### Model Descriptions:
 - **Products**
