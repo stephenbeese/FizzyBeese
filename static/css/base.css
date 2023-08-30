@@ -178,7 +178,6 @@ a.icon {
     background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
     background-size: cover;
     min-height: fit-content;
-    /* max-height: 75vh; */
     width: 100vw;
 }
 
@@ -282,7 +281,6 @@ a.icon {
 /* Testimonials */
 
 .testimonials-container {
-    /* height: 80%; */
     min-height: fit-content;
 }
 
@@ -332,12 +330,6 @@ a.icon {
 
 .home-address {
     font-size: 1.2rem;
-}
-
-#map {
-    height: 80%;
-    width: 80%;
-    margin: 0 auto;
 }
 
 #gmp-map {
@@ -629,8 +621,6 @@ Product Details Page
     }
 
     .testimonials-container {
-        /* min-height: fit-content;
-        max-height: 60vh; */
         padding-bottom: 25px;
     }
 
@@ -646,7 +636,7 @@ Product Details Page
 }
 
 @media (max-width: 768px) {
-    #map {
+    #gmp-map {
         height: 400px;
         width: 90%;
     }

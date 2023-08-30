@@ -286,75 +286,10 @@ Home
                 </div>
                 <div class="col-12 col-md-5 col-lg-7 mb-3 order-first order-md-last">
                     <h4 class="mt-4 mb-3 fs-2">Find us on Google Maps</h4>
-                    <!-- <div id="map"></div> -->
                     <div id="gmp-map"></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-{% endblock %}
-
-{% block postloadjs %}
-<!-- <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBdiozrqw27M2ctumeeoo7fFpx33OSzCE&callback=initMap&v=weekly"
-    defer></script>
-
-<script>
-    function initMap() {
-        const myLatLng = {
-            lat: 51.48499496067841,
-            lng: -2.4910626311418307
-        };
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 15,
-            center: myLatLng,
-        });
-
-        new google.maps.Marker({
-            position: myLatLng,
-            map,
-            title: "FizzyBeese",
-        });
-    }
-
-    window.initMap = initMap;
-
-    let map;
-
-async function initMap() {
-  const { Map } = await google.maps.importLibrary("maps");
-
-  map = new Map(document.getElementById("map"), {
-    center: { lat: 51.48499496067841, lng: -2.4910626311418307 },
-    zoom: 15,
-  });
-}
-
-initMap();
-</script> -->
-
-
-<!-- <script>
-    "use strict";
-
-    function initMap() {
-        const myLatLng = {
-            lat: 51.48480987548828,
-            lng: -2.4910223484039307
-        };
-        const map = new google.maps.Map(document.getElementById("gmp-map"), {
-            zoom: 14,
-            center: myLatLng,
-            fullscreenControl: false,
-            zoomControl: true,
-            streetViewControl: false
-        });
-        new google.maps.Marker({
-            position: myLatLng,
-            map,
-            title: "My location"
-        });
-    }
-</script> -->
 {% endblock %}
