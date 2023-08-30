@@ -334,6 +334,11 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
          - The offers tab and dropdown options do not show if there are no sale or clearance products. This is so that users are not disappointed when they navigate to the sale page to find there are no products populating it.
       - About, Events and Contact Links
 
+**Desktop View**
+![Desktop Navbar](readme/desktop-navbar.png) 
+**Mobile View**
+![Mobile Navabar](readme/mobile-navbar.png)
+
 **Footer**
    - The footer also holds some important information. Such as:
       - Social Media links
@@ -342,14 +347,20 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
       - External links
       - Mailing list
 
+![Footer](readme/footer.png)
 
 **Notifications (Toasts)**
    - I have included the use of toasts in this project to give feedback to the user about the changes to the bag, any errors they may face and any relevant information that is useful.
+
+![Toast - Bag](readme/bag-toast.png)
 
 **Offers**
    - In the navbar there is an offers dropdown menu. 
    - This menu on displays when there are products that populate it. For example, if there are sale items, clearance items or both.
    - The dropdown will not show if there are no sale or clearance items.
+
+![Offers tab](readme/offers-tab.png)
+![Navbar with no offers](readme/navbar-no-offers.png)
 
 #### Page content
 <hr>
@@ -359,73 +370,118 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 **Our Products section**
    - The Our Products section features images of examples of some of the types of products this business offers. This is essentially another nav bar that will likely grab the users' attention when scrolling the home page. Once clicked it will take you to the product page with the relevant filtering for the option chosen.
 
+![Our products section](readme/our-products.png)
+
 **Featured and latest products**
    - This section features the latest products that have been uploaded to the database as well as the products the admin deems to be worthy of being on the front page. The latest products section allows regular customers to view products they may not have seen before straight away.
+
+![Featured and latest products](readme/featured.png)
 
 **Store values**
    - This section features the values of the store, helping to build trust and align ourselves with the target market.
 
+![Our values section](readme/our-values.png)
+
 **Testimonials**
    - The testimonials section is a way for users to give honest feedback about the business to other users. This again helps build trust with our target market and will hopefully convert new customers to make purchases.
 
+![Testimonials section](readme/testimonials.png)
+
 **Location**
    - The location section features a Google Maps API pinned with the location of the store. It also contains the opening hours of the shop allowing users of this site to make a decision of if they would like to view the products in person before purchasing. Users may also like to support local independent businesses so knowing the location etc. may sway them to make a purchase or visit the shop.
+
+![Location section](readme/location.png)
 
 #### Products
 
 **Add to bag**
    - The product cards feature an add-to-bag button. This allows a user to add a product to the bag without having to view the product detail page. This reduces the amount of clicks a user needs to make to be able to purchase the products on offer.
 
+![Add to bag](readme/card-add-to-bag.png)
+
 **Product cards**
    - Each product is contained within its own card and contains an image, its product category and fragrance category tags, price, and an add-to-bag button.
+
+![Product Card](readme/product-card.png)
 
 **No products page**
    - When a user goes on a page with no items related to it they will be greeted by the following message:
 
+![No products page](readme/no-products.png)
+
 **Sorting**
    - The user can sort the products in a multitude of ways for example:
+
+![Product Sorting](readme/sorting.png)
 
 **Sale Price**
    - If the product includes a sale price the product will look like this:
 
+![Product card sale price](readme/product-card-sale.png)
 
    - This allows the user to view the price before and after the sale, hopefully enticing them to purchase due to its reduced cost
 
 **Out of stock**
    - If a product has no stock remaining the add-to-bag will be disabled and contain the text "Out of Stock". This does not allow the user to add this product to the bag.
 
+![Product card out of stock](readme/product-card-out-of-stock.png)
 
 #### Product detail page
 
 **Stock remaining**
    - Just under the price a user can view the stock remaining of the selected product. This page will not allow a user to add more than the remaining stock into the bag. 
 
+![Product detail out of stock](readme/product-detail-out-of-stock.png)
+
+![Product detail stock remaining](readme/product-detail-stock.png)
+
 **Quantity button**
    - The quantity button allows a user to seamlessly choose the amount of the item they would like to purchase. The quantity minus button gets disabled when the value reaches 1. The value of this can go above the stock remaining value however it will not let the user add that many to the bag.
+
+![Product detail quantity button](readme/product-detail-quantity.png)
+
 
 **Add to bag button**
    - The add to bag button allows the user to add this product to the bag with the relevant quantity they choose. The add-to-bag button will be disabled if the product is out of stock. 
 
+![Add to bag](readme/add-to-bag.png)
+
+![Product detail out of stock button](readme/product-detail-out-of-stock-button.png)
+
 **Return to the products page**
    - The Keep Shopping button will take the user back to the All Products page. 
+
+![Keep Shopping button](readme/keep-shopping.png)
 
 **Additional product images**
    - Some products include additional images to show off the product from different angles or in use.
 
+![Additional Images](readme/product-detail-additional-images.png)
+
+
 **Product ingredients labels**
    - Some products feature an ingredients label so that users can view what's in them. This helps a user decide if a product is suitable for them. Some users may have sensitive skin and may react badly to a certain ingredient. This allows users to check before purchase and covers the business for any legal requirements when selling these types of products.
 
+![Product label](readme/product-label.png)
 
 #### Shopping bag
+
+![Shopping bag](readme/shopping-bag.png)
 
 **Product image**
    - The shopping bag features images of the product in the bag so the customer can easily see what products they are about to purchase
 
+![Shopping bag product image](readme/shopping-bag-product-image.png)
+
 **Quantity**
    - The shopping bag also features a quantity input box where they can edit the amount they would like directly from the shopping bag. Users also have the option to remove products directly from the bag if they no longer want them
 
+![Shopping bag quantity](readme/shopping-bag-quantity.png)
+
 **Subtotal**
    - In the shopping bag a user can also view the subtotal of each product they have in there. The subtotal is the price of the item multiplied by the quantity in their basket.
+
+![Subtotal](readme/subtotal.png)
 
 - **Delivery costs**
    - The user can see how much the delivery is going to cost. The delivery cost is calculated based on the total weight of the order. This site also offers free delivery on orders over £50. On the shopping bag page, you can also see how much more you would need to spend to receive this offer. Hopefully enticing users to spend more money with the business
@@ -433,24 +489,34 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 - **Grand total**
    - The user's grand total is reflected to them just above the checkout button. This is a combination of the total price of all items and the delivery costs. This tells the user exactly how much their order will come to if they decide to go through with the checkout process.
 
+![Shopping bag totals](readme/shopping-bag-totals.png)
+
 
 #### Checkout page
 
 - **Save info**
    - If logged in the user will have an option to save their delivery information to their profile making it easier to complete the checkout process next time they order. 
 
+![Save Information](readme/save-info.png)
+
    - If the user is not logged in they will be prompted to if they would like to save their profile information.
 
 - **Payment**
-   - The card element is injected by the Stripe API and uses a payment system that is PCI compliant. 
+   - The card element is injected by the Stripe API and uses a payment system that is PCI compliant.
+
+![Payment](readme/payment.png)
 
 - **Spinner**
    - This site features a spinner when an order is submitted. This provides feedback to the user about the checkout process, showing them that it is attempting to submit. Any errors will be shown to the user in the form of a toast.
+
+![Spinner](readme/spinner.png)
 
 #### Checkout success page
 
 - **Order summary**
    - The checkout success page features a summary of the users' order including the user's delivery details, products ordered, total price, etc. This can also be viewed in their profile.
+
+![Order Summary](readme/order-summary.png)
 
 - **Product pictures**
    - The checkout success page features images of the products ordered so the user can easily see the products they have ordered.
@@ -458,17 +524,24 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 - **Email confirmation**
    - A confirmation email will be sent to the user upon purchase. The email will include a basic summary of the order and a thank you from the business.
 
+![Email Confirmation](readme/checkout-email-confirmation.png)
+
 ### Profile
 
 - **Edit delivery / personal information**
    - On the profile page a user can edit and update their personal information ready for the next order they complete. This will also automatically update if a user changes the information in the checkout process with the save info box checked.
 
+![profile Information](readme/profile-information.png)
+
 **Order History**
    - On the profile page a user is able to view their past orders. They can click on the order number to view the full details of a past order. A user will need to be logged in to access this page.
+
+![Order History](readme/order-history.png)
 
 - **View testimonial submissions**
    - A user can also view their submitted testimonials and also receive a status of whether or not their review has made it to the front page.
 
+![My Testimonials](readme/my-testimonials.png)
 
 #### Contact Us
 
@@ -481,28 +554,59 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 
    - A user can submit this form to get in contact with the admin and ask about any inquiries they may have, whether that is in regards to products or booking them for events.
 
+![Contact Form](readme/contact-form.png)
+
 #### Contact Success
 
 - **Shows message**
    - The contact success page shows the user that their contact form has been submitted by showing them the information they have entered. The page also says that the admin will get back to them on their email address as soon as possible.
+
+![Contact Success Page](readme/contact-success.png)
+
+![Contact Toast](readme/contact-success-toast.png)
 
 #### Events
 
 - **View events**
    - Users are able to view the upcoming events the shop will be attending. This allows the users to make plans to visit these events and view these products in person.
 
+   - If there are no events the page will display the following:
+
+![No events page](readme/no-events.png)
+
+
+                        ADD EVENTS HERE!!!!! NOT ADMIN!!!!!!!!!!!
+
 ### Existing Admin Features
+
+![Admin dropdown bar](readme/my-account-dropdown-admin.png)
 
 The admin has the ability to do the following things from the frontend:
 
 - **Add a product**
    - The admin can easily add new products from the account icon in the navbar.
 
+![Add product](readme/add-product.png)
+
 - **Edit a product**
    - The admin has the ability to edit products either from the products list pages or the product details page. This makes changing product details efficient and easy to do.
 
+![Edit Product from card](readme/product-card-edit.png)
+
+![Edit Product button](readme/edit-product.png)
+
 - **Delete a product**
-   - The admin is able to delete a product instantly from both the product list pages and the product detail page.
+   - The admin is able to delete a product instantly from both the product list pages (as shown above) and the product detail page.
+
+![Edit and delete buttons](readme/edit-delete.png)
+
+- **Add additional images to selected products**
+   - The admin is able to add additional images to products to showcase the product in use.
+   - They are also able to easily delete images they no longer want to display which can be done via the product detail page.
+
+![Add additional images](readme/additional-images.png)
+
+![Edit additional images](readme/edit-delete-additional-images.png)
 
 - **View all orders**
    - In the account dropdown menu in the navbar the admin can keep an eye on new orders by viewing the all orders page. This features a table containing relevant information about an order including:
@@ -519,13 +623,19 @@ The admin has the ability to do the following things from the frontend:
    - This information is everything the admin would need to ship an order. 
    - They can also view the full details by clicking on the order number to bring up the checkout success page.
 
+![View all orders](readme/all-orders.png)
+
 - **Hide and view hidden products**
    - The admin has the ability to hide products. For example,
       - If they are planning to release a product or a range of products on a certain day
       - They want to temporarily remove products from user viewing
 
+![Hidden products page](readme/hidden-products-page.png)
+
 - **View products by stock**
-   - This page allows the admin to view products by stock starting with the lowest amount first. This is beneficial as the admin can easily see what products they are running low on and therefore they can easily see which ones they would have to make. 
+   - This page allows the admin to view products by stock starting with the lowest amount first. This is beneficial as the admin can easily see what products they are running low on and therefore they can easily see which ones they would have to make.
+
+![Products by stock](readme/products-by-stock.png)
 
 - **Add an event**
    - The admin can add an event directly from the frontend. The form has some restrictions. For example,
@@ -533,14 +643,24 @@ The admin has the ability to do the following things from the frontend:
       - The end time cannot be before the start time
    If either of these conditions occur there will be a toast explaining to the user what the issue is and how to correct it.
 
+![Events form](readme/events-form.png)
+
+![Events error toast](readme/start-time-past.png)
+
+![Events errror toast 2](readme/end-time-error.png)
+
 From the admin panel, the admin has the ability to:
 
 - **Approve testimonials**
    - The user can approve testimonials by going to the testimonial database, selecting the relevant testimonial, and clicking approve. This will then show the testimonial on the front page.
 
+![Approve Testimonials](readme/approve-testimonials.png)
+
 - **View messages**
    - The admin will have to use the admin panel to view the messages. They can do this by going to the contacts section. 
    - There is a boolean field that the admin can check off once they have replied to them allowing them to easily see whether they have replied yet or not. This is reflected in the string displayed when viewing the entries in the admin panel. In the form f'Message from {user}: {subject} - replied: {replied}'
+
+![Contact Messages](readme/contact-messages.png)
 
 These features would ideally be able to be accessed via the frontend however due to time constraints they were not able to be implemented in this way. However, the admin still has access to these features and can still act upon them.
 
