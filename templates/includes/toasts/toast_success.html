@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-3 my-1">
                             <a href="{% url 'product_detail' item.product.id %}">
-                                <img class="w-100 rounded" src="/media/{{ item.product.image }}" alt="">
+                                <img class="w-100 rounded" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="">
                             </a>
                         </div>
                         <div class="col-9">
