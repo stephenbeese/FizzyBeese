@@ -21,15 +21,17 @@
             <div class="order-history-all table-responsive">
                 <table class="table table-sm table-borderless">
                     <thead>
-                        <th>Order Number</th>
-                        <th>Date</th>
-                        <th>Name</th>
-                        <th>Customer Details</th>
-                        <th>Items</th>
-                        <th>Item Total</th>
-                        <th>Total Weight</th>
-                        <th>Delivery Cost</th>
-                        <th>Grand Total</th>
+                        <tr>
+                            <th>Order Number</th>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Customer Details</th>
+                            <th>Items</th>
+                            <th>Item Total</th>
+                            <th>Total Weight</th>
+                            <th>Delivery Cost</th>
+                            <th>Grand Total</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {% for order in orders %}
@@ -79,5 +81,5 @@
 
 
 {% block postloadjs %}
-    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    <script src="{% static 'profiles/js/countryfield.js' %}"></script>
 {% endblock %}

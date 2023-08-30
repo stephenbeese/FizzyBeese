@@ -152,6 +152,7 @@ a.icon {
     clear: left;
     font: 14px Helvetica, Arial, sans-serif;
     width: 600px;
+    max-width: 100vw;
 }
 
 #mc_embed_signup .button {

@@ -1,7 +1,13 @@
 # Validator testing
 
 ## HTML
+To test the HTML of the site I used the W3C HTML Validator.
 
+After testing each page by direct input, I can confim that there were no errors other than an empty h1 element that contained the loading spinner for checkout submissions.
+
+![Loading spinner HTML warning](readme/empty-heading-warning.png)
+
+After filtering out this warning there were no further warnings or errors.
 
 
 ## CSS

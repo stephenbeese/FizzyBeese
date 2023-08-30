@@ -76,7 +76,7 @@ Checkout Success
                         </tr>
                         {% for item in order.lineitems.all %}
                         <tr class="text-muted">
-                            <td scope="row">{{ item.product.name }}</td>
+                            <td>{{ item.product.name }}</td>
                             <td>{{ item.quantity }} @
                                 {% if item.product.sale_price %}
                                 £{{ item.product.sale_price }}
