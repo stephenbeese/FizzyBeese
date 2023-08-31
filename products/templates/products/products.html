@@ -86,7 +86,7 @@ Products
                     </a>
                     <div class="card-body pb-0">
                         <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                            <h2 class="text-black mb-0 fs-5">{{ product.name }}</h2>
+                            <h2 class="text-black mb-0 fs-5 bold-underline-hover">{{ product.name }}</h2>
                         </a>
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                         {% for product_category in product.product_categories.all %}
