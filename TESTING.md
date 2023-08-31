@@ -1,3 +1,18 @@
+# Contents
+
+- [Validator Testing](#validator-testing)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [Javascript](#javascript)
+    - [Python](#python)
+- [WAVE Evaluation Tool](#wave-evaluation-tool)
+- [Lighthouse Reports](#lighthouse)
+- [Manual Testing](#manual-testing-of-epics-and-user-stories)
+    - [Epics](#epics)
+    - [User Stories](#user-stories)
+    - [Error Tetsing](#error-testing)
+- [Automated Testing](#automated-testing)
+
 # Validator testing
 
 ## HTML
@@ -98,6 +113,33 @@ I did try to shorten these lines however some were not possible so therefore I l
 
 # WAVE Evaluation Tool
 
+To test the accessibility of my website I used the [Wave Evaluation Tool](https://wave.webaim.org)
+
+The WAVE evaluation tool generally came back with no errors.
+
+The ones I did have though are as follows:
+
+**Footer**
+- Low contrast on MailChimp elements
+- Missing aria-label on MailChimp input field
+
+**Products**
+- Redundant links - This was due to having the product image and product name both wrapped in anchor tags.
+
+**Checkout**
+- Missing labels on form fields
+- Again, I recieved a redundant links alert due to the reason mentioned above.
+
+**Checkout Success**
+- Empty table header - This is in regards to the order information table. The second column has been left blank to hold the values of the order information.
+
+**Events**
+- Empty table header - This is again due to styling choices. I do not feel that it is neccessary to have a heading here.
+
+**Add Product**
+- No form label for image and image label fields.
+
+<br>
 
 # Lighthouse
 
@@ -695,12 +737,12 @@ I did try to shorten these lines however some were not possible so therefore I l
 | ✔ | Ingredient labels accurately reflect the product's contents.
 
 
-## Other Testing
+## Error Testing
 
 | Passed | Criteria |
 |---|---|
 | ✔ | Custom 404 error page displays when a page has not been found |
-| Untested | Custom 500 error page displays when there is a server error |
+| ✔ | Custom 500 error page displays when there is a server error |
 
 
 
