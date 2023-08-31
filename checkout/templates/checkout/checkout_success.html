@@ -13,7 +13,7 @@ Checkout Success
 {% block content %}
 <div class="row mw-100 m-0">
     <div class="col-12 text-center mt-3">
-        <h2 class="fw-bold">Thank you, {{ order.full_name }} for your order!</h2>
+        <h1 class="fw-bold">Thank you, {{ order.full_name }} for your order!</h1>
         <p>A confirmation will be sent to your email address <span class="fw-bold">({{ order.email }})</span></p>
     </div>
 </div>
@@ -22,7 +22,7 @@ Checkout Success
     <div class="col-12 col-lg-5">
         <div class="row justify-content-center mb-3">
             <div class="col-10">
-                <h3 class="my-4 fw-bold">Order Summary:</h3>
+                <h2 class="my-4 fw-bold">Order Summary:</h2>
             </div>
         </div>
         {% for item in order.lineitems.all %}
@@ -33,7 +33,7 @@ Checkout Success
             <div class="col-5">
                 <div class="ms-3">
                     <a class="text-dark text-decoration-none" href="{% url 'product_detail' item.product.id %}">
-                        <p class="fs-5 fw-bold mb-0 product-name bold-hover">{{ item.product.name }}</p>
+                        <h3 class="fs-5 fw-bold mb-0 product-name bold-hover">{{ item.product.name }}</h3>
                     </a>
                     <p class="text-muted fs-5">{{ item.quantity }} @
                         {% if item.product.sale_price %}

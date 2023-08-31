@@ -21,7 +21,7 @@ Shopping Bag
                 <thead>
                     <tr>
                         <th scope="col" class="fs-5">Product Info</th>
-                        <th scope="col" class="fs-5"> </th>
+                        <th scope="col" class="fs-5">Name</th>
                         <th scope="col" class="fs-5">Price</th>
                         <th scope="col" class="fs-5">Quantity</th>
                         <th scope="col" class="fs-5">Subtotal</th>
@@ -86,8 +86,8 @@ Shopping Bag
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="text-end">
-                            <h6>Bag total: <strong>£{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: <strong>£{{ delivery|floatformat:2 }}</strong></h6>
+                            <p class="fs-5 mb-0">Bag total: <strong>£{{ total|floatformat:2 }}</strong></p>
+                            <p class="fs-5 mb-0">Delivery: <strong>£{{ delivery|floatformat:2 }}</strong></p>
                             <h4>Total Price: <strong>£{{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
                                 <p>You could get free delivery by spending <strong>£{{ free_delivery_delta }}</strong> more!</p>

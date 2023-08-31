@@ -19,32 +19,32 @@ Checkout
             <h2 class="text-center mb-2 fw-bold">Order Summary</h2>
         </div>
             <div class="col-7">
-                <p class="fw-bold text-muted ms-5 fs-5">Item</p>
+                <h3 class="fw-bold text-muted ms-5 fs-5">Item</h3>
             </div>
             <div class="col-3">
-                <p class="fw-bold text-muted text-center fs-5">Subtotal</p>
+                <h3 class="fw-bold text-muted text-center fs-5">Subtotal</h3>
             </div>
         </div>
         {% for item in bag_items %}
         <div class="row justify-content-center mx-0 mb-3">
             <div class="col-2 mb-1">
                 <a href="{% url 'product_detail' item.product.id %}">
-                    <img class="rounded w-100" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="">
+                    <img class="rounded w-100" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="{{ item.product.name }}">
                 </a>
             </div>
             <div class="col-5">
                 <div class="ms-3">
                     <a class="text-dark text-decoration-none" href="{% url 'product_detail' item.product.id %}">
-                        <p class="fs-4 mb-0 product-name bold-hover">{{ item.product.name }}</p>
+                        <h4 class="fs-4 mb-0 product-name bold-hover">{{ item.product.name }}</h4>
                     </a>
-                    <p class="text-muted fs-5">Qty: {{ item.quantity }}</p>
+                    <h4 class="text-muted fs-5">Qty: {{ item.quantity }}</h4>
                 </div>
             </div>
             <div class="col-3 text-center">
                 {% if item.product.sale_price %}
-                <p class="fw-bold fs-5">£{{ item.product.sale_price | calculate_subtotal:item.quantity }}</p>
+                <h4 class="fw-bold fs-5">£{{ item.product.sale_price | calculate_subtotal:item.quantity }}</h4>
                 {% else %}
-                <p class="fw-bold fs-5">£{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                <h4 class="fw-bold fs-5">£{{ item.product.price | calculate_subtotal:item.quantity }}</h4>
                 {% endif %}
             </div>
         </div>
