@@ -10,7 +10,7 @@ Shopping Bag
 <div class="container">
     <div class="row">
         <div class="col">
-            <h2 class="text-center mt-4 fs-1">Shopping Bag</h2>
+            <h1 class="text-center mt-4 fs-1">Shopping Bag</h1>
             <hr class="mx-auto w-25">
         </div>
     </div>
@@ -21,7 +21,7 @@ Shopping Bag
                 <thead>
                     <tr>
                         <th scope="col" class="fs-5">Product Info</th>
-                        <th scope="col" class="fs-5"></th>
+                        <th scope="col" class="fs-5"> </th>
                         <th scope="col" class="fs-5">Price</th>
                         <th scope="col" class="fs-5">Quantity</th>
                         <th scope="col" class="fs-5">Subtotal</th>
@@ -39,10 +39,10 @@ Shopping Bag
                         </td>
                         <td>
                             {% if item.product.sale_price %}
-                                <p class="mb-0 text-muted text-decoration-line-through d-inline fs-5">£{{ item.product.price }}</p>
-                                <p class="text-danger mb-0 fw-bold fs-5">£{{ item.product.sale_price }}</p>
+                                <h2 class="mb-0 text-muted text-decoration-line-through d-inline fs-5">£{{ item.product.price }}</h2>
+                                <h2 class="text-danger mb-0 fw-bold fs-5">£{{ item.product.sale_price }}</h2>
                             {% else %}
-                                <p class="fw-bold fs-5">£{{ item.product.price }}</p>
+                                <h2 class="fw-bold fs-5">£{{ item.product.price }}</h2>
                             {% endif %}
                         </td>
                         <td>
@@ -52,7 +52,7 @@ Shopping Bag
                                     <div class="input-group input-group-{{ item.item_id }}">
                                         <div class="input-group-prepend">
                                             <button class="decrement-qty btn btn-sm btn-black decrement-qty_{{ item.item_id }} border border-0" 
-                                                data-item_id="{{ item.item_id }}">
+                                                data-item_id="{{ item.item_id }}" aria-label="Decrement quantity">
                                                 <span>
                                                     <i class="fa-solid fa-minus fa-sm"></i>
                                                 </span>
@@ -60,10 +60,10 @@ Shopping Bag
                                         </div>
                                         <input class="form-control form-control-sm qty_input id_qty_{{ item.item_id }} rounded" type="number"
                                             name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock_remaining }}"
-                                            data-item_id="{{ item.item_id }}">
+                                            data-item_id="{{ item.item_id }}" aria-label="Quantity">
                                         <div class="input-group-append">
                                             <button class="increment-qty btn btn-sm btn-black increment-qty_{{ item.item_id }} border border-0"
-                                                data-item_id="{{ item.item_id }}">
+                                                data-item_id="{{ item.item_id }}" aria-label="Increment quantity">
                                                 <span>
                                                     <i class="fa-solid fa-plus fa-sm"></i>
                                                 </span>
@@ -77,9 +77,9 @@ Shopping Bag
                         </td>
                         <td>
                             {% if item.product.sale_price %}
-                                <p class="fw-bold fs-5">£{{ item.product.sale_price | calculate_subtotal:item.quantity }}</p>
+                                <h3 class="fw-bold fs-5">£{{ item.product.sale_price | calculate_subtotal:item.quantity }}</h3>
                             {% else %}
-                                <p class="fw-bold fs-5">£{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                                <h3 class="fw-bold fs-5">£{{ item.product.price | calculate_subtotal:item.quantity }}</h3>
                             {% endif %}
                         </td>
                     </tr>

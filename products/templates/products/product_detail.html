@@ -143,7 +143,7 @@
                                             <div class="input-group-prepend">
                                                 <button
                                                     class="decrement-qty btn btn-black decrement-qty_{{ product.id }} border border-0"
-                                                    data-item_id="{{ product.id }}">
+                                                    data-item_id="{{ product.id }}" aria-label="Decrement quantity">
                                                     <span>
                                                         <i class="fa-solid fa-minus"></i>
                                                     </span>
@@ -151,11 +151,11 @@
                                             </div>
                                             <input class="form-control qty_input id_qty_{{ product.id }} rounded"
                                                 type="number" name="quantity" value="1" min="1"
-                                                max="{{ product.stock_remaining }}" data-item_id="{{ product.id }}">
+                                                max="{{ product.stock_remaining }}" data-item_id="{{ product.id }}" aria-label="quantity">
                                             <div class="input-group-append">
                                                 <button
                                                     class="increment-qty btn btn-black increment-qty_{{ product.id }} border border-0"
-                                                    data-item_id="{{ product.id }}">
+                                                    data-item_id="{{ product.id }}" aria-label="Increment quantity">
                                                     <span class="icon">
                                                         <i class="fa-solid fa-plus"></i>
                                                     </span>

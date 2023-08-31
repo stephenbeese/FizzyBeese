@@ -63,7 +63,7 @@ Products
             {% if products|length == 0 %}
             <div class="row">
                 <div class="col-6 offset-3 text-center">
-                    <h3 class="my-3 fw-bold">Oops, we don't have what you're looking for!</h3>
+                    <h1 class="my-3 fw-bold">Oops, we don't have what you're looking for!</h1>
                     <a href="{% url 'products' %}" class="btn btn-outline-dark">
                         <span class="icon me-2 fw-bold"><i class="fa-solid fa-chevron-left fa-xl"></i></span>
                         <span>Go Back</span>
@@ -79,14 +79,14 @@ Products
                     <a href="{% url 'product_detail' product.id %}">
                         {% if product.image %}
                         <img src="{{ product.image.url }}" class="card-img-top border-bottom border-dark"
-                            alt="{{ product.image }}">
+                            alt="{{ product.name }}">
                         {% else %}
-                        <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark" alt="">
+                        <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark" alt="{{ product.name }}">
                         {% endif %}
                     </a>
                     <div class="card-body pb-0">
                         <a class="text-decoration-none" href="{% url 'product_detail' product.id %}">
-                            <p class="text-black mb-0 fs-5">{{ product.name }}</p>
+                            <h2 class="text-black mb-0 fs-5">{{ product.name }}</h2>
                         </a>
                         <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
                         {% for product_category in product.product_categories.all %}
@@ -111,25 +111,25 @@ Products
                         <div class="row">
                             <div class="col-lg-6 p-0 text-start">
                                 {% if product.sale_price %}
-                                <p class="fw-bold text-danger mb-0 fs-5 ms-2">
+                                <h3 class="fw-bold text-danger mb-0 fs-5 ms-2">
                                     £{{ product.sale_price }}
                                     <span class="mb-0 text-muted text-decoration-line-through d-inline old-price ms-1">
                                         £{{ product.price }}
                                     </span>
-                                </p>
+                                </h3>
                                 {% else %}
-                                <p class="fw-bold mb-0 fs-5 ms-2">£{{ product.price }}</p>
+                                <h3 class="fw-bold mb-0 fs-5 ms-2">£{{ product.price }}</h3>
                                 {% endif %}
                             </div>
                             <div class="col-lg-6 p-0 text-end">
                                 <form action="{% url 'add_to_bag' product.id %}" method="POST" class="form">
                                     {% csrf_token %}
-                                    <input type="number" name="quantity" value="1" class="d-none">
+                                    <input type="number" name="quantity" value="1" class="d-none" aria-label="Quantity">
                                     {% if product.stock_remaining <= 0 %}
-                                    <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock"
+                                    <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock" aria-label="Out of stock"
                                         disabled>
                                     {% else %}
-                                    <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag">
+                                    <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag" aria-label="Add to bag">
                                     {% endif %}
                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                 </form>

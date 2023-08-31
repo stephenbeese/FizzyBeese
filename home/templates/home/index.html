@@ -50,7 +50,7 @@ Home
 <section>
     <div class="row bg-white w-100 m-0 border-top-and-bottom our-products">
         <div class="col-12 text-center">
-            <h2 class="mt-3">Our Products</h2>
+            <h1 class="mt-3">Our Products</h1>
             <hr class="mx-auto mt-0">
             <p>With our wide range of products,<br>we guarantee we have a scent for everyone!</p>
             <div class="row justify-content-center mb-3">
@@ -60,7 +60,7 @@ Home
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}bath-bomb.jpg" alt="Bath bombs">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
-                            <p class="text-white fs-1 bold-underline-hover">Bath Bombs</p>
+                            <h2 class="text-white fs-1 bold-underline-hover">Bath Bombs</h2>
                             <hr class="mx-auto">
                         </div>
                     </a>
@@ -70,7 +70,7 @@ Home
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-melt.jpg" alt="Wax melts">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
-                            <p class="text-white fs-1 bold-underline-hover">Wax Melts</p>
+                            <h2 class="text-white fs-1 bold-underline-hover">Wax Melts</h2>
                             <hr class="mx-auto">
                         </div>
                     </a>
@@ -81,7 +81,7 @@ Home
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}soap-sponge.jpg" alt="Soap sponges">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
-                            <p class="text-white fs-1 bold-underline-hover">Soap Sponges</p>
+                            <h2 class="text-white fs-1 bold-underline-hover">Soap Sponges</h2>
                             <hr class="mx-auto">
                         </div>
                     </a>
@@ -91,7 +91,7 @@ Home
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}candle.jpg" alt="Candles">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
-                            <p class="text-white fs-1 bold-underline-hover">Candles</p>
+                            <h2 class="text-white fs-1 bold-underline-hover">Candles</h2>
                             <hr class="mx-auto">
                         </div>
                     </a>
@@ -103,7 +103,7 @@ Home
                             alt="Car freshners">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
-                            <p class="text-white fs-1 bold-underline-hover">Car Freshners</p>
+                            <h2 class="text-white fs-1 bold-underline-hover">Car Freshners</h2>
                             <hr class="mx-auto">
                         </div>
                     </a>
@@ -114,7 +114,7 @@ Home
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-burner.jpg" alt="Wax Burners">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
-                            <p class="text-white fs-1 bold-underline-hover">Wax Burners</p>
+                            <h2 class="text-white fs-1 bold-underline-hover">Wax Burners</h2>
                             <hr class="mx-auto">
                         </div>
                     </a>
@@ -141,7 +141,7 @@ Home
                                         <div class="row">
                                             <a href="{% url 'product_detail' f.id %}">
                                                 <img src="{{ MEDIA_URL }}{{ f.image }}"
-                                                    class="featured-image rounded card-shadow" alt="{{ f.image }}">
+                                                    class="featured-image rounded card-shadow" alt="{{ f.name }}">
                                             </a>
                                         </div>
                                         <div class="row w-100 m-0">
@@ -175,7 +175,7 @@ Home
                                         <div class="row">
                                             <a href="{% url 'product_detail' l.id %}">
                                                 <img src="{{ MEDIA_URL }}{{ l.image }}"
-                                                    class="latest-image rounded card-shadow" alt="{{ l.image }}">
+                                                    class="latest-image rounded card-shadow" alt="{{ l.name }}">
                                             </a>
                                         </div>
                                         <div class="row w-100 m-0">
@@ -209,21 +209,21 @@ Home
             <div class="row justify-content-evenly mt-5 mb-3">
                 <div class="col-md-4 col-lg-3 col-10">
                     <span class="icon"><i class="fa-solid fa-leaf fa-xl"></i></span>
-                    <h4 class="fw-bold my-2">Nature-Lover</h4>
+                    <h3 class="fw-bold my-2">Nature-Lover</h3>
                     <p>We believe in the power of nature to heal and rejuvenate. That's why we use only the finest
                         natural ingredients in our bath bombs and wax melts. We also believe in being environmentally
                         conscious, so our products are always cruelty-free and vegan.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-10">
                     <span class="icon"><i class="fa-regular fa-handshake fa-xl"></i></span>
-                    <h4 class="fw-bold my-2">Hard Work Pays Off</h4>
+                    <h3 class="fw-bold my-2">Hard Work Pays Off</h3>
                     <p>We're a small business, but we work hard to make sure our products are the best they can be.
                         We're always innovating and looking for new ways to improve our products. We believe that hard
                         work and dedication always pay off.</p>
                 </div>
                 <div class="col-md-4 col-lg-3 col-10">
                     <span class="icon"><i class="fa-regular fa-heart fa-xl"></i></span>
-                    <h4 class="fw-bold my-2">Customer First</h4>
+                    <h3 class="fw-bold my-2">Customer First</h3>
                     <p>We put the customer first in everything we do. We want to make sure that you're happy with your
                         purchase, and we're always here to answer your questions. We believe that customer satisfaction
                         is the most important thing.</p>
@@ -260,7 +260,7 @@ Home
                 <div class="col-12 col-md-5 col-lg-3 offset-md-1">
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-5 col-md-12">
-                            <h4 class="mt-4 fs-2">Address</h4>
+                            <h3 class="mt-4 fs-2">Address</h3>
                             <div class="text-start mt-3 ms-5 lh-1 home-address">
                                 <p class="mb-2">38 Long Road</p>
                                 <p class="mb-2">Mangotsfield</p>
@@ -269,7 +269,7 @@ Home
                             </div>
                         </div>
                         <div class="col-12 col-sm-5 col-md-12">
-                            <h4 class="mt-4 fs-2">Opening Hours</h4>
+                            <h3 class="mt-4 fs-2">Opening Hours</h3>
                             <div class="text-start ms-5">
                                 <p>
                                     <strong>Monday:</strong> 10am - 4pm <br>
@@ -285,7 +285,7 @@ Home
                     </div>
                 </div>
                 <div class="col-12 col-md-5 col-lg-7 mb-3 order-first order-md-last">
-                    <h4 class="mt-4 mb-3 fs-2">Find us on Google Maps</h4>
+                    <h3 class="mt-4 mb-3 fs-2">Find us on Google Maps</h3>
                     <div id="gmp-map"></div>
                 </div>
             </div>
