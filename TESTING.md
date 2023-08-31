@@ -96,6 +96,138 @@ As you can see above the only errors remaining are lines that are too long for t
 I did try to shorten these lines however some were not possible so therefore I left them.
 
 
+# WAVE Evaluation Tool
+
+
+# Lighthouse
+
+### Home page
+
+- Desktop
+
+![Lighthouse Home Page](readme/lighthouse-home-desktop.png)
+
+- Mobile
+
+![Lighthouse Home Page](readme/lighthouse-home-mobile.png)
+
+### All Products page
+
+- Desktop
+
+![Lighthouse All Products Page](readme/lighthouse-products-desktop.png)
+
+- Mobile
+
+![Lighthouse All Products Page](readme/lighthouse-products-mobile.png)
+
+### Product Detail page
+
+- Desktop
+
+![Lighthouse Product Detail Page](readme/lighthouse-product-detail-desktop.png)
+
+- Mobile
+
+![Lighthouse Product Detail Page](readme/lighthouse-product-detail-mobile.png)
+
+### Shopping Bag page
+
+- Desktop
+
+![Lighthouse Shopping Bag Page](readme/lighthouse-bag-desktop.png)
+
+- Mobile
+
+![Lighthouse Shopping Bag Page](readme/lighthouse-bag-mobile.png)
+
+### Checkout page
+
+- Desktop
+
+![Lighthouse Checkout Page](readme/lighthouse-checkout-desktop.png)
+
+- Mobile
+
+![Lighthouse Checkout Page](readme/lighthouse-checkout-mobile.png)
+
+
+### Checkout Success page
+
+- Desktop
+
+![Lighthouse Checkout Success Page](readme/lighthouse-checkout-success-desktop.png)
+
+- Mobile
+
+![Lighthouse Checkout Success Page](readme/lighthouse-checkout-success-mobile.png)
+
+
+### Profile page
+
+- Desktop
+
+![Lighthouse Profile Page](readme/lighthouse-profile-desktop.png)
+
+- Mobile
+
+![Lighthouse Profile Page](readme/lighthouse-profile-mobile.png)
+
+
+### Contact Form page
+
+- Desktop
+
+![Lighthouse Contact Form Page](readme/lighthouse-contact-form-desktop.png)
+
+- Mobile
+
+![Lighthouse Contact Form Page](readme/lighthouse-contact-form-mobile.png)
+
+
+### Events page
+
+- Desktop
+
+![Lighthouse Events Page](readme/lighthouse-events-desktop.png)
+
+- Mobile
+
+![Lighthouse Events Page](readme/lighthouse-events-mobile.png)
+
+
+### Events Form page
+
+- Desktop
+
+![Lighthouse Events Form Page](readme/lighthouse-events-form-desktop.png)
+
+- Mobile
+
+![Lighthouse Events Form Page](readme/lighthouse-events-form-mobile.png)
+
+
+### Testimonial Form page
+
+- Desktop
+
+![Lighthouse Testimonial Form Page](readme/lighthouse-testimonial-form-desktop.png)
+
+- Mobile
+
+![Lighthouse Testimonial Form Page](readme/lighthouse-testimonial-form-mobile.png)
+
+
+### About page
+
+- Desktop
+
+![Lighthouse About Page](readme/lighthouse-about-desktop.png)
+
+- Mobile
+
+![Lighthouse About Page](readme/lighthouse-about-mobile.png)
+
 # Manual Testing of Epics and User Stories
 
 ## Epics
