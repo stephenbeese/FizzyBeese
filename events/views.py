@@ -45,7 +45,8 @@ class CreateEvent(View):
 class Events(View):
     def get(self, request):
         current_time = timezone.now()
-        future_events = Event.objects.filter(start_time__gt=current_time).order_by('start_time')
+        future_events = Event.objects.filter(
+            start_time__gt=current_time).order_by('start_time')
         template = 'events/events_list.html'
         context = {
             'events': future_events,
