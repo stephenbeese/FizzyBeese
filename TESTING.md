@@ -18,7 +18,7 @@
 ## HTML
 To test the HTML of the site I used the W3C HTML Validator.
 
-After testing each page by direct input, I can confim that there were no errors other than an empty h1 element that contained the loading spinner for checkout submissions.
+After testing each page by direct input, I can confirm that there were no errors other than an empty h1 element that contained the loading spinner for checkout submissions.
 
 ![Loading spinner HTML warning](readme/empty-heading-warning.png)
 
@@ -26,7 +26,7 @@ After filtering out this warning there were no further warnings or errors.
 
 
 ## CSS
-I ran each css file through the W3C CSS validation service and I recieved no errors.
+I ran each CSS file through the W3C CSS validation service and I received no errors.
 
 The files I tested were:
 - static/css/base.css
@@ -36,12 +36,12 @@ The files I tested were:
 
 ![CSS validation](readme/css-validator.png)
 
-I did recieve one warning on the checkout.css file and that was:
+I did receive one warning on the checkout.css file and that was:
 
 ![CSS warning](readme/css-warning.png)
 
 ## Javascript
-To test my javascript I ran each file and <script></script> element through JSHint and recieved no errors except for the following that were out of my control.
+To test my javascript I ran each file and <script></script> element through JSHint and received no errors except for the following that were out of my control.
 
 - stripe_elements.js - One undefined variable Stripe
 
@@ -108,7 +108,7 @@ The only errors remaining after correcting them with autopep8 are as follows:
 
 As you can see above the only errors remaining are lines that are too long for the standard pep8 guidelines.
 
-I did try to shorten these lines however some were not possible so therefore I left them.
+I did try to shorten these lines however some were not possible so I left them.
 
 
 # WAVE Evaluation Tool
@@ -121,20 +121,20 @@ The ones I did have though are as follows:
 
 **Footer**
 - Low contrast on MailChimp elements
-- Missing aria-label on MailChimp input field
+- Missing aria label on MailChimp input field
 
 **Products**
 - Redundant links - This was due to having the product image and product name both wrapped in anchor tags.
 
 **Checkout**
 - Missing labels on form fields
-- Again, I recieved a redundant links alert due to the reason mentioned above.
+- Again, I received a redundant links alert due to the reason mentioned above.
 
 **Checkout Success**
-- Empty table header - This is in regards to the order information table. The second column has been left blank to hold the values of the order information.
+- Empty table header - This is in regard to the order information table. The second column has been left blank to hold the values of the order information.
 
 **Events**
-- Empty table header - This is again due to styling choices. I do not feel that it is neccessary to have a heading here.
+- Empty table header - This is again due to styling choices. I do not feel that it is necessary to have a heading here.
 
 **Add Product**
 - No form label for image and image label fields.

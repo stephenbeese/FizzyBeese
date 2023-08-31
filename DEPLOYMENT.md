@@ -46,7 +46,7 @@
   import dj_database_url
   ```
 
-4. Remaining in your settings.py file scroll to the **DATABASES** section, comment out the SQLite3 database and connect to your ElephantSQL database URL. Your code should look like this:
+4. Remaining in your settings.py file scroll to the **DATABASES** section, comment out the SQLite3 database, and connect to your ElephantSQL database URL. Your code should look like this:
   ```
   # DATABASES = {
   #     'default': {
@@ -113,7 +113,7 @@
       }
 ```
 
-2. Install gunicorn to act as your web server. In the terminal type the following command:
+2. Install Gunicorn to act as your web server. In the terminal type the following command:
 ```
   pip3 install gunicorn
 ```
@@ -123,7 +123,7 @@
   pip3 freeze > requirements.txt
 ```
 
-4. Create a file named Procfile in the root directory. This tells Heroku to create a web dyno that will run gunicorn and serve our Django app. In the file you will need to include the following line:
+4. Create a file named Procfile in the root directory. This tells Heroku to create a web dyno that will run Gunicorn and serve our Django app. In the file you will need to include the following line:
 ```
   web: gunicorn fizzybeese.wsgi:application
 ```
@@ -256,7 +256,7 @@ ensuring it is the same value as is in your config variables.
   - Click the 'Download .csv file' button. This will contain the user's access key and secret access key. We will use these to authenticate them through our Django app. It is very important that you download and save this as we will not be able to access this again.
 
 ### 7. Connecting Django to S3
-1. Install packages boto3 and django storages with the following terminal commands:
+1. Install packages boto3 and Django storages with the following terminal commands:
 ```
   pip3 install boto3
   pip3 install django-storages
@@ -267,7 +267,7 @@ ensuring it is the same value as is in your config variables.
 ```
 3. Add ```'storages',``` to the bottom of your installed apps in your settings.py file
 4. To connect Django to S3 we need to add some other settings in settings.py
-- Add the following settings just under you MEDIA_URL and MEDIA_ROOT settings.
+- Add the following settings just under your MEDIA_URL and MEDIA_ROOT settings.
 ```
   if 'USE_AWS' in os.environ:
     AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
@@ -275,15 +275,15 @@ ensuring it is the same value as is in your config variables.
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 ```
-5. With that addeed, you will need to go to heroku and add your AWS keys to the config variables under settings in your relevant app.
+5. With that added, you will need to go to Heroku and add your AWS keys to the config variables under settings in your relevant app.
 6. Add your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY as config variables. Their values can be found in the .csv file you downloaded earlier. You will also need to add the USE_AWS key which we will set to True.
-7. While were here we can remove the DISABLE_COLLECTSTATIC variable. As Django should now collectstatic files and automatically upload them to S3.
+7. While we're here we can remove the DISABLE_COLLECTSTATIC variable. As Django should now collectstatic files and automatically upload them to S3.
 8. Back in your settings.py file we need to tell Django where our static files will be coming from in production. Which we can do with the following line (In the if statement in step 4.):
 ```
   AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 ```
 9. We now need to tell Django that in production we want to use S3 to store our static files whenever someone runs collectstatic and that we want any uploaded product images to go there also. To do this follow these steps:
-- create a new file in the root directory named ```custom_storages.py```
+- Create a new file in the root directory named ```custom_storages.py```
 - In this file at the top import django settings and s3boto3 storage class from django storages.
 ```
   from django.conf import settings
@@ -310,8 +310,8 @@ ensuring it is the same value as is in your config variables.
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 ```
-11. Now we can add, commit and push our changes to GitHub. This will make Heroku run ```python3 manage.py collectstatic``` during the build process and upload our static files to S3.
-12. We can now go to our Heroku app page and view the build log and the click on Open app to view our app to see if our staticfiles have now been uploaded. We can also look at our S3 bucket page and we should see a static folder containing all of our static files.
+11. Now we can add, commit, and push our changes to GitHub. This will make Heroku run ```python3 manage.py collectstatic``` during the build process and upload our static files to S3.
+12. We can now go to our Heroku app page view the build log and then click on Open app to view our app to see if our static files have now been uploaded. We can also look at our S3 bucket page and we should see a static folder containing all of our static files.
 
 ### 8. Media Files
 1. (Optional) We can add an optional setting to cache our static files. This will improve performance for our users. If you would like to add this functionality add the following code to the top of your ```if 'USE_AWS' in os.environ:``` statement.
@@ -322,26 +322,26 @@ ensuring it is the same value as is in your config variables.
       'CacheControl': 'max-age=94608000',
   }
 ```
-2. We can now add and commit that then push to GitHub
-3. Now go to S3 and under your app create a new folder called media and click create folder.
-4. Inside of this folder click add files and then select all the product images.
+2. We can now add and commit that and then push it to GitHub
+3. Now go to S3 and under your app create a new folder called media and click Create folder.
+4. Inside of this folder click Add Files and then select all the product images.
 5. Under permissions you will find an Access Control List (ACL) heading. You will need to select the Grant public-read access button and confirm you understand the risks.
-6. You can now scroll to the bottom of the page and click upload.
+6. You can now scroll to the bottom of the page and click Upload.
 
 ### 9. Django admin
 - You will need to verify your superuser's email address in your deployed app.
 - To do this go to the admin panel and log in using your superuser credentials you created earlier.
-- Go to email addresses click on your email and check the verified and primary checkboxes and click save
-- **Please note:** If you do not see your email here, you will first have to attempt to login and then it will show up in the admin panel's email address section above.
+- Go to email addresses click on your email, check the verified and primary checkboxes and click save
+- **Please note:** If you do not see your email here, you will first have to attempt to log in and then it will show up in the admin panel's email address section above.
 
 ### 10. Set up Stripe keys and webhook endpoint
 1. Navigate to Stripe and log in.
-2. Go to the developers section and go onto the API keys tab.
+2. Go to the developers' section and go onto the API keys tab.
 3. Copy your publishable key and create a new config var in Heroku called STRIPE_PUBLIC_KEY and paste in the publishable key as the value.
 4. Do the same with the secret key and name it STRIPE_SECRET_KEY and again, paste in the value of the secret key.
-5. To set up the new endpoint, navigate to Webhooks in the developers menu and click add endpoint.
+5. To set up the new endpoint, navigate to Webhooks in the developers' menu and click Add endpoint.
 6. Copy your Heroku app URL to the Endpoint URL text box and add /checkout/wh/ to the end of it.
-7. Click Select events then Select all events and click the Add events button at the bottom.
+7. Click Select Events then Select all events and click the Add Events button at the bottom.
 8. You can then click Add endpoint.
 9. You can now reveal your Signing secret and copy it to your clipboard.
 10. Back in Heroku you need to add that to your config variables with the key STRIPE_WH_SECRET.

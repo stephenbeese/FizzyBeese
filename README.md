@@ -195,8 +195,8 @@ Once this feature was completed I would move the user story from the in-progress
 ### Keywords
 To increase SEO I have used a keywords and description Meta tag in the head of my [base.html](templates/base.html) template. I initially wrote down as many short and long-tail keywords I could think of. I then typed some keywords into wordtracker.com to see which keywords had the highest volume (average number of searches) with the lowest competition.
 
-With finding this balance the list of best keywords are as follows:
-- scented wax melts, best scented wax melts, high scented wax melts, homemade muscle soak bath bomb, homemade bath bombs, homemade bath bombs uk, bath bomb set, Homemade toilet bombs, Toilet bombs uk, Cruelty free mens fragrance uk, Best selling bath products, Coconut bath products, Eco-friendly bath products.
+To find this balance the list of best keywords are as follows:
+- scented wax melts, best scented wax melts, high scented wax melts, homemade muscle soak bath bomb, homemade bath bombs, homemade bath bombs uk, bath bomb set, Homemade toilet bombs, Toilet bombs uk, cruelty free mens fragrance uk, Best selling bath products, Coconut bath products, Eco-friendly bath products.
 
 I have also included some other keywords that may be less efficient but are still relevant.
 
@@ -367,7 +367,7 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 
 **Offers**
    - In the navbar, there is an offers dropdown menu. 
-   - This menu displays when there are products that populate it. For example, if there are sale items, clearance items or both.
+   - This menu displays when there are products that populate it. For example, if there are sale items, clearance items, or both.
    - The dropdown will not show if there are no sale or clearance items.
 
 ![Offers tab](readme/offers-tab.png)
@@ -585,9 +585,6 @@ A [sitemap.xml](sitemap.xml) and a [robots.txt](robots.txt) file have been added
 
 ![No events page](readme/no-events.png)
 
-
-                        ADD EVENTS HERE!!!!! NOT ADMIN!!!!!!!!!!!
-
 ### Existing Admin Features
 
 ![Admin dropdown bar](readme/my-account-dropdown-admin.png)
@@ -755,7 +752,7 @@ Below is a list of bugs that occurred during the development process, the causes
 | The image and label widget on the edit product page was not showing despite following the example in the Boutique ado project. | The template was rendering the form element as a crispy form, not the custom widget. | The issue here was solved by adding an if statement into the form (lines 24 to 27 in [edit_product.html](products/templates/products/edit_product.html)) to render the custom widget instead of the crispy form field. |
 Failed Build when deploying to Heroku. | Heroku failed to build due to <code>backport.zoneinfo</code> | This requirement is only needed when the Python version is below 3.9 so I added the following code to only install the package when it is required. <code>backports.zoneinfo==0.2.1;python_version<"3.9"</code> |
 | I was originally using the latest version of Django (v4.2.4). Which was fine until I needed to deploy. When attempting to connect to my ElephantSQL I was unable to use the version of PostgreSQL that they have to use for free which is 11.8. | The cause of this was that the Django version I was using was only compatible with PostgreSQL version 12 and up. | The solution to this was to uninstall Django using the terminal command <code>pip3 uninstall django</code> and then install Django version 3.2 with the following command <code>pip3 install Django==3.2</code>
-|Google Maps API was not working on my Heroku app after deployment. | The cause of this was that the deployed versions URL was not registered. | After trying to add the deployed version to the allowed referrers on the Google Maps Credentials page multiple times, I decided to create a new project and start again. Once I had set this up and added the URL to the Google Maps API restrictions it worked perfectly first try on both my development version and my production version.
+|Google Maps API was not working on my Heroku app after deployment. | The cause of this was that the deployed version's URL was not registered. | After trying to add the deployed version to the allowed referrers on the Google Maps Credentials page multiple times, I decided to create a new project and start again. Once I had set this up and added the URL to the Google Maps API restrictions it worked perfectly first try on both my development version and my production version.
 
 
 ## Deployment
