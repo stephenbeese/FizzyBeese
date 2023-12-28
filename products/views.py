@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, Case, When, F, ExpressionWrapper, fields
+# from django.db.models.functions import Coalesce
 from django.db.models.functions import Lower
 from .models import Product, ProductCategory, FragranceCategory, AdditionalImages
 from .forms import ProductForm, AdditionalImagesForm
+
+# from django.db.models import Case, When, Value, FloatField
 
 
 def all_products(request):
@@ -27,10 +30,24 @@ def all_products(request):
                 sortkey = 'product_categories__name'
             elif sortkey == 'fragrance_categories':
                 sortkey = 'fragrance_categories__name'
+            elif sortkey == 'price':
+                # Sort by price, considering sale price if available
+                price_expression = Case(
+                    When(sale_price__isnull=False, then=F('sale_price')),
+                    default=F('price'),
+                    output_field=fields.FloatField(),
+                )
+                products = products.annotate(sorted_price=price_expression)
+
+                # Update sortkey to use the annotated field
+                sortkey = 'sorted_price'
+
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
+
             products = products.order_by(sortkey)
 
         if 'product_categories' in request.GET:

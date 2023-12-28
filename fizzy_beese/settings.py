@@ -32,7 +32,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu104.gitpod.io',
     'fizzybeese-52707759b9ba.herokuapp.com',
-    'localhost']
+    'localhost',
+    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu107.gitpod.io']
 
 # Application definition
 
