@@ -17,6 +17,26 @@ def all_products(request):
     direction = None
 
     if request.GET:
+        if 'product_categories' in request.GET:
+            product_category = request.GET.getlist('product_categories')
+            products = products.filter(
+                product_categories__name__in=product_category)
+            product_category = ProductCategory.objects.filter(
+                name__in=product_category)
+
+        if 'fragrance_categories' in request.GET:
+            fragrance_category = request.GET.getlist('fragrance_categories')
+            products = products.filter(
+                fragrance_categories__name__in=fragrance_category)
+            fragrance_category = FragranceCategory.objects.filter(
+                name__in=fragrance_category)
+
+        if 'sale' in request.GET:
+            products = Product.objects.filter(sale_price__isnull=False)
+
+        if 'is_clearance' in request.GET:
+            products = products.filter(is_clearance=True)
+
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -46,26 +66,6 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
 
             products = products.order_by(sortkey)
-
-        if 'product_categories' in request.GET:
-            product_category = request.GET.getlist('product_categories')
-            products = products.filter(
-                product_categories__name__in=product_category)
-            product_category = ProductCategory.objects.filter(
-                name__in=product_category)
-
-        if 'fragrance_categories' in request.GET:
-            fragrance_category = request.GET.getlist('fragrance_categories')
-            products = products.filter(
-                fragrance_categories__name__in=fragrance_category)
-            fragrance_category = FragranceCategory.objects.filter(
-                name__in=fragrance_category)
-
-        if 'sale' in request.GET:
-            products = Product.objects.filter(sale_price__isnull=False)
-
-        if 'is_clearance' in request.GET:
-            products = products.filter(is_clearance=True)
 
         if 'stock_remaining' in request.GET:
             products = products.order_by('stock_remaining')
