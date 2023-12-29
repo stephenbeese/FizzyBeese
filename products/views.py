@@ -1,13 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q, Case, When, F, ExpressionWrapper, fields
-# from django.db.models.functions import Coalesce
+from django.db.models import Q, Case, When, F, fields
 from django.db.models.functions import Lower
 from .models import Product, ProductCategory, FragranceCategory, AdditionalImages
 from .forms import ProductForm, AdditionalImagesForm
-
-# from django.db.models import Case, When, Value, FloatField
 
 
 def all_products(request):
