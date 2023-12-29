@@ -52,10 +52,15 @@
                         <a class="text-decoration-none"
                             href="{% url 'products' %}?product_categories={{ product_category.name }}">
                             <p class="d-inline text-muted text-uppercase categories">
-                                {{ product_category.friendly_name }} |
+                                {{ product_category.friendly_name }}
                             </p>
                         </a>
                         {% endfor %}
+
+                        {% if product.fragrance_categories%}
+                            <p class="d-inline text-muted text-uppercase categories">|</p>
+                        {% endif %}
+
                         {% for fragrance_category in product.fragrance_categories.all %}
                         <a class="text-decoration-none"
                             href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
