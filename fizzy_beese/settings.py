@@ -33,7 +33,9 @@ ALLOWED_HOSTS = [
     '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu104.gitpod.io',
     'fizzybeese-52707759b9ba.herokuapp.com',
     'localhost',
-    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu107.gitpod.io']
+    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu107.gitpod.io',
+    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu108.gitpod.io',
+    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu114.gitpod.io']
 
 # Application definition
 
@@ -147,6 +149,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

@@ -172,28 +172,28 @@ a.icon {
 
 /* Home page image and call to action */
 .home-image {
-    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
+    background: url('/media/bath-bomb-home.webp') no-repeat center center fixed;
     background-size: cover;
     height: 70vh;
     width: 100vw;
 }
 
 .home-products-image {
-    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
+    background: url('/media/bath-bomb-home.webp') no-repeat center center fixed;
     background-size: cover;
     height: 92vh;
     width: 100vw;
 }
 
 .testimonial-image {
-    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
+    background: url('/media/bath-bomb-home.webp') no-repeat center center fixed;
     background-size: cover;
     min-height: fit-content;
     width: 100vw;
 }
 
 .featured-products-image {
-    background: url('/media/bath-bomb-home.jpeg') no-repeat center center fixed;
+    background: url('/media/bath-bomb-home.webp') no-repeat center center fixed;
     background-size: cover;
     width: 100%;
     max-width: none;
@@ -263,17 +263,19 @@ a.icon {
     color: white;
 }
 
-.product-overlay hr, .product-overlay p {
+.product-overlay hr,
+.product-overlay p {
     margin: 10px;
-  }
+}
 
 .product-home-div:hover .product-overlay {
-    display: flex; /* Show the overlay on hover */
+    display: flex;
+    /* Show the overlay on hover */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
-  }
+}
 
 
 /* Our values section */
@@ -309,7 +311,7 @@ a.icon {
 
 .carousel-inner,
 .carousel-item,
-.carousel-item > img {
+.carousel-item>img {
     max-height: 450px;
 }
 
@@ -362,7 +364,7 @@ a.icon {
 .about-image {
     max-height: fit-content;
     max-width: 80%;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
 }
 
 
@@ -382,7 +384,7 @@ a.icon {
 }
 
 .card-shadow:hover {
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
 }
 
 .card-body {
@@ -583,6 +585,7 @@ Product Details Page
     .product-home-image {
         max-width: 25vw;
     }
+
     .product-overlay {
         max-width: 25vw;
         height: 25vw;
@@ -636,7 +639,7 @@ Product Details Page
     }
 
     .carousel-item,
-    .carousel-item > img {
+    .carousel-item>img {
         max-height: unset;
         height: 390px;
     }
