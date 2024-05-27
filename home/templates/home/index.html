@@ -4,9 +4,9 @@
 {% block extra_js %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2yPNEdhnFwkQevJUkQWDJE9I9uX6B_L4&callback=initMap&libraries=&v=weekly&loading=async" defer></script>
-<script>
+<script defer>
     "use strict";
-
+    
     function initMap() {
         const myLatLng = {
             lat: 51.48480987548828,
@@ -136,7 +136,87 @@ Home
                             <div class="col-9 overflow-x-scroll d-flex">
                                 {% for f in featured_products %}
                                 {% if f.is_hidden == False %}
-                                <div class="row featured-products-container">
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 featured-products-container">
+                                    <div class="card card-shadow border-dark">
+                                        <a href="{% url 'product_detail' f.id %}">
+                                            {% if f.image %}
+                                            <img src="{{ f.image.url }}" class="card-img-top border-bottom border-dark"
+                                                alt="{{ f.name }}">
+                                            {% else %}
+                                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark"
+                                                alt="{{ f.name }}">
+                                            {% endif %}
+                                        </a>
+                                        <div class="card-body pb-0">
+                                            <a class="text-decoration-none" href="{% url 'product_detail' f.id %}">
+                                                <h2 class="text-black mb-0 fs-5 bold-underline-hover">{{ f.name }}</h2>
+                                            </a>
+                                            <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
+                                            {% for product_category in f.product_categories.all %}
+                                            <a class="text-decoration-none"
+                                                href="{% url 'products' %}?product_categories={{ product_category.name }}">
+                                                <p class="d-inline text-muted text-uppercase categories">
+                                                    {{ product_category.friendly_name }}</p>
+                                            </a>
+                                            {% endfor %}
+                                            {% if f.fragrance_categories %}
+                                                <p class="d-inline text-muted text-uppercase categories">|</p>
+                                            {% endif %}
+                                            {% for fragrance_category in f.fragrance_categories.all %}
+                                            <a class="text-decoration-none"
+                                                href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
+                                                <p class="d-inline text-muted text-uppercase categories">
+                                                    {{ fragrance_category.friendly_name }}
+                                                    {% if not forloop.last %}| {% endif %}
+                    
+                                                </p>
+                                            </a>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="card-footer bg-white border-top-0">
+                                            <div class="row">
+                                                <div class="col-lg-6 p-0 text-start">
+                                                    {% if f.sale_price %}
+                                                    <h3 class="fw-bold text-danger mb-0 fs-5 ms-2">
+                                                        £{{ f.sale_price }}
+                                                        <span class="mb-0 text-muted text-decoration-line-through d-inline old-price ms-1">
+                                                            £{{ f.price }}
+                                                        </span>
+                                                    </h3>
+                                                    {% else %}
+                                                    <h3 class="fw-bold mb-0 fs-5 ms-2">£{{ f.price }}</h3>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="col-lg-6 p-0 text-end">
+                                                    <form action="{% url 'add_to_bag' f.id %}" method="POST" class="form">
+                                                        {% csrf_token %}
+                                                        <input type="number" name="quantity" value="1" class="d-none" aria-label="Quantity">
+                                                        {% if f.stock_remaining <= 0 %}
+                                                        <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock"
+                                                            aria-label="Out of stock" disabled>
+                                                        {% else %}
+                                                        <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag"
+                                                            aria-label="Add to bag">
+                                                        {% endif %}
+                                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            {% if request.user.is_superuser %}
+                                            <div class="row p-0">
+                                                <div class="col-12 mt-2 p-0 fw-bold">
+                                                    <a href="{% url 'edit_product' f.id %}" class="text-success mx-1">Edit Product</a>
+                                                    <a href="{% url 'delete_product' f.id %}" class="text-danger mx-1">Delete</a>
+                                                    <p class="small text-muted mx-1 mb-0">Stock Remaining ({{ f.stock_remaining }})
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% comment %} <div class="row featured-products-container">
                                     <div class="col">
                                         <div class="row">
                                             <a href="{% url 'product_detail' f.id %}">
@@ -156,7 +236,7 @@ Home
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                                 {% endif %}
                                 {% endfor %}
                             </div>
@@ -170,7 +250,91 @@ Home
                             <div class="col-9 overflow-x-scroll d-flex pb-3">
                                 {% for l in latest_products %}
                                 {% if l.is_hidden == False %}
-                                <div class="row latest-products-container">
+                                <div class="col-lg-3 col-md-4 col-sm-6 mb-4 latest-products-container">
+                                    <div class="card card-shadow border-dark">
+                                        <a href="{% url 'product_detail' l.id %}">
+                                            {% if l.image %}
+                                            <img src="{{ l.image.url }}" class="card-img-top border-bottom border-dark"
+                                                alt="{{ l.name }}">
+                                            {% else %}
+                                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark"
+                                                alt="{{ l.name }}">
+                                            {% endif %}
+                                        </a>
+                                        <div class="card-body pb-0">
+                                            <a class="text-decoration-none" href="{% url 'product_detail' l.id %}">
+                                                <h2 class="text-black mb-0 fs-5 bold-underline-hover">{{ l.name }}</h2>
+                                            </a>
+                                            <span class="icon text-muted"><i class="fa-solid fa-tags"></i></span>
+                                            {% for product_category in l.product_categories.all %}
+                                            <a class="text-decoration-none"
+                                                href="{% url 'products' %}?product_categories={{ product_category.name }}">
+                                                <p class="d-inline text-muted text-uppercase categories">
+                                                    {{ product_category.friendly_name }}</p>
+                                            </a>
+                                            {% endfor %}
+                                            {% if l.fragrance_categories %}
+                                                <p class="d-inline text-muted text-uppercase categories">|</p>
+                                            {% endif %}
+                                            {% for fragrance_category in l.fragrance_categories.all %}
+                                            <a class="text-decoration-none"
+                                                href="{% url 'products' %}?fragrance_categories={{ fragrance_category.name }}">
+                                                <p class="d-inline text-muted text-uppercase categories">
+                                                    {{ fragrance_category.friendly_name }}
+                                                    {% if not forloop.last %}| {% endif %}
+                    
+                                                </p>
+                                            </a>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="card-footer bg-white border-top-0">
+                                            <div class="row">
+                                                <div class="col-lg-6 p-0 text-start">
+                                                    {% if l.sale_price %}
+                                                    <h3 class="fw-bold text-danger mb-0 fs-5 ms-2">
+                                                        £{{ l.sale_price }}
+                                                        <span class="mb-0 text-muted text-decoration-line-through d-inline old-price ms-1">
+                                                            £{{ l.price }}
+                                                        </span>
+                                                    </h3>
+                                                    {% else %}
+                                                    <h3 class="fw-bold mb-0 fs-5 ms-2">£{{ l.price }}</h3>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="col-lg-6 p-0 text-end">
+                                                    <form action="{% url 'add_to_bag' l.id %}" method="POST" class="form">
+                                                        {% csrf_token %}
+                                                        <input type="number" name="quantity" value="1" class="d-none" aria-label="Quantity">
+                                                        {% if l.stock_remaining <= 0 %}
+                                                        <input type="submit" class="btn btn-outline-danger me-2" value="Out of Stock"
+                                                            aria-label="Out of stock" disabled>
+                                                        {% else %}
+                                                        <input type="submit" class="btn btn-outline-dark me-2" value="Add to Bag"
+                                                            aria-label="Add to bag">
+                                                        {% endif %}
+                                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            {% if request.user.is_superuser %}
+                                            <div class="row p-0">
+                                                <div class="col-12 mt-2 p-0 fw-bold">
+                                                    <a href="{% url 'edit_product' l.id %}" class="text-success mx-1">Edit Product</a>
+                                                    <a href="{% url 'delete_product' l.id %}" class="text-danger mx-1">Delete</a>
+                                                    <p class="small text-muted mx-1 mb-0">Stock Remaining ({{ l.stock_remaining }})
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                {% comment %} <div class="row latest-products-container">
                                     <div class="col">
                                         <div class="row">
                                             <a href="{% url 'product_detail' l.id %}">
@@ -190,7 +354,7 @@ Home
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                                 {% endif %}
                                 {% endfor %}
                             </div>
