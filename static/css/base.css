@@ -34,7 +34,7 @@ body {
 .featured-products-container,
 .latest-products-container {
     display: inline-block;
-    width: 250px;
+    min-width: 175px;
     margin: 10px;
     vertical-align: top;
 }
