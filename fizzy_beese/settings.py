@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     'localhost',
     '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu107.gitpod.io',
     '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu108.gitpod.io',
-    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu114.gitpod.io']
+    '8000-stephenbeese-fizzybeese-uj86rszvgi6.ws-eu114.gitpod.io',
+    '127.0.0.1']
 
 # Application definition
 

@@ -9,11 +9,10 @@
 <div class="row mw-100 mx-auto justify-content-center">
     <div class="product-detail-container col-12 col-lg-10">
         <div class="row justify-content-center">
-
             <div class="col-11 col-lg-7 text-center">
                 <div class="image-container">
                     {% if product.image %}
-                    <img src="{{ product.image.url }}" class="product-detail-image mt-5 mb-2 img-fluid border-dark"
+                    <img src="{{ product.image.url }}" class="product-detail-image mt-5 mb-2 img-fluid border-dark shadow"
                         alt="{{ product.image }}">
                     {% else %}
                     <img src="{{ MEDIA_URL }}no-image.png" class="product-detail-image mt-5 mb-2 img-fluid border-dark" alt="">
@@ -21,9 +20,9 @@
                     <ul class="image-list mb-2">
                         <li class="active">
                             {% if product.image %}
-                            <img src="{{ product.image.url }}" class="img-fluid" alt="{{ product.image }}">
+                            <img src="{{ product.image.url }}" class="img-fluid shadow-sm" alt="{{ product.image }}">
                             {% else %}
-                            <img src="{{ MEDIA_URL }}no-image.png" class="img-fluid" alt="">
+                            <img src="{{ MEDIA_URL }}no-image.png" class="img-fluid shadow-sm" alt="No image available">
                             {% endif %}
                         </li>
                         {% for image in additional_images %}

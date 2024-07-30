@@ -137,7 +137,7 @@ Home
                                 {% for f in featured_products %}
                                 {% if f.is_hidden == False %}
                                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 featured-products-container">
-                                    <div class="card card-shadow border-dark">
+                                    <div class="card card-shadow border-dark card-custom-size">
                                         <a href="{% url 'product_detail' f.id %}">
                                             {% if f.image %}
                                             <img src="{{ f.image.url }}" class="card-img-top border-bottom border-dark"
@@ -229,7 +229,7 @@ Home
                                 {% for l in latest_products %}
                                 {% if l.is_hidden == False %}
                                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 latest-products-container">
-                                    <div class="card card-shadow border-dark">
+                                    <div class="card card-shadow border-dark card-custom-size">
                                         <a href="{% url 'product_detail' l.id %}">
                                             {% if l.image %}
                                             <img src="{{ l.image.url }}" class="card-img-top border-bottom border-dark"

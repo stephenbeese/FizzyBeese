@@ -200,6 +200,11 @@ a.icon {
     padding: 0;
 }
 
+.card-custom-size {
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
 .home-button {
     width: fit-content;
     height: fit-content;
