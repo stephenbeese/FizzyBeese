@@ -10,7 +10,7 @@ Shopping Bag
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-center mt-4 fs-1">Shopping Bag</h1>
+            <h1 class="text-center mt-4 fs-1 fw-bold">Shopping Bag</h1>
             <hr class="mx-auto w-25">
         </div>
     </div>
@@ -31,7 +31,9 @@ Shopping Bag
                     {% for item in bag_items %}
                     <tr>
                         <td class="w-25">
-                            <img class="img-fluid rounded w-75 shadow" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="img-fluid rounded w-75 shadow" src="{{ MEDIA_URL }}{{ item.product.image }}" alt="">
+                            </a>
                         </td>
                         <td class="p-3">
                             <p class="text-black mb-1 fs-5"><strong>{{ item.product.name }}</strong></p>
@@ -87,7 +89,7 @@ Shopping Bag
                     <tr>
                         <td colspan="5" class="text-end">
                             <p class="fs-5 mb-0">Bag total: <strong>£{{ total|floatformat:2 }}</strong></p>
-                            <p class="fs-5 mb-0">Delivery: <strong>£{{ delivery|floatformat:2 }}</strong></p>
+                            <p class="fs-5 mb-0">Delivery: <strong>{% if delivery == 0 %}FREE{% else %}£{{ delivery|floatformat:2 }}{% endif %}</strong></p>
                             <h4>Total Price: <strong>£{{ grand_total|floatformat:2 }}</strong></h4>
                             {% if free_delivery_delta > 0 %}
                                 <p>You could get free delivery by spending <strong>£{{ free_delivery_delta }}</strong> more!</p>
