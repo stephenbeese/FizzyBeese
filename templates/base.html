@@ -74,9 +74,9 @@
     <title>FizzyBeese | {% block title %}{% endblock %}</title>
 </head>
 
-<body>
-    <header class="container-fluid fixed top">
-        <div id="topnav" class="row bg-white">
+<body class="mw-100">
+    <header class="container-fluid fixed top mw-100 p-0">
+        <div id="topnav" class="row bg-white mw-100">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font my-0">FizzyBeese</h2>
@@ -145,7 +145,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-white">
+        <div class="row bg-white mw-100">
             <nav class="navbar navbar-expand-lg bg-body-tertiary border-top-and-bottom">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -182,11 +182,12 @@
 
     {% block page_header %}
     {% endblock %}
-
-    <div class="container-fluid main-container p-0">
-        {% block content %}
-        {% endblock %}
-    </div>
+    <main class="main mw-100">
+        <div class="container-fluid main-container p-0 mw-100">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
 
     <footer>
         <div class="row w-100 bg-white m-0">
@@ -235,7 +236,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <div id="mc_embed_shell">
                     <div id="mc_embed_signup" style="max-width: 95vw !important;">
                         <form
@@ -278,7 +279,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </footer>
     {% block postloadjs %}
@@ -289,7 +290,7 @@
     <script src="https://kit.fontawesome.com/d29701d5af.js" crossorigin="anonymous"></script>
 
     <!-- Mail Chimp Scripts -->
-    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
+    <!-- <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
     </script>
     <script>
         (function ($) {
@@ -309,7 +310,7 @@
             ftypes[5] = 'birthday';
         }(jQuery));
         var $mcj = jQuery.noConflict(true);
-    </script>
+    </script> -->
 </body>
 
 </html>
