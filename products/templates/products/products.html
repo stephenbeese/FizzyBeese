@@ -78,11 +78,11 @@ Products
                 <div class="card card-shadow border-dark">
                     <a href="{% url 'product_detail' product.id %}">
                         {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img-top border-bottom border-dark"
-                            alt="{{ product.name }}">
+                        <img src="{{ product.image.url }}" class="card-img-top border-bottom border-dark product-card-image"
+                            alt="{{ product.name }}" loading="lazy">
                         {% else %}
-                        <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark"
-                            alt="{{ product.name }}">
+                        <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark product-card-image"
+                            alt="{{ product.name }}" loading="lazy">
                         {% endif %}
                     </a>
                     <div class="card-body pb-0">

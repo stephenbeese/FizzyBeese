@@ -57,7 +57,7 @@ Home
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
                     <a href="{% url 'products' %}?product_categories=bath_bomb"
                         class="text-center text-decoration-none" aria-label="Bath bombs">
-                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}bath-bomb.jpg" alt="Bath bombs">
+                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}bath-bomb.jpg" alt="Bath bombs" loading="lazy">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
                             <h2 class="text-white fs-1 bold-underline-hover">Bath Bombs</h2>
@@ -67,7 +67,7 @@ Home
                 </div>
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
                     <a href="{% url 'products' %}?product_categories=wax_melt" class="text-center text-decoration-none" aria-label="Wax melts">
-                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-melt.jpg" alt="Wax melts">
+                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-melt.jpg" alt="Wax melts" loading="lazy">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
                             <h2 class="text-white fs-1 bold-underline-hover">Wax Melts</h2>
@@ -78,7 +78,7 @@ Home
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
                     <a href="{% url 'products' %}?product_categories=soap_sponge"
                         class="text-center text-decoration-none" aria-label="Soap sponges">
-                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}soap-sponge.jpg" alt="Soap sponges">
+                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}soap-sponge.jpg" alt="Soap sponges" loading="lazy">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
                             <h2 class="text-white fs-1 bold-underline-hover">Soap Sponges</h2>
@@ -87,7 +87,7 @@ Home
                     </a>
                 </div>
                 <div class="col-6 col-lg-4 mb-3 product-home-div">
-                    <a href="{% url 'products' %}?product_categories=candle" class="text-center text-decoration-none" aria-label="Candles">
+                    <a href="{% url 'products' %}?product_categories=candle" class="text-center text-decoration-none" aria-label="Candles" loading="lazy">
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}candle.jpg" alt="Candles">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
@@ -100,7 +100,7 @@ Home
                     <a href="{% url 'products' %}?product_categories=car_freshner"
                         class="text-center text-decoration-none" aria-label="Car freshners">
                         <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}car-freshner.jpg"
-                            alt="Car freshners">
+                            alt="Car freshners" loading="lazy">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
                             <h2 class="text-white fs-1 bold-underline-hover">Car Freshners</h2>
@@ -111,7 +111,7 @@ Home
                 <div class="col-6 col-lg-4 mb-5 product-home-div">
                     <a href="{% url 'products' %}?product_categories=wax_burner"
                         class="text-center text-decoration-none" aria-label="Wax burners">
-                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-burner.jpg" alt="Wax Burners">
+                        <img class="product-home-image rounded card-shadow" src="{{ MEDIA_URL }}wax-burner.jpg" alt="Wax Burners" loading="lazy">
                         <div class="product-overlay mx-auto rounded">
                             <hr class="mx-auto">
                             <h2 class="text-white fs-1 bold-underline-hover">Wax Burners</h2>
@@ -140,11 +140,11 @@ Home
                                     <div class="card card-shadow border-dark card-custom-size">
                                         <a href="{% url 'product_detail' f.id %}">
                                             {% if f.image %}
-                                            <img src="{{ f.image.url }}" class="card-img-top border-bottom border-dark"
-                                                alt="{{ f.name }}">
+                                            <img src="{{ f.image.url }}" class="card-img-top border-bottom border-dark product-card-image"
+                                                alt="{{ f.name }}" loading="lazy">
                                             {% else %}
-                                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark"
-                                                alt="{{ f.name }}">
+                                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark product-card-image"
+                                                alt="{{ f.name }}" loading="lazy">
                                             {% endif %}
                                         </a>
                                         <div class="card-body pb-0">
@@ -232,11 +232,11 @@ Home
                                     <div class="card card-shadow border-dark card-custom-size">
                                         <a href="{% url 'product_detail' l.id %}">
                                             {% if l.image %}
-                                            <img src="{{ l.image.url }}" class="card-img-top border-bottom border-dark"
-                                                alt="{{ l.name }}">
+                                            <img src="{{ l.image.url }}" class="card-img-top border-bottom border-dark product-card-image"
+                                                alt="{{ l.name }}" loading="lazy">
                                             {% else %}
-                                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark"
-                                                alt="{{ l.name }}">
+                                            <img src="{{ MEDIA_URL }}no-image.png" class="card-img-top border-bottom border-dark product-card-image"
+                                                alt="{{ l.name }}" loading="lazy">
                                             {% endif %}
                                         </a>
                                         <div class="card-body pb-0">

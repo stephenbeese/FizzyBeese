@@ -415,6 +415,12 @@ a.icon {
     font-size: 0.8em;
 }
 
+.product-card-image {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+}
+
 
 /* 
 Product Details Page

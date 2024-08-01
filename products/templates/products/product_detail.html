@@ -13,28 +13,28 @@
                 <div class="image-container">
                     {% if product.image %}
                     <img src="{{ product.image.url }}" class="product-detail-image mt-5 mb-2 img-fluid border-dark shadow"
-                        alt="{{ product.image }}">
+                        alt="{{ product.image }}" loading="lazy">
                     {% else %}
-                    <img src="{{ MEDIA_URL }}no-image.png" class="product-detail-image mt-5 mb-2 img-fluid border-dark" alt="">
+                    <img src="{{ MEDIA_URL }}no-image.png" class="product-detail-image mt-5 mb-2 img-fluid border-dark" alt="No image available for {{ product.name }}" loading="lazy">
                     {% endif %}
                     <ul class="image-list mb-2">
                         <li class="active">
                             {% if product.image %}
-                            <img src="{{ product.image.url }}" class="img-fluid shadow-sm" alt="{{ product.image }}">
+                            <img src="{{ product.image.url }}" class="img-fluid shadow-sm" alt="{{ product.image }}" loading="lazy">
                             {% else %}
-                            <img src="{{ MEDIA_URL }}no-image.png" class="img-fluid shadow-sm" alt="No image available">
+                            <img src="{{ MEDIA_URL }}no-image.png" class="img-fluid shadow-sm" alt="No image available for {{ product.name }}" loading="lazy">
                             {% endif %}
                         </li>
                         {% for image in additional_images %}
                         <li>
-                            <img class="img-fluid" src="{{ image.image.url }}"
+                            <img class="img-fluid" src="{{ image.image.url }}" loading="lazy"
                                 alt="{{ product.name }}{% for product_category in product.product_categories.all %} {{ product_category.friendly_name }}{% endfor %}">
                         </li>
                         {% endfor %}
                         {% if product.label_image %}
                         <li>
                             <img class="img-fluid" src="{{ product.label_image.url }}"
-                                alt="{{ product.name }} ingredients label">
+                                alt="{{ product.name }} ingredients label" loading="lazy">
                         </li>
                         {% endif %}
                     </ul>
